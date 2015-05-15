@@ -1,0 +1,163 @@
+\documentclass{scrreprt}
+
+\input{include/style}
+\input{include/mathformat}
+
+
+\title{Gravitational Waves in Modified Gravity}
+% TODO: Subtitle about finding instability in bigravity
+\author{Nils Fischer}
+\date{July 28, 2015}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	By parametrization of the evolution equation of gravitational waves, I find constraints for the physical viability of a general modified gravity theory. In particular, I focus on a bimetric setting.
+\end{abstract}
+
+
+\tableofcontents
+
+
+\chapter{Introduction}
+
+
+\section{Gravitational Waves: Metric Pertubations in an FRW Universe} % Overview of Primordial Gravitational Waves
+
+\begin{align}\label{eq:evolution}
+	\ddconf{h} + 2 \Hconf \dconf{h} + c_T^2 k^2 h &= 0
+\end{align}
+
+
+\section{Dark Energy or Modified Gravity: Two Solutions for the Accelerating Expansion of our Universe} % Overview of the Dark Energy problem
+
+- universe expands accelerated today, obtained by cosmological constant in Einstein-Hilbert action
+
+\begin{align}\label{eq:einstein_hilbert_action}
+	S[g] = \int \! \mathrm{d}^4 x \sqrt{-g} \left( R - 2\Lambda \right)
+	\Rightarrow \; ... \ddt{a_\Lambda} > 0
+\end{align}
+
+- but needs to be \textbf{fine-tuned} and \textbf{why now?}
+
+- either find model for $\Lambda$ (scalar field, ...) or \emph{modify gravity}
+
+
+\section{Gravitational Waves in Modified Gravity}
+
+- as shown in [], the evolution equation for gravitational waves takes the form []. In a theory of modified gravity, this equation will also be modified.
+
+- For such a theory to be viable, the tensor pertubations must remain in limits set by observations.
+
+- The evolution of gravitational waves can therefore provide constraints on physically viable modified gravity theories.
+
+- To investigate the effects of various modifications of the evolution equation, I introduce parameters.
+
+
+
+\chapter{Parametrization of Modified Gravitational Wave Evolution}
+
+
+\section{Constant Friction}
+
+I will first consider an additional friction term $\alpha_M$ in the evolution equation \citep{Pettorino2014}:
+
+\begin{align}\label{eq:evolution_friction}
+	\ddt{h} + \left( 3 + \alpha_M \right) \Hcosm \dt{h} + \frac{c_T^2 k^2}{a^2} h &= 0 \\
+	\Leftrightarrow \quad \ddconf{h} + \left( 2 + \alpha_M \right) \Hconf \dconf{h} + c_T^2 k^2 h &= 0 \\
+    \Leftrightarrow \quad \ddefold{h} + \left( \frac{\defold{\Hconf}}{\Hconf} + 2 + \alpha_M \right) \defold{h} + \frac{c_T^2 k^2}{\Hconf^2} h &= 0
+\end{align}
+
+\plt{plots/variation_alpha_m}{img:variation_alpha_m}{Increasing $\alpha_M$ introduces more friction, so the amplitude of the gravitational wave decreases more rapidly.}
+
+For a constant $\alpha_M$, the differential equation can even be solved analytically in radiation or matter domination, where
+
+\begin{align}
+	&a(\conft) = a_0 \conft^n \quad \textrm{with} \quad n \defeq \frac{2}{1+3\eosp} \\
+	\Rightarrow \quad &\Hconf = \frac{\dconf{a}}{a} = \frac{n}{\conft}
+\end{align}
+
+So \ref{eq:evolution_friction} becomes:
+
+\begin{equation}\label{eq:evolution_friction_matter}
+	\ddconf{h} + \left( 2 + \alpha_M \right) \frac{n}{\conft} \dconf{h} + c_T^2 k^2 h = 0
+\end{equation}
+
+The solution to \ref{eq:evolution_friction_matter} can be written in terms of Bessel functions:
+
+\begin{equation}
+	h(\conft) = \conft^{-p} \left[C_1 J_p(c_T k \conft) + C_2 Y_p(c_T k \conft) \right] \quad \textrm{with} \quad p = n(1+\frac{\alpha_M}{2})-\frac{1}{2}
+\end{equation}
+
+$J_p(x)$ and $Y_p(x)$ denote the Bessel functions of first and second kind, respectively. Their asymptotic behaviour for large $k$ or late times $\conft$ is:
+
+\begin{align}
+	J_p(x) \, &\rightarrow \, \sqrt{\frac{2}{\pi x}} \cos(x-\frac{2p+1}{4}\pi) + \mathcal{O}(x^{-\frac{3}{2}}) \\
+	Y_p(x) \, &\rightarrow \, \sqrt{\frac{2}{\pi x}} \sin(x-\frac{2p+1}{4}\pi) + \mathcal{O}(x^{-\frac{3}{2}})
+\end{align}
+
+Therefore, we find the asymptotic behaviour for the tensor pertubations with friction $\alpha_M$ in radiation or matter domination as
+
+\begin{align}
+	h(\conft) &\propto \conft^{-p-\frac{1}{2}} = \conft^{-n(1+\frac{\alpha_M}{2})} \\
+	\Rightarrow \: h(a) &\propto a^{\frac{-p-\frac{1}{2}}{n}} = a^{-(1+\frac{\alpha_M}{2})}
+\end{align}
+
+times fast oscillation.
+
+This immediately yields a constraint for the additional friction $\alpha_M$ in this regime:
+
+\begin{equation}
+	\alpha_M \geq -2
+\end{equation}
+
+
+\subsection{Comparison to \cite{Amendola2015}}
+
+In \citep{Amendola2015}, both the physical and reference metric tensor pertubations can be described as \ref{eq:evolution_friction_matter} with friction
+\begin{align}
+	\alpha_M^{g} &= 0 \\
+	\alpha_M^{f} &= -3(1+\eosp) < -2
+\end{align}
+
+Clearly, the physical metric pertubations $h_g$ fall like $\frac{1}{a}$ as in \LambdaCDM, whereas the reference metric pertubations $h_f$ grow like $a^1$ in RDE and $a^\frac{1}{2}$ in MDE.
+
+
+\section{Parametrized Friction}
+
+More suitable to ... parametrization for the additional friction $\alpha_M$ could be time-dependent, e.g.
+
+\begin{equation}
+	\alpha_M = \alpha_{M0} a^\beta
+\end{equation}
+
+\plt{plots/variation_beta}{img:variation_beta}{For positive $\beta$, the evolution matches \LambdaCDM at early times and deviates at late times.}
+
+
+\chapter{Gravitional Waves in Bigravity}
+
+\chapter{Summary}
+
+
+\begin{appendices}
+
+\chapter{Mathematical Appendix}
+
+\section{Bessel Functions}
+
+\begin{align}
+	f''(x) + \left(2p+1\right)\frac{1}{x} f'(x) + \left(\alpha^2 + \frac{\beta^2}{x^2}\right) f(x) = 0 \\
+	\Rightarrow \: f(x) = x^{-p} \left[C_1 J_q(\alpha x) + C_2 Y_q(\alpha x)\right] \quad \textrm{with} \quad q = \sqrt{p^2 - \beta^2}
+\end{align}
+
+\subsection{Asymptotic Behaviour}
+
+\end{appendices}
+
+
+\bibliography{lit}
+
+
+\end{document}

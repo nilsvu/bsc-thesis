@@ -1,0 +1,25 @@
+# compiled PDFs
+/*.pdf
+
+# Resources
+Resources/
+
+# LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+
+## Build tool auxiliary files:
+*.synctex
+*.synctex.gz
+*.synctex.gz(busy)
+
+# Texpad
+.texpadtmp/
+
+# Mac Noise
+.DS_Store

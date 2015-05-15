@@ -1,0 +1,30 @@
+
+% General
+\usepackage[english]{babel}
+\usepackage{hyperref}
+
+% Fonts
+\usepackage{fontspec,xunicode}
+\setmainfont{Cardo}
+\setsansfont{Avenir Next}
+\setmonofont[Scale=MatchLowercase]{Menlo}
+
+% Symbols
+\newcommand{\LambdaCDM}{$\Lambda$CDM }
+
+% Images
+\newcommand{\plt}[4][\textwidth]{
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=#1]{#2}
+		\caption{#4}
+		\label{#3}
+	\end{figure}
+}
+
+% Bibliography
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+% Appendix
+\usepackage[toc,page]{appendix}
