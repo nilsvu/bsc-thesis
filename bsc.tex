@@ -1,4 +1,4 @@
-\documentclass{scrreprt}
+\documentclass[parskip=half]{scrreprt}
 
 \input{include/style}
 \input{include/mathformat}
@@ -24,19 +24,68 @@
 \chapter{Introduction}
 
 
-\section{Gravitational Waves: Metric Pertubations in an FRW Universe} % Overview of Primordial Gravitational Waves
+\section{Gravitational Waves: Metric Tensor Perturbations in an FRW Universe} % Overview of Primordial Gravitational Waves
+
+In General Relativity, we vary the \emph{Einstein-Hilbert action}
+
+\begin{align}\label{eq:einstein_hilbert_action}
+	S[g] = \int \! \mathrm{d}^4 x \sqrt{-g} \Rscal
+\end{align}
+
+with respect to the metric $g$ to obtain the \emph{Einstein equations}
+
+\begin{equation}
+	\Gtens_{\mu \nu} = T_{\mu \nu}
+\end{equation}
+
+that relate the geometry of spacetime to its energy content.
+
+Assumptions of spatial homogeneity and isotropy at large scales give rise to the FRW metric
+
+\begin{equation}
+	ds^2 = -dt^2 + a(t)^2 \delta_{ij} dx^i dx^j
+\end{equation}
+
+that is a particular solution to the Einstein equations describing a smooth, expanding universe. We can consider small perturbations $\delta g$ around this metric: 
+% perturbations from matter / objects moving / also primordial / fluctuations and such, maybe start with explaining dT first
+
+\begin{equation}
+	\Gtens_{\mu \nu}[g + \delta g] = T_{\mu \nu}[g] + \delta T_{\mu \nu}[g]
+	\implies \delta\Gtens_{\mu \nu}[g,\delta g] = \delta T_{\mu \nu}[g] \quad \textrm{to linear order in $\delta g$}
+\end{equation}
+
+Because of its symmetry condition, $\delta g$ has 10 degrees of freedom that decompose...
+
+So considering only tensor pertubations $h_{ij}$, the metric becomes
+
+\begin{equation}
+	g_{\mu \nu} =
+	\begin{Bmatrix}
+		-1 & 0 \\
+		0 & a(t)^2 \left(\delta_{ij} + h_{ij}\right)
+	\end{Bmatrix}
+\end{equation}
+
+and we can compute the Einstein tensor pertubation:
+
+\begin{equation}
+	\delta\Gtens_{ij} = \delta\Rtens_{ij} = \frac{3 a^2}{2} \Hcosm \dt{h_{ij}} + \frac{a^2}{2}\ddt{h_{ij}} + \frac{k^2}{2}h_{ij}
+\end{equation}
+
+Without any matter perturbations $\delta T_{\mu \nu}$, we obtain the evolution equation for gravitational waves
 
 \begin{align}\label{eq:evolution}
-	\ddconf{h} + 2 \Hconf \dconf{h} + c_T^2 k^2 h &= 0
+	\ddt{h} + 3 \Hcosm \dt{h} + \frac{k^2}{a^2} h &= 0
+	\iff \ddconf{h} + 2 \Hconf \dconf{h} + k^2 h &= 0
 \end{align}
 
 
-\section{Dark Energy or Modified Gravity: Two Solutions for the Accelerating Expansion of our Universe} % Overview of the Dark Energy problem
+\section{The Cosmological Constant Problem} % Overview of Dark Energy, modified gravity
 
 - universe expands accelerated today, obtained by cosmological constant in Einstein-Hilbert action
 
-\begin{align}\label{eq:einstein_hilbert_action}
-	S[g] = \int \! \mathrm{d}^4 x \sqrt{-g} \left( R - 2\Lambda \right)
+\begin{align}\label{eq:einstein_hilbert_action_cc}
+	S[g] = \int \! \mathrm{d}^4 x \sqrt{-g} \left( \Rscal - 2\Lambda \right)
 	\Rightarrow \; ... \ddt{a_\Lambda} > 0
 \end{align}
 
@@ -49,7 +98,7 @@
 
 - as shown in [], the evolution equation for gravitational waves takes the form []. In a theory of modified gravity, this equation will also be modified.
 
-- For such a theory to be viable, the tensor pertubations must remain in limits set by observations.
+- For such a theory to be viable, the tensor perturbations must remain in limits set by observations.
 
 - The evolution of gravitational waves can therefore provide constraints on physically viable modified gravity theories.
 
@@ -98,11 +147,11 @@ $J_p(x)$ and $Y_p(x)$ denote the Bessel functions of first and second kind, resp
 	Y_p(x) \, &\rightarrow \, \sqrt{\frac{2}{\pi x}} \sin(x-\frac{2p+1}{4}\pi) + \mathcal{O}(x^{-\frac{3}{2}})
 \end{align}
 
-Therefore, we find the asymptotic behaviour for the tensor pertubations with friction $\alpha_M$ in radiation or matter domination as
+Therefore, we find the asymptotic behaviour for the tensor perturbations with friction $\alpha_M$ in radiation or matter domination as
 
 \begin{align}
 	h(\conft) &\propto \conft^{-p-\frac{1}{2}} = \conft^{-n(1+\frac{\alpha_M}{2})} \\
-	\Rightarrow \: h(a) &\propto a^{\frac{-p-\frac{1}{2}}{n}} = a^{-(1+\frac{\alpha_M}{2})}
+	\implies h(a) &\propto a^{\frac{-p-\frac{1}{2}}{n}} = a^{-(1+\frac{\alpha_M}{2})}
 \end{align}
 
 times fast oscillation.
@@ -116,13 +165,13 @@ This immediately yields a constraint for the additional friction $\alpha_M$ in t
 
 \subsection{Comparison to \cite{Amendola2015}}
 
-In \citep{Amendola2015}, both the physical and reference metric tensor pertubations can be described as \ref{eq:evolution_friction_matter} with friction
+In \citep{Amendola2015}, both the physical and reference metric tensor perturbations can be described as \ref{eq:evolution_friction_matter} with friction
 \begin{align}
 	\alpha_M^{g} &= 0 \\
 	\alpha_M^{f} &= -3(1+\eosp) < -2
 \end{align}
 
-Clearly, the physical metric pertubations $h_g$ fall like $\frac{1}{a}$ as in \LambdaCDM, whereas the reference metric pertubations $h_f$ grow like $a^1$ in RDE and $a^\frac{1}{2}$ in MDE.
+Clearly, the physical metric perturbations $h_g$ fall like $\frac{1}{a}$ as in \LambdaCDM, whereas the reference metric perturbations $h_f$ grow like $a^1$ in RDE and $a^\frac{1}{2}$ in MDE.
 
 
 \section{Parametrized Friction}
@@ -149,7 +198,7 @@ More suitable to ... parametrization for the additional friction $\alpha_M$ coul
 
 \begin{align}
 	f''(x) + \left(2p+1\right)\frac{1}{x} f'(x) + \left(\alpha^2 + \frac{\beta^2}{x^2}\right) f(x) = 0 \\
-	\Rightarrow \: f(x) = x^{-p} \left[C_1 J_q(\alpha x) + C_2 Y_q(\alpha x)\right] \quad \textrm{with} \quad q = \sqrt{p^2 - \beta^2}
+	\implies f(x) = x^{-p} \left[C_1 J_q(\alpha x) + C_2 Y_q(\alpha x)\right] \quad \textrm{with} \quad q = \sqrt{p^2 - \beta^2}
 \end{align}
 
 \subsection{Asymptotic Behaviour}
