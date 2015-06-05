@@ -1,5 +1,9 @@
 \documentclass[parskip=half]{scrreprt}
 
+\usepackage{todonotes} % TODO: remove todonotes package
+\newcommand{\todocheck}[1]{\todo[color=blue!40]{#1}}
+
+
 \input{include/style}
 \input{include/mathformat}
 
@@ -23,64 +27,139 @@
 
 \chapter{Introduction}
 
+I will first give a brief introduction to standard FRW cosmology in General Relativity in \autoref{sec:grav_waves_frw} and derive the evolution equation for gravitational waves by considering perturbations to such a universe. In \autoref{sec:cc_problem}, I will then summarize the Cosmological Constant Problem and explain, why this is still one of the greatest mysteries in theoretical physics of our time. I will briefly explore various ways to solve this problem and give reasons, why a modification of General Relativity ... Such modifications will generally also alter the evolution of gravitational waves. I will therefore explain in \autoref{sec:grav_waves_mod} how a modified gravity theory in conjunction with observable data can be tested for physical viability when considering these alterations.
 
-\section{Gravitational Waves: Metric Tensor Perturbations in an FRW Universe} % Overview of Primordial Gravitational Waves
 
-In General Relativity, we vary the \emph{Einstein-Hilbert action}
+\section{Gravity and Spacetime in General Relativity \citep{Tolish}}\label{sec:gr}
 
+For a long time, physicists believed space and time were both flat and fundamentally different concepts. In \emph{Newtonian spacetime}, it is therefore straight forward to define notions such as the \emph{length of a curve} and \emph{simultaneity}.
+
+With Maxwell's theory of electromagnetism and experimental observations regarding the speed of light, however, many of these concepts had to be abandoned. Physicists realized the necessity to reconsider fundamental assumptions about space and time. Albert Einstein addressed many of these issues with his theory of special relativity \todo{summarize SR briefly, mention GR->SR for minkowskian metric} in 1905, but, in particular, one striking observation remained unexplained:
+
+Newtonian mechanics postulates that particles accelerate under the influence of \textbf{any} force proportional to their \emph{inertial mass} \(m_i\). At the same time, the gravitational force a particle induces on another is proportional to its \emph{gravitational mass} \(m_g\) that is completely unrelated to the former in this theory. Strikingly, however, experiments find inertial and gravitational mass indistinguishable from another \todo{order of magnitude?} --- to this end, any two objects will fall with the same velocity, no matter their weight --- and physicists identify both as \emph{mass} \(m=m_i=m_g\) instead. This \emph{equivalence principle} constitutes the basis of Einstein's 1915 theory of \emph{general relativity} where gravity is \textbf{not regarded as an external force} acting on particles in spacetime but rather a phenomenon of the geometry of spacetime itself, with \textbf{particles moving freely in curved spacetime}.
+
+In General Relativity, the \emph{Einstein equations}
+\begin{align}\label{eq:einstein_eqns}
+	\Gtens_{\mu \nu} = 8 \pi \Newtconst T_{\mu \nu} \\
+	\textrm{with the \emph{Einstein Tensor}} \quad &\Gtens_{\mu \nu} = \Rtens_{\mu \nu} + \frac{1}{2}g_{\mu \nu}\Rscal \, \textrm{,} \\
+	\textrm{the \emph{Ricci Scalar}} \quad &\Rscal = g^{\mu \nu}\Rtens_{\mu \nu} \, \textrm{,} \\
+	\textrm{the \emph{Ricci Tensor}} \quad &\Rtens_{\mu \nu} = \Riemtens^\alpha_{\alpha \mu \nu} \, \textrm{,} \\
+	\textrm{the \emph{Riemann Tensor}} \quad &\Riemtens^\alpha_{\beta \mu \nu} = \Gamma^\alpha_{\beta \nu, \mu} - \Gamma^\alpha_{\beta \mu, \nu} + \Gamma^\alpha_{\gamma \mu}\Gamma^\gamma_{\beta \nu} + \Gamma^\alpha_{\gamma \nu}\Gamma^\gamma_{\beta \mu} \\
+	\textrm{and the \emph{Christoffel Symbols}} \quad &\Gamma^\alpha_{\beta \gamma} = \frac{1}{2} g^{\alpha \mu} \del{g_{\mu \beta, \gamma} + g_{\mu \gamma, \beta} - g_{\beta \gamma, \mu}}
+\end{align}
+relate the geometry of spacetime, encoded in the metric tensor~\(g_{\mu \nu}\), to the energy content of the universe~\(T_{\mu \nu}\). 
+
+We can obtain the Einstein equation through variation of the \emph{Einstein-Hilbert action}
 \begin{align}\label{eq:einstein_hilbert_action}
-	S[g] = \int \! \mathrm{d}^4 x \sqrt{-g} \Rscal
+	S[g] = \int \! \dif{^4x} \sqrt{-\gdet} \Rscal \quad \textrm{with} \quad \gdet = \det{g}
 \end{align}
+with respect to \(g_{\mu \nu}\). A detailed derivation is done in \autoref{app:deriv_einstein_eqns}.
 
-with respect to the metric $g$ to obtain the \emph{Einstein equations}
+Given an energy-momentum tensor \(T_{\mu \nu}\), the Einstein equations constitute ten \todo{why ten? > symmetric} highly non-linear partial differential equations for the spacetime metric~\(g\). The metric in turn restores the notion of the length of a curve in spacetime and thus allows us to formulate postulates for the dynamics of matter in the universe.\\
+In particular, as a generalization of Newton's law, particles without any external forces acted upon will move on \emph{geodesics} in spacetime, i.e. their curve is stationary with respect to the length functional.
 
+A simple solution to the Einstein equations \todo{in vacuum?} is the flat \emph{Minkowskian} spacetime metric
 \begin{equation}
-	\Gtens_{\mu \nu} = T_{\mu \nu}
-\end{equation}
-
-that relate the geometry of spacetime to its energy content.
-
-Assumptions of spatial homogeneity and isotropy at large scales give rise to the FRW metric
-
-\begin{equation}
-	ds^2 = -dt^2 + a(t)^2 \delta_{ij} dx^i dx^j
-\end{equation}
-
-that is a particular solution to the Einstein equations describing a smooth, expanding universe. We can consider small perturbations $\delta g$ around this metric: 
-% perturbations from matter / objects moving / also primordial / fluctuations and such, maybe start with explaining dT first
-
-\begin{equation}
-	\Gtens_{\mu \nu}[g + \delta g] = T_{\mu \nu}[g] + \delta T_{\mu \nu}[g]
-	\implies \delta\Gtens_{\mu \nu}[g,\delta g] = \delta T_{\mu \nu}[g] \quad \textrm{to linear order in $\delta g$}
-\end{equation}
-
-Because of its symmetry condition, $\delta g$ has 10 degrees of freedom that decompose...
-
-So considering only tensor pertubations $h_{ij}$, the metric becomes
-
-\begin{equation}
-	g_{\mu \nu} =
-	\begin{Bmatrix}
+	g_{\mu \nu} = \eta_{\mu \nu} =
+	\begin{bmatrix}
 		-1 & 0 \\
-		0 & a(t)^2 \left(\delta_{ij} + h_{ij}\right)
-	\end{Bmatrix}
+		0 & \idmat_3
+	\end{bmatrix}_{\mu \nu}
 \end{equation}
+of special relativity.\todo{include this here?}
 
-and we can compute the Einstein tensor pertubation:
 
-\begin{equation}
-	\delta\Gtens_{ij} = \delta\Rtens_{ij} = \frac{3 a^2}{2} \Hcosm \dt{h_{ij}} + \frac{a^2}{2}\ddt{h_{ij}} + \frac{k^2}{2}h_{ij}
-\end{equation}
+\section{Gravitational Waves: Metric Tensor Perturbations in an FRW Universe}\label{sec:grav_waves_frw}
 
-Without any matter perturbations $\delta T_{\mu \nu}$, we obtain the evolution equation for gravitational waves
+In cosmology, we strive to understand \textbf{how the entire universe evolves}.
 
-\begin{align}\label{eq:evolution}
-	\ddt{h} + 3 \Hcosm \dt{h} + \frac{k^2}{a^2} h &= 0
-	\iff \ddconf{h} + 2 \Hconf \dconf{h} + k^2 h &= 0
+As of the \emph{cosmological principle}, it is reasonable to assume the universe is \emph{spatially homogeneous and isotropic} at large scales. This gives rise to six spatial symmetries and leads to the \emph{Friedmann-Robertson-Walker~(FRW)} metric
+\begin{align}
+	\dif{s}^2 = -\dif{t}^2 + a(t)^2 \gamma_{ij} \dif{x^i}\dif{x^j} \quad \textrm{where} \quad &\dif{s}^2 = g_{\mu \nu}\dif{x}^\mu \dif{x}^\nu \\
+	\textrm{and} \quad &\gamma_{ij}(r,\theta,\phi) =
+	\begin{bmatrix}
+		\frac{1}{1-\kappa r^2} & 0 & 0 \\
+		0 & r^2 & 0 \\
+		0 & 0 & r^2 sin^2(\theta)
+	\end{bmatrix}_{ij}
 \end{align}
+that is a particular solution to the Einstein equations describing a smooth, expanding universe. The \emph{scale factor}~\(a(t)\) is the only freedom left after considering the symmetries and scales the time-independent metric \(\gamma_{ij}\) of a spatial \todocheck{can the subspace(?) be called spatial, or rather three-dim.?} subspace with a constant curvature~\(\kappa\). See \autoref{app:deriv_frw} for a detailed derivation.
 
+A wealth of cosmological implications follow from these assumption and are discussed in detail in the literature. \todo{add references}
 
-\section{The Cosmological Constant Problem} % Overview of Dark Energy, modified gravity
+At smaller scales, the universe is not homogeneous and isotropic at all, of course. Galaxies, stars and planets, as well as radiation or, in fact, any energy content of the universe disturb the spacetime metric locally\todo{also primordial / early universe / inflation and such}\todo{..and lead to gravitational interaction}. It is therefore reasonable to consider perturbations~\(\delta g\) around the smooth FRW metric and their evolution.\todo{motivate better > baccigalupi p. 22}
+
+When we assume an exact solution~\(g\) to the unperturbed Einstein equations and consider a sufficiently small perturbation to the energy-momentum tensor~\(\delta T_{\mu \nu}\), then so will be the metric perturbation \(\delta g\) \todo{really?} that solves
+\begin{equation}
+	\Gtens_{\mu \nu}[g + \delta g] = T_{\mu \nu}[g] + \delta T_{\mu \nu}[g] \quad \textrm{for} \quad 8 \pi \Newtconst = 1
+\end{equation}
+and we obtain
+\begin{equation}\label{eq:perturbed_einstein_eqns}
+	\delta\Gtens_{\mu \nu}[g,\delta g] = \delta T_{\mu \nu}[g]
+\end{equation}
+with \(\delta\Gtens_{\mu \nu}[g,\delta g]\) linear in \(\delta g\) in linear perturbation theory.
+
+Because of its symmetry condition\todo{add reference or derive}, \(\delta g\) has 10 degrees of freedom that we can parametrize as \citep{Schulz}
+\begin{align}
+	\delta g = -2A \dif{x^0}\otimes\dif{x^0} + B_i\del{\dif{x^0}\otimes\dif{x^i}+\dif{x^i}\otimes\dif{x^0}} + \del{2C\gamma_{ij} + 2E_{ij}}\dif{x^i}\otimes\dif{x^j}
+\end{align}\todocheck{notation}
+for small spatial \emph{scalar fields}~\(A=A(x^0)\) and~\(C=C(x^0)\), a \emph{vector field}~\(B_i=B_i(x^0)\) and a symmetric, trace-free \emph{tensor field}~\(E_{ij}=E_{ij}(x^0)\).
+
+As of the \emph{Helmholtz theorem}, the parameters uniquely decompose further into scalar, vector and tensor components~as
+\begin{align}
+	\delta g = \delta g^{\mathrm{scalar}} + \delta g^{\mathrm{vector}} + \delta g^{\mathrm{tensor}} \, \textrm{.}
+\end{align}
+This is shown in detail in \autoref{app:deriv_decompose} and allows us to study scalar, vector and tensor perturbations separately. \todo{add info about scalar, vector, tensor > grav. waves}
+
+Gravitational waves now arise, when we only consider unsourced tensor perturbations. This is analogous to the propagation of electromagnetic waves in vacuum, for example.\todo{elaborate}
+
+It is shown in \autoref{app:deriv_decompose} that
+\begin{equation}
+	\delta g^{\mathrm{tensor}}_{ij} = h_{ij}
+\end{equation}
+is a \emph{symmetric, traceless, divergence-free tensor field} and can therefore be expressed in terms of two functions~\(\hcross\) and~\(\hplus\)~as
+\begin{equation}
+	h_{ij} =
+	\begin{bmatrix}
+		\hplus & \hcross & 0 \\
+		\hcross & -\hplus & 0 \\
+		0 & 0 & 0
+	\end{bmatrix}_{ij}
+\end{equation}
+with an implicit choice of axis.\todo{elaborate choice of axis, show div/trace-free with wave-vector k}
+
+The perturbed line element becomes
+\begin{equation}
+	\dif{s}^2 = -\dif{t}^2 + a(t)^2 \del{\gamma_{ij} + h_{ij}} \dif{x^i}\dif{x^j}
+\end{equation}
+and with this explicit form of the metric we can compute the Einstein tensor perturbation in \autoref{eq:perturbed_einstein_eqns}. This is done in \autoref{app:deriv_gtens_perturb} and we obtain
+\begin{align}\label{eq:evolution}
+	\delta\Gtens_{ij} = \delta\Rtens_{ij} = \frac{3 a^2}{2} \Hcosm \dt{h_{ij}} + \frac{a^2}{2}\ddt{h_{ij}} + \frac{k^2}{2}h_{ij} \\
+\end{align}
+with the \emph{Hubble function}
+\begin{equation}
+	\Hcosm = \dt{a}\frac{1}{a} \, \textrm{.}
+\end{equation}
+
+For \(\delta T_{\mu \nu}=0\) \autoref{eq:perturbed_einstein_eqns} is already a wave equation \todo{damped oscillator, not wave!} for \(h \in \cbr{\hcross, \hplus}\):
+\begin{align}
+	\ddt{h} + 3 \Hcosm \dt{h} + \frac{k^2}{a^2} h = 0 \\
+	\iff \ddconf{h} + 2 \Hconf \dconf{h} + k^2 h = 0	
+\end{align}
+\todo{elaborate!}
+
+\section{The Cosmological Constant Problem}\label{sec:cc_problem} % Overview of Dark Energy, modified gravity
+
+Both Quantum Field Theory and General Relativity are extremely well-tested theories and constitute the basis of modern physics. %mention scales/ applications
+The Cosmological Constant Problem arises from both an unexplained theoretical implication of the former, namely \emph{vacuum energy}, and a cosmological observation that requires ...
+
+\subsection{Vacuum Energy}
+
+In QFT we have vacuum energy... % add simple example/derivation
+Such a zero-point energy does not change the dynamics of the system and can be safely ignored in QFT. % safely? ignored?
+General Relativity now tells us that all energy content gravitates, including the vacuum energy. % evidence: lamb shift, casimir
+For $V_{vac}>0$ this will result in an accelerated late time de Sitter expansion of the universe, but already the electron field contributes way too much energy for $H_0$ to be consistent with observations. With renormalization, this can be cancelled with an extremely fine-tuned counterterm \emph{for every order of perturbation} \citep{Datta1996}. % "radiative instability" > formulate in detail, include unstable wilson effective action
+
 
 - universe expands accelerated today, obtained by cosmological constant in Einstein-Hilbert action
 
@@ -89,12 +168,17 @@ Without any matter perturbations $\delta T_{\mu \nu}$, we obtain the evolution e
 	\Rightarrow \; ... \ddt{a_\Lambda} > 0
 \end{align}
 
+- unique theory of gravity! -> lovelock!
+
 - but needs to be \textbf{fine-tuned} and \textbf{why now?}
 
 - either find model for $\Lambda$ (scalar field, ...) or \emph{modify gravity}
 
+- naturalness <-> anthropic \cite{Datta1996}
 
-\section{Gravitational Waves in Modified Gravity}
+- QFT needs vacuum energy
+
+\section{Gravitational Waves in Modified Gravity}\label{sec:grav_waves_mod}
 
 - as shown in [], the evolution equation for gravitational waves takes the form []. In a theory of modified gravity, this equation will also be modified.
 
@@ -102,11 +186,10 @@ Without any matter perturbations $\delta T_{\mu \nu}$, we obtain the evolution e
 
 - The evolution of gravitational waves can therefore provide constraints on physically viable modified gravity theories.
 
-- To investigate the effects of various modifications of the evolution equation, I introduce parameters.
-
-
 
 \chapter{Parametrization of Modified Gravitational Wave Evolution}
+
+- To investigate the effects of various modifications of the evolution equation, I introduce parameters.
 
 
 \section{Constant Friction}
@@ -185,7 +268,8 @@ More suitable to ... parametrization for the additional friction $\alpha_M$ coul
 \plt{plots/variation_beta}{img:variation_beta}{For positive $\beta$, the evolution matches \LambdaCDM at early times and deviates at late times.}
 
 
-\chapter{Gravitional Waves in Bigravity}
+\chapter{Bimetric Parametrization of Gravitational Waves}
+
 
 \chapter{Summary}
 
@@ -193,6 +277,21 @@ More suitable to ... parametrization for the additional friction $\alpha_M$ coul
 \begin{appendices}
 
 \chapter{Mathematical Appendix}
+
+\section{Derivation of the Einstein equations from the Einstein-Hilbert action}\label{app:deriv_einstein_eqns}
+
+To derive the Einstein equations, we begin with the Einstein-Hilbert action
+
+\begin{align}
+	S[g] = \int \! \dif{^4x} \sqrt{-|g|} \Rscal \, \textrm{.}
+\end{align}
+
+
+\section{Derivation of the FRW metric from the cosmological principle}\label{app:deriv_frw}
+
+
+\section{Decomposition}\label{app:deriv_decompose}
+\todo{show as decomposition of the SO(3) group}
 
 \section{Bessel Functions}
 
@@ -206,7 +305,7 @@ More suitable to ... parametrization for the additional friction $\alpha_M$ coul
 \end{appendices}
 
 
-\bibliography{lit}
+\bibliography{lit,Bachelorarbeit}
 
 
 \end{document}

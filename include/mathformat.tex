@@ -1,9 +1,17 @@
-\usepackage{amsmath,amssymb,esdiff}
+\usepackage{amsmath,amssymb}
+\usepackage{esdiff} % derivatives
+\usepackage{commath} % math macros
+\usepackage{bbm} % blackboard style symbols
 
 % Symbols
-\newcommand{\Rscal}{R} % Ricci Scalar
+\newcommand{\Rscal}{\mathcal{R}} % Ricci Scalar
 \newcommand{\Rtens}{R} % Ricci Tensor
+\newcommand{\Riemtens}{R} % Riemann Tensor
 \newcommand{\Gtens}{G} % Einstein Tensor
+\newcommand{\gdet}{|g|} % determinant of g
+\newcommand{\Newtconst}{\mathrm{G}_\mathrm{N}} % Newtonian constant
+\newcommand{\hcross}{h_\times} % cross-polarized tensor perturbation
+\newcommand{\hplus}{h_+} % plus-polarized tensor perturbation
 \newcommand{\conft}{\eta} % conformal time
 \newcommand{\efold}{\log a} % e-foldings
 \newcommand{\Hcosm}{\mathrm{H}} % Hubble function
@@ -18,5 +26,8 @@
 \newcommand{\defold}[1]{#1'}
 \newcommand{\ddefold}[1]{#1''}
 
-% Operators
+% Operators and other stuff
+\newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\defeq}{:=}
+\newcommand{\idmat}{\mathbbm{1}}
+\newcommand{\covd}{\nabla}
