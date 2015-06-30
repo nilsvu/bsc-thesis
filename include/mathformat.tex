@@ -4,12 +4,14 @@
 \usepackage{bbm} % blackboard style symbols
 
 % Symbols
-\newcommand{\Rscal}{\mathcal{R}} % Ricci Scalar
-\newcommand{\Rtens}{R} % Ricci Tensor
-\newcommand{\Riemtens}{R} % Riemann Tensor
-\newcommand{\Gtens}{G} % Einstein Tensor
+\newcommand{\Rscal}{\mathcal{R}} % Ricci scalar
+\newcommand{\Rtens}{R} % Ricci tensor
+\newcommand{\Riemtens}{R} % Riemann tensor
+\newcommand{\Gtens}{G} % Einstein tensor
+\newcommand{\Ttens}{T} % Energy-momentum tensor
 \newcommand{\gdet}{|g|} % determinant of g
 \newcommand{\Newtconst}{\mathrm{G}_\mathrm{N}} % Newtonian constant
+\newcommand{\cosmconst}{\Lambda} % determinant of g
 \newcommand{\hcross}{h_\times} % cross-polarized tensor perturbation
 \newcommand{\hplus}{h_+} % plus-polarized tensor perturbation
 \newcommand{\conft}{\eta} % conformal time
@@ -17,17 +19,29 @@
 \newcommand{\Hcosm}{\mathrm{H}} % Hubble function
 \newcommand{\Hconf}{\mathcal{H}} % conformal Hubble function
 \newcommand{\eosp}{\omega} % equation of state parameter
+\newcommand{\nexp}{n(\eosp)} % 3(1+w)
+\newcommand{\spatcurv}{\kappa} % spatial curvature
+\newcommand{\dens}{\rho} % density
+\newcommand{\denscrit}{\rho_\textnormal{crit}} % density
+\newcommand{\Dens}{\Omega} % normalized density
+\newcommand{\symbdust}{\mathrm{d}} % normalized density
+\newcommand{\symbrad}{\gamma} % normalized density
+% Parametrization
+\newcommand{\alphaM}{\alpha_\mathrm{M}} % parametrized friction
+\newcommand{\cT}{c_\mathrm{T}} % parametrized propagation speed
+\newcommand{\const}{\mathrm{const.}} % constant parameter
 
 % Derivatives
 \newcommand{\dt}[1]{\diff{#1}{t}}
 \newcommand{\ddt}[1]{\diff[2]{#1}{t}}
 \newcommand{\dconf}[1]{\dot{#1}}
 \newcommand{\ddconf}[1]{\ddot{#1}}
-\newcommand{\defold}[1]{#1'}
-\newcommand{\ddefold}[1]{#1''}
+\newcommand{\defold}[1]{#1^\prime}
+\newcommand{\ddefold}[1]{#1^{\prime\prime}}
 
 % Operators and other stuff
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\defeq}{:=}
 \newcommand{\idmat}{\mathbbm{1}}
 \newcommand{\covd}{\nabla}
+\newcommand{\eul}{\mathrm{e}}

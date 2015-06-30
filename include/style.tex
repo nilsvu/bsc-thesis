@@ -1,7 +1,13 @@
 
 % General
 \usepackage[english]{babel}
-\usepackage{hyperref}
+%\usepackage{placeins} % for \FloatBarrier command
+
+% Links
+\usepackage{color,xcolor}
+\definecolor{uhd}{RGB}{196,19,47}
+\usepackage[colorlinks=true,allcolors=uhd]{hyperref}
+\newcommand{\namedeqref}[2]{\hyperref[#2]{#1}~\eqref{#2}}
 
 % Fonts
 \usepackage{fontspec,xunicode}
@@ -10,17 +16,45 @@
 \setmonofont[Scale=MatchLowercase]{Menlo}
 
 % Symbols
-\newcommand{\LambdaCDM}{$\Lambda$CDM }
+\newcommand{\cosmconstCDM}{$\cosmconst$CDM }
+\newcommand{\fR}[1]{\(f(\Rscal)\)~#1}
+
+% Equations
+\newcommand{\eqpunct}[1]{\mathpunct{#1}}
+\newcommand{\eqname}[2]{\label{#2} \\[-1em] \tag*{\llap{\textit{#1}}}}
 
 % Images
-\newcommand{\plt}[4][\textwidth]{
+\newcommand{\plt}[2]{
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=#1]{#2}
-		\caption{#4}
-		\label{#3}
+		\includegraphics[width=\textwidth]{plots/#1}
+		\caption{#2}
+		\label{fig:#1}
 	\end{figure}
 }
+
+% Tables
+\usepackage{array} % for math mode in tables
+\usepackage{booktabs} % for hline rules
+
+% Page Layout
+%\pagestyle{headings}
+%\usepackage[textheight=640pt]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\AtBeginDocument{
+	\fancyhf{}
+	\lhead{\textit{\nouppercase{\leftmark}}}
+	\rhead{\thepage}
+	\renewcommand{\headrulewidth}{0.2pt}
+}
+
+
+% Headings
+%\usepackage[bf]{titlesec}
+%\titleformat{\chapter}[display]{\large\bfseries}{\chaptertitlename\ \thechapter}{5pt}{\large}% NEW
+%\titlespacing*{\chapter}{0pt}{30pt}{20pt}% NEW
+
 
 % Bibliography
 \usepackage{natbib}
