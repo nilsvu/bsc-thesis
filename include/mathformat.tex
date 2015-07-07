@@ -18,8 +18,10 @@
 \newcommand{\efold}{\log a} % e-foldings
 \newcommand{\Hcosm}{\mathrm{H}} % Hubble function
 \newcommand{\Hconf}{\mathcal{H}} % conformal Hubble function
-\newcommand{\eosp}{\omega} % equation of state parameter
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\eosp}{\mathpzc{w}} % equation of state parameter
 \newcommand{\nexp}{n(\eosp)} % 3(1+w)
+\newcommand{\nexpconft}{\tilde{n}(\eosp)} % 2/(1+3w)
 \newcommand{\spatcurv}{\kappa} % spatial curvature
 \newcommand{\dens}{\rho} % density
 \newcommand{\denscrit}{\rho_\textnormal{crit}} % density
@@ -28,8 +30,14 @@
 \newcommand{\symbrad}{\gamma} % normalized density
 % Parametrization
 \newcommand{\alphaM}{\alpha_\mathrm{M}} % parametrized friction
-\newcommand{\cT}{c_\mathrm{T}} % parametrized propagation speed
+\newcommand{\tenspert}{\mathrm{T}}
+\newcommand{\cT}{c_\tenspert} % parametrized propagation speed
 \newcommand{\const}{\mathrm{const.}} % constant parameter
+\newcommand{\alphaMnot}{\alpha_{\mathrm{M}0}} % parametrized power law friction amplitude
+\newcommand{\betaexp}{\beta} % parametrized power law friction exponent
+% Bessel functions
+\newcommand{\besselJ}{J}
+\newcommand{\besselY}{Y}
 
 % Derivatives
 \newcommand{\dt}[1]{\diff{#1}{t}}
@@ -41,7 +49,8 @@
 
 % Operators and other stuff
 \newcommand{\vect}[1]{\boldsymbol{#1}}
-\newcommand{\defeq}{:=}
+\usepackage{mathtools}
+\newcommand{\defeq}{\coloneqq}
 \newcommand{\idmat}{\mathbbm{1}}
 \newcommand{\covd}{\nabla}
 \newcommand{\eul}{\mathrm{e}}

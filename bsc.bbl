@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amendola et~al.(2014)Amendola, Ballesteros, and
+  Pettorino]{Amendola2014}
+Luca Amendola, Guillermo Ballesteros, and Valeria Pettorino.
+\newblock {Effects of modified gravity on B-mode polarization}.
+\newblock \emph{arXiv preprint arXiv:1405.7004}, 043009:\penalty0 1--14, 2014.
+\newblock ISSN 1550-7998.
+\newblock \doi{10.1103/PhysRevD.90.043009}.
+\newblock URL \url{http://arxiv.org/abs/1405.7004}.
+
+\bibitem[Amendola et~al.(2015)Amendola, Koennig, Martinelli, Pettorino, and
+  Zumalacarregui]{Amendola2015}
+Luca Amendola, Frank Koennig, Matteo Martinelli, Valeria Pettorino, and Miguel
+  Zumalacarregui.
+\newblock {Surfing gravitational waves: can bigravity survive growing tensor
+  modes?}
+\newblock pages 1--18, 2015.
+\newblock URL \url{http://arxiv.org/pdf/1503.02490.pdf}.
+
+\bibitem[Datta(1996)]{Datta1996}
+Dhurjati~Prasad Datta.
+\newblock {on the Cosmological Constant Problem}.
+\newblock \emph{International Journal of Modern Physics D}, 05\penalty0
+  (04):\penalty0 433--440, 1996.
+\newblock ISSN 0218-2718.
+\newblock \doi{10.1142/S0218271896000278}.
+
+\bibitem[Hwang and Noh(1996)]{Hwang1996}
+Jai-chan Hwang and Hyerim Noh.
+\newblock {Cosmological perturbations in generalized gravity theories}.
+\newblock \emph{Physical Review D}, 54\penalty0 (2), 1996.
+\newblock ISSN 05562821.
+
+\bibitem[Martin(2012)]{Martin2012}
+J\'{e}r\^{O}me Martin.
+\newblock {Everything you always wanted to know about the cosmological constant
+  problem (but were afraid to ask)}.
+\newblock \emph{Comptes Rendus Physique}, 13\penalty0 (6-7):\penalty0 566--665,
+  2012.
+\newblock ISSN 16310705.
+\newblock \doi{10.1016/j.crhy.2012.04.008}.
+
+\bibitem[Pettorino and Amendola(2014)]{Pettorino2014}
+Valeria Pettorino and Luca Amendola.
+\newblock {Friction in Gravitational Waves: a test for early-time modified
+  gravity}.
+\newblock \emph{Physics Letters B}, 742:\penalty0 4, 2014.
+\newblock ISSN 03702693.
+\newblock \doi{10.1016/j.physletb.2015.02.007}.
+\newblock URL \url{http://arxiv.org/abs/1408.2224}.
+
+\bibitem[Raveri et~al.(2014)Raveri, Silvestri, and Zhou]{Raveri2014}
+Marco Raveri, Alessandra Silvestri, and Shuang-Yong Zhou.
+\newblock {Measuring the speed of cosmological gravitational waves}.
+\newblock 061501:\penalty0 5, 2014.
+\newblock ISSN 15502368.
+\newblock \doi{10.1103/PhysRevD.91.061501}.
+\newblock URL \url{http://arxiv.org/abs/1405.7974}.
+
+\bibitem[Schulz()]{Schulz}
+Frederic Schulz.
+\newblock \emph{{Lecture on General Relativity}}.
+
+\bibitem[Tolish()]{Tolish}
+Alexander Tolish.
+\newblock {General Relativity and the Newtonian Limit}.
+\newblock pages 1--17.
+
+\bibitem[Xu()]{Xu2015}
+Lixin Xu.
+\newblock {Gravitational Waves: A Test for Modified Gravity}.
+\newblock pages 1--9.
+
+\end{thebibliography}

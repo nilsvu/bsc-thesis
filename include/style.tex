@@ -8,6 +8,7 @@
 \definecolor{uhd}{RGB}{196,19,47}
 \usepackage[colorlinks=true,allcolors=uhd]{hyperref}
 \newcommand{\namedeqref}[2]{\hyperref[#2]{#1}~\eqref{#2}}
+\newcommand{\appref}[1]{\hyperref[#1]{Appendix~\ref{#1}}}
 
 % Fonts
 \usepackage{fontspec,xunicode}
@@ -16,7 +17,7 @@
 \setmonofont[Scale=MatchLowercase]{Menlo}
 
 % Symbols
-\newcommand{\cosmconstCDM}{$\cosmconst$CDM }
+\newcommand{\LCDM}{$\cosmconst$CDM }
 \newcommand{\fR}[1]{\(f(\Rscal)\)~#1}
 
 % Equations
@@ -24,12 +25,15 @@
 \newcommand{\eqname}[2]{\label{#2} \\[-1em] \tag*{\llap{\textit{#1}}}}
 
 % Images
+\usepackage{pgf}
+%\setlength{\abovecaptionskip}{0pt }
 \newcommand{\plt}[2]{
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[width=\textwidth]{plots/#1}
-		\caption{#2}
-		\label{fig:#1}
+	\begin{figure}[ht]%
+		\begin{center}%
+			\input{plots/#1.pgf}%
+		\end{center}%
+		\caption{#2}%
+		\label{fig:#1}%
 	\end{figure}
 }
 
