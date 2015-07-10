@@ -22,18 +22,18 @@
 
 % Equations
 \newcommand{\eqpunct}[1]{\mathpunct{#1}}
-\newcommand{\eqname}[2]{\label{#2} \\[-1em] \tag*{\llap{\textit{#1}}}}
+\newcommand{\eqname}[2]{\label{#2} \\[-1em] \tag*{\llap{\emph{#1}}}}
 
 % Images
 \usepackage{pgf}
 %\setlength{\abovecaptionskip}{0pt }
-\newcommand{\plt}[2]{
-	\begin{figure}[ht]%
-		\begin{center}%
-			\input{plots/#1.pgf}%
-		\end{center}%
-		\caption{#2}%
-		\label{fig:#1}%
+\newcommand{\plt}[3]{
+	\begin{figure}[ht]
+		\begin{center}
+			\input{plots/#1.pgf}
+		\end{center}
+		\caption{\textbf{#2} \quad #3}
+		\label{fig:#1}
 	\end{figure}
 }
 

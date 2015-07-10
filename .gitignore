@@ -12,6 +12,8 @@ Resources/
 *.fls
 *.out
 *.toc
+*.bbl
+*.blg
 
 ## Build tool auxiliary files:
 *.synctex
@@ -23,3 +25,6 @@ Resources/
 
 # Mac Noise
 .DS_Store
+
+# Python
+*.pyc

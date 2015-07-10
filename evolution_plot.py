@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import matplotlib.pyplot as plt
 import texfig
+import matplotlib.pyplot as plt
 import os
 
 tex_width = 5.78853 # in inches
-
 
 def plot_evolution(filename, **kwargs):
     data = np.loadtxt('data/' + filename, delimiter=",")
@@ -52,36 +51,60 @@ def single_plot(files_prefix, *args, **kwargs):
     texfig.savefig('plots/' + files_prefix)
 
 
-#single_plot(files_prefix="varying_aM", plabel=ur'\alpha_\mathrm{M}', LCDM_pvalue=0)
-#single_plot(files_prefix="varying_k", plabel='k')
-#single_plot(files_prefix="varying_cT", plabel=ur'c_\mathrm{T}', LCDM_pvalue=1)
+single_plot(files_prefix="varying_aM", plabel=r'\alphaM', LCDM_pvalue=0)
+single_plot(files_prefix="varying_k", plabel='k')
+single_plot(files_prefix="varying_cT", plabel=r'\cT', LCDM_pvalue=1)
 
-#single_plot(files_prefix="varying_beta", plabel=ur'\beta')
+single_plot(files_prefix="varying_beta", plabel=r'\betaexp')
+
+# show growing modes and slope of the amplitude
+plt.clf()
+fig = texfig.figure(width=tex_width)
+
+plot_parametric_evolution(files_prefix="growing_aM", plabel=r'\alphaM', LCDM_pvalue=0)
+
+def slope_analytic(a, alpha_M, h_0):
+    return a**(-1 - alpha_M/2.) * h_0
+
+a = np.logspace(-5, 0, 100)
+
+plt.plot(a, slope_analytic(a, alpha_M=-2, h_0=10**-4.977515978085766), ls='dotted')
+plt.plot(a, slope_analytic(a, alpha_M=-3, h_0=10**0.02414219792993043), ls='dotted')
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.xlabel(r'scale factor \(a\)')
+plt.ylabel(r'tensor perturbations \(|h|\)')
+
+plt.legend(loc='lower left')
+
+texfig.savefig('plots/growing_aM')
 
 
-# beta...
+# varying both alphaM and beta
 
-# plt.clf()
-# fig, axes = texfig.subplots(width=tex_width, nrows=2, ncols=2, sharex=True, sharey=True)
-#
-# for (i, row) in enumerate([["0", "0.1"], ["0.4", "1"]]):
-#     for (j, beta_str) in enumerate(row):
-#         ax = axes[i][j]
-#         plt.sca(ax)
-#
-#         plot_parametric_evolution('varying_aM0_beta_' + beta_str, ur'\alpha_\mathrm{M}^0', LCDM_pvalue=0)
-#
-#         ax.set_title(ur'$\beta=' + beta_str + '$')
-#
-#         ax.set_xscale('log')
-#         ax.set_yscale('log')
-#
-#         if i==1:
-#             ax.set_xlabel(r'scale factor \(a\)')
-#         if j==0:
-#             ax.set_ylabel(r'tensor perturbations \(|h|\)')
-#
-# texfig.savefig('plots/varying_aM0_beta')
+plt.clf()
+fig, axes = texfig.subplots(width=tex_width, nrows=2, ncols=2, sharex=True, sharey=True)
+
+for (i, row) in enumerate([["0", "0.1"], ["0.4", "1"]]):
+    for (j, beta_str) in enumerate(row):
+        ax = axes[i][j]
+        plt.sca(ax)
+
+        plot_parametric_evolution('varying_aM0_beta_' + beta_str, ur'\alphaMnot', LCDM_pvalue=0)
+
+        ax.set_title(ur'$\beta=' + beta_str + '$')
+
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+
+        if i==1:
+            ax.set_xlabel(r'scale factor \(a\)')
+        if j==0:
+            ax.set_ylabel(r'tensor perturbations \(|h|\)')
+
+texfig.savefig('plots/varying_aM0_beta')
 
 
 # bimetric
@@ -92,11 +115,11 @@ fig, axes = texfig.subplots(width=tex_width, ratio=1, nrows=2, ncols=1, sharex=T
 for (i, aMf_str) in enumerate(["-3", "-4"]):
     ax = axes[i]
     plt.sca(ax)
-    
-    plot_evolution('bimetric_aMf' + aMf_str + '_g.csv', label=ur'physical metric perturbations $h_g(a)$', color='black')
-    plot_evolution('bimetric_aMf' + aMf_str + '_f.csv', label=ur'reference metric perturbations $h_f(a)$', color='blue')
 
-    ax.set_title(ur'$\alpha_\mathrm{M}^\mathrm{f}=' + aMf_str + '$')
+    plot_evolution('bimetric_aMf' + aMf_str + '_g.csv', label=ur'physical metric perturbations $h\ofmetr{g}(a)$', color='black')
+    plot_evolution('bimetric_aMf' + aMf_str + '_f.csv', label=ur'reference metric perturbations $h\ofmetr{f}(a)$', color='blue')
+
+    ax.set_title(ur'$\alphaMofmetr{f}=' + aMf_str + '$')
 
     ax.set_xscale('log')
     ax.set_yscale('log')

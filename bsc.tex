@@ -33,6 +33,8 @@
 %I will first give a brief introduction to standard FRW cosmology in general relativity in \autoref{sec:grav_waves} and derive the evolution equation for gravitational waves by considering perturbations to such a universe. In \autoref{sec:cc_problem}, I will then summarize the cosmological constant problem and explain, why this is still one of the greatest mysteries in theoretical physics of our time. I will briefly explore an approach to solve this problem in a theory of modified gravity. Such modifications will generally also alter the evolution of gravitational waves. I will therefore explain in \autoref{sec:grav_waves_mod} how a modified gravity theory in conjunction with observable data can be tested for physical viability when considering these alterations. \todo{improve}
 \todo{write intro}
 
+\todo{c=1}
+
 \section{Gravitational Waves}\label{sec:grav_waves}
 
 %In this section, we will derive the evolution equation of gravitational waves in general relativity. \todo{improve}
@@ -47,6 +49,7 @@ With Maxwell's theory of electromagnetism and experimental observations regardin
 Newtonian mechanics postulates that particles accelerate under the influence of \textbf{any} force proportional to their \emph{inertial mass} \(m_i\). At the same time, the gravitational force a particle induces on another is proportional to its \emph{gravitational mass} \(m_g\) that is completely unrelated to the former in this theory. Strikingly, however, experiments find inertial and gravitational mass indistinguishable from another \todo{order of magnitude?} --- to this end, any two objects will fall with the same velocity, no matter their weight --- and physicists identify both as \emph{mass} \(m=m_i=m_g\) instead. This \emph{equivalence principle} constitutes the basis of Einstein's 1915 theory of \emph{general relativity} where gravity is \textbf{not regarded as an external force} acting on particles in spacetime but rather a phenomenon of the geometry of spacetime itself, with \textbf{particles moving freely in curved spacetime}.
 
 In general relativity, the \emph{Einstein equations}
+
 \begin{align}\label{eq:einstein_eqns}
 	\Gtens_{\mu \nu} + \cosmconst g_{\mu\nu} &= 8 \pi \Newtconst \Ttens_{\mu \nu} \\
 	\text{with the \emph{Einstein Tensor}} \quad &\Gtens_{\mu \nu} = \Rtens_{\mu \nu} + \frac{1}{2}g_{\mu \nu}\Rscal \eqpunct{,} \label{eq:einstein_tensor} \\
@@ -59,9 +62,9 @@ relate the geometry of spacetime, encoded in the metric tensor~\(g_{\mu \nu}\), 
 
 We can obtain the Einstein equations through variation of the \emph{Einstein-Hilbert action}
 \begin{align}\label{eq:einstein_hilbert_action}
-	S[g] = \int \! \dif{^4x} \sqrt{-\gdet} \del{\Rscal - 2\cosmconst} \quad \text{with} \quad \gdet = \det{g}
+	S[g] = \int \! \dif{^4x} \sqrt{-\metrdet{g}} \del{\Rscal - 2\cosmconst} + \int \! \dif{^4x} \sqrt{-\metrdet{g}} \lagrdensmatter \quad \text{with} \quad \metrdet{g} = \det{g}
 \end{align}
-with respect to \(g_{\mu \nu}\). A detailed derivation is done in \appref{app:deriv_einstein_eqns}.
+with respect to \(g_{\mu \nu}\). A detailed derivation is done in \appref{app:deriv_einstein_eqns}. The matter Lagrangian denoted by \(\lagrdensmatter\) is only \emph{minimally coupled} to gravity through the measure \(\sqrt{-\metrdet{g}}\dif{^4x}\) that arises from the spacetime metric in general relativity.
 
 Given a stress-energy tensor \(\Ttens_{\mu \nu}\), the Einstein equations constitute ten \todo{why ten? > symmetric} highly non-linear partial differential equations for the spacetime metric~\(g\). The metric, in turn, restores the notion of the length of a curve in spacetime and thus allows us to formulate postulates for the dynamics of matter in the universe.
 
@@ -120,7 +123,7 @@ the \namedeqref{Einstein equations}{eq:einstein_eqns} reduce to two ordinary, co
 \end{align}
 \end{subequations}
 with the \emph{Hubble function}
-\begin{equation}
+\begin{equation}\label{eq:hubble}
 	\Hcosm \equiv \dt{a}\frac{1}{a} \quad \text{or} \quad \Hconf \equiv \frac{\dconf{a}}{a} = a \Hcosm \quad \text{in conformal time \(\conft\).}
 \end{equation}
 The \emph{equation of state parameter} \(\eosp\) for various matter types is summarized in \autoref{tab:matter_types}. For a universe filled with any such matter, we can solve the \namedeqref{Friedmann equations}{eq:friedmann_eqns} to find both the time evolution of the matter density
@@ -217,7 +220,7 @@ is a \emph{symmetric, traceless, divergence-free tensor field} and can therefore
 		0 & 0 & 0
 	\end{bmatrix}_{ij}
 \end{equation}
-with an implicit choice of axis.\todo{elaborate choice of axis, show div/trace-free with wave-vector k, "transverse-traceless TT gauge"}
+with an implicit choice of the \(z\)-axis in direction of the \emph{wave vector}~\(\vect{k}\) \citep{Dodelson}. \todo{elaborate choice of axis, show div/trace-free with wave-vector k, "transverse-traceless TT gauge"}
 
 The perturbed line element becomes
 \begin{equation}
@@ -232,14 +235,22 @@ The \namedeqref{perturbed Einstein equations}{eq:perturbed_einstein_eqns} that g
 \begin{subequations}\label{eq:grav_waves_evolution}
 \begin{align}
 	\ddt{h} + 3 \Hcosm \dt{h} + \frac{k^2}{a^2} h &= 0 \quad \text{in cosmic time \(t\)} \\
-	\text{or} \quad \ddconf{h} + 2 \Hconf \dconf{h} + k^2 h &= 0 \quad \text{in conformal time \(\conft\)}
+	\text{or} \quad \ddconf{h} + 2 \Hconf \dconf{h} + k^2 h &= 0 \quad \text{in conformal time \(\conft\)} \label{eq:grav_waves_evolution_conft}
 \end{align}
 \end{subequations}
-for \(h \in \cbr{\hcross, \hplus}\). Its solutions are called \emph{gravitational waves} and occur in two independent \emph{polarizations} \(\hcross\) and \(\hplus\). Gravitational waves are damped by the expansion of the universe as exhibited by \eqref{eq:grav_waves_evolution}.
+for \(h \in \cbr{\hcross, \hplus}\). Its solutions are called \emph{gravitational waves} and occur in two independent \emph{polarizations} \(\hcross\) and \(\hplus\). Neglecting the friction term, harmonic oscillations
+\begin{equation}
+	h \propto \eul^{\pm k \conft} \quad \text{with the \emph{wavelength mode}} \quad k \equiv \abs{\vect{k}}
+\end{equation}
+solve \eqref{eq:grav_waves_evolution_conft}.
 
-\todo{improve plot!} \todo{observations, limits}
+Gravitational waves are damped by the expansion of the universe as exhibited by \eqref{eq:grav_waves_evolution} where the friction term is proportional to the Hubble function. In an expanding universe, the \namedeqref{Hubble function}{eq:hubble} is positive, thus damping the amplitude of gravitational waves. However, the tensor perturbations will remain constant at early times where the conformal time is still smaller than the wavelength scal~\(\frac{1}{k}\) of the gravitational wave. It begins to oscillate at its \emph{horizon entry}~\(\conft \simeq \frac{1}{k}\) where cosmological scales on the order of the gravitational wave's wavelength move into causal contact. The horizon entry for larger-scale modes with smaller \(k\) thus occurs later. This behaviour is presented in \autoref{fig:varying_k} where the absolute value~\(\abs{h(a)}\) of several tensor modes in a universe dominated by the cosmological regimes discussed in \autoref{sec:frw} is plotted in double-logarithmic scale. Detailed information about the assumptions, initial conditions and parameters that were chosen to obtain the plot in \autoref{fig:varying_k} are given in the context of a parametric modification to the \namedeqref{evolution equation of gravitational waves}{eq:grav_waves_evolution} in \autoref{sec:param_friction_const}.
 
-\plt{varying_k}{The gravitational wave enters the horizon earlier for larger modes k.}
+\plt{varying_k}{Tensor perturbations \(\abs{h(a)}\) for different wavelength modes \(k\)}{In an expanding universe, tensor perturbations remain constant at early times until cosmological scales on the order of the gravitational wave's wavelength scale \(\frac{1}{k}\) move into causal contact. This horizon entry occurs later for large-scale gravitational waves with smaller modes \(k\).}
+
+
+\todo{observations/CMB, limits}
+
 
 We will further discuss gravitational waves in the context of \emph{modified gravity} in \autoref{ch:param_mod_grav} and the remainder of the thesis. However, to understand the reason why a modification of general relativity may be necessary, \autoref{sec:cc_problem} first formulates the \emph{cosmological constant problem} and an approach for solving it.
 
@@ -285,7 +296,7 @@ Remarkably, assigning an importance to not only energy differences, but also abs
 where the kinetic energy vanishes and the potential assumes its minimum value \(V_0\). This zero-point potential is usually chosen arbitrarily when only energy differences are considered but must be taken into account in general relativity. Particularly in presence of phase transitions, one can generally not choose the zero-point potential such that it always vanishes.
 %When we simply consider a scalar field \(\Phi\) with action
 %\begin{equation}
-%	S_\Phi = \int \! \dif{^4x} \sqrt{-\gdet} \del{\frac{1}{2}\partial_\mu\Phi\partial^\mu\Phi - V(\Phi)}
+%	S_\Phi = \int \! \dif{^4x} \sqrt{-\metrdet{g}} \del{\frac{1}{2}\partial_\mu\Phi\partial^\mu\Phi - V(\Phi)}
 %\end{equation}
 %and corresponding stress-energy tensor
 %\begin{equation}
@@ -323,9 +334,24 @@ In fact, unbroken \emph{supersymmetry} would accomplish just that. In supersymme
 
 With the cosmological constant set to zero, the cosmological observation of accelerated expansion \todo{other observables?} remains to be explained by a different mechanism. Dark energy models such as the \emph{quintessence} theory \todo{add reference} postulate further contributions to the stress-energy tensor that have the same accelerating effect as a cosmological constant. A different approach is to modify the theory of gravity instead.
 
-Every attempt towards a modified theory of gravity has to take Lovelock's theorem into consideration and break at least one of its assumptions that make general relativity unique. The concept of the entire class of \emph{\fR{theories}}, for example, is to replace the Ricci scalar \(\Rscal\) in the \namedeqref{Einstein-Hilbert action}{eq:einstein_hilbert_action} by a function \(f(\Rscal)\) that breaks the assumption of only second-order derivatives.
+Every attempt towards a modified theory of gravity has to take Lovelock's theorem into consideration and break at least one of its assumptions that make general relativity unique. The concept of the entire class of \emph{\fR{theories}}, for example, is to replace the Ricci scalar \(\Rscal\) in the \namedeqref{Einstein-Hilbert action}{eq:einstein_hilbert_action} by a function \(f(\Rscal)\).
+% such that the action becomes
+%\begin{equation}\label{eq:fR_action}
+%	S[g] = \int \! \dif{^4x} \sqrt{-\metrdet{g}} f(\Rscal) + \int \! \dif{^4x} \sqrt{-\metrdet{g}} \lagrdensmatter
+%	\eqpunct{.}
+%\end{equation}
+\fR{theories} break Lovelock's assumption of only second-order equations of motion and are in many cases equivalent to an additional scalar field contribution to the matter Lagrangian that is non-minimally coupled to gravity. \todo{add reference}
 
-Alternatively, the very natural hypothesis of a \emph{massive graviton} requires us to introduce a second, arbitrary \emph{reference metric} \(f\) in addition to the physical metric \(g\) \todo{add reference, explain: necessary for interaction terms} that clearly breaks the second assumption in Lovelock's theorem. By simply assuming the reference metric to behave dynamically just like \(g\), we arrive at the theory of \emph{massive bigravity} that allows solutions with late-time acceleration. \todo{add reference}
+Alternatively, the hypothesis of a \emph{massive graviton} requires a second, arbitrary \emph{reference metric} \(f\) in addition to the physical metric \(g\). The additional metric is necessary to construct a mass term because a single metric allows only trivial self-interaction terms \(g^{\mu\sigma}g_{\sigma\nu}=\delta^\mu_\nu\) and \(g^{\mu\nu}g_{\mu\nu} = 4\). By postulating a symmetric action where the reference metric \(f\) behaves dynamically just like \(g\), we arrive at the theory of \emph{massive bigravity}.
+% with the action
+%\begin{equation}
+%	S[g,f] =
+%	- \frac{\planckM_g^2}{2} \int \! \dif{^4x} \sqrt{-\metrdet{g}} \Rscal[g]
+%	- \frac{\planckM_f^2}{2} \int \! \dif{^4x} \sqrt{-\metrdet{f}} \Rscal[f]
+%	+ m^2 \planckM_g^2 \int \! \dif{^4x} \sqrt{-\metrdet{g}} \sum_{n=0}^4 \beta_n e_n()
+%	+ \int \! \dif{^4x} \sqrt{-\metrdet{g}} \lagrdensmatter
+%\end{equation}
+The cosmology in this theory allows solutions with late-time acceleration without a cosmological constant. \todo{add reference}
 
 \todo{connect to next chapter}
 
@@ -333,21 +359,21 @@ Alternatively, the very natural hypothesis of a \emph{massive graviton} requires
 
 \chapter{Parametrization of Modified Gravitational Wave Evolution}\label{ch:param_mod_grav}
 
-Many theories of modified gravity are discussed in the literature \todo{add reference} and this thesis will not focus on one specific model. Instead, the remainder of the thesis will explore various parametric modifications to the \namedeqref{evolution equation of gravitational waves}{eq:grav_waves_evolution} that can result from a modified gravity theory. For such a modified gravity theory to be physically viable, the metric tensor perturbations must remain within constraints set by observations. In particular, any theory that exhibits \textbf{growing} tensor modes in cosmological evolution should be regarded with serious doubt, as their amplitude would likely be large enough today to be detected by experiments. \todo{mention observations} \todo{add reference}
+Many theories of modified gravity are discussed in the literature \todo{add reference} and this thesis will not focus on one specific model. Instead, the remainder of the thesis will explore various parametric modifications to the \namedeqref{evolution equation of gravitational waves}{eq:grav_waves_evolution} that can result from a modified gravity theory. For such a modified gravity theory to be physically viable, the metric tensor perturbations must remain within constraints set by observations. In particular, any theory that exhibits \textbf{growing} tensor modes in cosmological evolution should be regarded with serious doubt, as their amplitude would likely be large enough today to be excluded by experiments. \todo{mention observations} \todo{add reference}
 
 In an \fR{theory} without anisotropic stress, for example, the evolution equation becomes \citep{Xu2015,Hwang1996}
 \begin{equation}
 	\ddconf{h} + \del{2 + \diff{\log{F}}{\efold}} \Hconf \dconf{h} + k^2 h = 0 \quad \text{with} \quad F \defeq \diff{f(\Rscal)}{\Rscal} \eqpunct{,}
 \end{equation}
-thus adding an additional friction term. Furthermore, the speed of gravitational waves in a modified gravity theory can deviate from the speed of light \(c\) \citep{Amendola2014,Raveri2014}. I investigate the effects such modifications have on the evolution of gravitational waves by introducing appropriate parameters in \eqref{eq:grav_waves_evolution}. A reasonable parametric modification motivated by the above considerations is
+thus adding an additional friction term. Furthermore, the propagation speed of gravitational waves in a modified gravity theory can deviate from the speed of light \(c\) \citep{Amendola2014,Raveri2014}. I investigate the effects such modifications have on the evolution of gravitational waves by introducing appropriate parameters in \eqref{eq:grav_waves_evolution}. A reasonable parametric modification motivated by the above considerations is
 \begin{subequations}\label{eq:evolution_friction}
 \begin{align}
-	\ddt{h} + \del{3 + \alpha_M} \Hcosm \dt{h} + \frac{\cT^2 k^2}{a^2} h &= 0 \quad \text{in cosmic time \(t\),} \\
+	\ddt{h} + \del{3 + \alphaM} \Hcosm \dt{h} + \frac{\cT^2 k^2}{a^2} h &= 0 \quad \text{in cosmic time \(t\),} \\
 	\ddconf{h} + \del{2 + \alphaM} \Hconf \dconf{h} + \cT^2 k^2 h &= 0 \quad \text{in conformal time \(\conft\)} \\
     \text{or} \quad \ddefold{h} + \del{\frac{\defold{\Hconf}}{\Hconf} + 2 + \alphaM} \defold{h} + \frac{\cT^2 k^2}{\Hconf^2} h &= 0 \quad \text{in e-foldings \(\efold\)}
 \end{align}
 \end{subequations}
-where \(\alphaM\) denotes an additional friction term and \(\cT\) a deviation from the speed of light. Both parameters may in general be time-dependent. The standard behaviour of general relativity discussed in \autoref{sec:perturb} is recovered for \(\alphaM=0\) and \(\cT=1\).
+where \(\alphaM\) denotes an additional friction term and \(\cT\) a deviation of the propagation speed from the speed of light. Both parameters may in general be time-dependent. The standard behaviour of general relativity discussed in \autoref{sec:perturb} is recovered for \(\alphaM=0\) and \(\cT=1\).
 
 
 \section{Constant additional friction}\label{sec:param_friction_const}
@@ -357,7 +383,7 @@ I will first consider a constant friction term \(\alphaM=\const\) in the \namede
 First, initial conditions were chosen such that
 \begin{equation}
 	h(a \to 0) = 1 \quad \text{and} \quad \defold{h}(a \to 0) = 0 \eqpunct{.}
-\end{equation}
+\end{equation}\todo{write the limit like this?}
 Furthermore, a standard FRW background was assumed where the Hubble function is given by the \namedeqref{Friedmann equation}{eq:friedmann_normalized_dens}
 \begin{equation}
 	\Hcosm(t) = \Hcosm_0 \sqrt{\sum_i\Dens_i(t)}
@@ -367,16 +393,16 @@ Only matter and dark energy contributions \(\Dens_\symbdust\) and \(\Dens_\cosmc
 \begin{equation}
 	\Dens_\symbdust(t) = \Dens_\symbdust(t_0) a^{-3} \quad \text{and} \quad \Dens_\cosmconst(t) = 1 - \Dens_\symbdust(t_0)
 \end{equation}
-were obtained from the \cite{Planck} \todo{add reference} results given in \autoref{tab:planck_data}.
+were obtained from the \cite{Planck} \todo{add reference to planck} results given in \autoref{tab:planck_data}.
 Lastly, the physical amplitude for the gravitational waves
 \begin{equation}
 	h_\textnormal{phys}(a) = \sqrt{A_\tenspert\del{\frac{k}{k_0}}^{n_\tenspert}} \cdot h(a)
 \end{equation}
-was also computed from the \cite{Planck} \todo{add reference} results given in \autoref{tab:planck_data}. \todo{elaborate!}
+was also computed from the \cite{Planck} \todo{add reference} results given in \autoref{tab:planck_data}. \todo{explain phys. ampl.!}
 
-\plt{varying_aM}{Increasing \(\alphaM\) introduces more friction, so the amplitude of the gravitational wave decreases more rapidly.}
+\plt{varying_aM}{Tensor perturbations \(\abs{h(a)}\) with additional friction \(\alphaM=\const\)}{Increasing \(\alphaM\) introduces more friction, so that the amplitude of the gravitational wave decreases more rapidly, but also delays the horizon entry.}
 
-In \autoref{fig:varying_aM}, the absolute value \(\abs{h(a)}\) is plotted in double-logarithmic scale \todo{better word?} for multiple values of \(\alphaM\). Clearly, the amplitude of the gravitational wave decreases more rapidly for larger \(\alphaM\) because additional friction is introduced. This reproduces the behaviour found in \cite{Pettorino2014}. \todo{write this here?} \todo{mention delayed horizon entry (competing!)} \todo{explain varying cT}
+In \autoref{fig:varying_aM}, the absolute value \(\abs{h(a)}\) is plotted in double-logarithmic scale \todo{better word?} for both positive and negative values of \(\alphaM\). Clearly, the amplitude of the gravitational wave decreases more rapidly for larger \(\alphaM\) because additional friction is introduced. However, also the horizon entry is delayed for larger \(\alphaM\) thus introducing a competing effect. This reproduces the behaviour found in \cite{Pettorino2014}. \todo{write this here?}
 
 
 \subsection{Analytic Solution in Cosmological Regimes}
@@ -394,18 +420,37 @@ This is a Bessel differential equation that has solutions in terms of Bessel fun
 \begin{equation}
 	h(\conft) = \conft^{-p} \sbr{C_1 \besselJ_p(\cT k \conft) + C_2 \besselY_p(\cT k \conft)} \quad \text{with} \quad p = \nexpconft\del{1 + \frac{\alphaM}{2}}-\frac{1}{2}
 \end{equation}
-where \(\besselJ_p(x)\) and \(\besselY_p(x)\) denote the Bessel functions of first and second kind, respectively. Their asymptotic behaviour for large \(k\) or late times \(\conft\) is given in \appref{app:bessel} and both correspond to oscillations with an amplitude decreasing as \(\conft^{-\frac{1}{2}}\). Therefore, in this regime the amplitude of gravitational waves with additional friction \(\alphaM\) behaves as
+where \(\besselJ_p(x)\) and \(\besselY_p(x)\) denote the Bessel functions of first and second kind, respectively. Their asymptotic behaviour for large \(k\) or late times \(\conft\) is given in \appref{app:bessel} and both correspond to oscillations with an amplitude decreasing as \(\conft^{-\frac{1}{2}}\). Therefore, the amplitude of gravitational waves with additional friction \(\alphaM\) behaves as
+\begin{subequations}\label{eq:slope_const_friction}
 \begin{align}
 	h(\conft) &\propto \conft^{-p-\frac{1}{2}} = \conft^{-\nexpconft\del{1+\frac{\alphaM}{2}}} \\
-	\text{or} \quad h(a) &\propto a^{-\frac{1}{\nexpconft}\del{p-\frac{1}{2}}} = a^{-\del{1+\frac{\alphaM}{2}}}
+	\text{or} \quad h(a) &\propto a^{-\frac{1}{\nexpconft}\del{p-\frac{1}{2}}} = a^{-\del{1+\frac{\alphaM}{2}}} \label{eq:slope_const_friction_a}
 \end{align}
-times fast oscillation.
+\end{subequations}
+times fast oscillation in this regime.
 
-This result immediately allows us to provide a constraint for the \(\alphaM\) parameter such that growing tensor modes are avoided in this regime. Since \(h(a)\) exhibits a growing amplitude for a positive exponent \(-\del{1+\frac{\alphaM}{2}} > 0\) in cosmological expansion, any theory of gravity that modifies the \namedeqref{evolution equation of gravitational waves}{eq:evolution_friction} by an additional friction term \(\alphaM=\const\) should fulfill
-\begin{equation}
+This result immediately gives a constraint for the \(\alphaM\) parameter such that growing tensor modes are avoided. Since \eqref{eq:slope_const_friction_a} exhibits a growing amplitude of \(h(a)\) for a positive exponent \(-\del{1+\frac{\alphaM}{2}} > 0\) in cosmological expansion, any theory of gravity that modifies the \namedeqref{evolution equation of gravitational waves}{eq:evolution_friction} by an additional friction term \(\alphaM=\const\) should fulfill
+\begin{equation}\label{eq:grow_cond_const_fric}
 	\alphaM \geq -2
 \end{equation}
-or else be regarded with serious doubt.
+or else be regarded with serious doubt. \todo{"in tension with exp."?}
+
+The numerical result obtained before reflects this behaviour as presented in \autoref{fig:growing_aM}. The plot shows the evolution of tensor modes for both \(\alphaM = -2\) and \(\alphaM < -2\) using the same numerical solution as in \autoref{fig:varying_aM} as well as the slope of the amplitude obtained analytically in \eqref{eq:slope_const_friction}. As expected from the analytic considerations, the gravitational wave with \(\alphaM = -2\) remains stable whereas the gravitational wave with \(\alphaM < -2\) grows in amplitude.
+
+\plt{growing_aM}{Tensor perturbations \(\abs{h(a)}\) with additional friction \(\alphaM \leq -2\)}{The numerical solution (solid lines) agrees with the slope of the amplitude obtained analytically (dotted lines). Gravitational waves with \(\alphaM = -2\) remain stable but grow in amplitude for \(\alphaM < -2\).}
+
+
+\section{Deviating propagation speed}
+
+To explore the effect a modified propagating speed has on the evolution of gravitational waves in a modified gravity theory, I consider a parametric deviation \(\cT\) from the speed of light in the \namedeqref{parametrized evolution equation}{eq:evolution_friction}. The deviation of the propagation speed as it appears in \eqref{eq:evolution_friction} changes the effective wavelength scale \(\frac{1}{\cT k}\) such that the horizon entry of the gravitational wave occurs later for smaller values of \(\cT\). The horizon entry is discussed in detail in the context of general relativity in \autoref{sec:frw}.
+
+\autoref{fig:varying_cT} shows the evolution of gravitational waves for several values of \(\cT=\const\). The plots were obtained numerically with the \mmainline{ParametricNDSolve} function in Mathematica and the same assumptions and initial conditions as chosen in \autoref{sec:param_friction_const}.
+
+\plt{varying_cT}{Tensor perturbations \(\abs{h(a)}\) with a modified propagation speed \(\cT=\const\)}{Gravitational waves with lower propagation speed \(\cT\) exhibit a delayed horizon entry.}
+
+Because gravitational waves with lower propagation speed \(\cT\) exhibit a delayed horizon entry, their amplitude today is closer to their initial value than for gravitational waves that propagate faster. An additional friction contribution \(\alphaM\) as discussed in \autoref{sec:param_friction_const} therefore is less effective for gravitational waves with lower \(\cT\) that enter the horizon later and thus have less time until today to decrease or increase in amplitude. This suggests a degeneracy between a modified propagation speed and an additional friction contribution, as both affect the amplitude of tensor perturbations measured today. A positive \(\alphaM\) that results in a faster decrease in amplitude can be compensated by a lower propagation speed \(\cT\) that in turn delays the horizon entry and thus gives the tensor mode less time to decrease. Also, the amount growing tensor modes increase in amplitude is reduced by a lower propagation speed.
+
+\todo{is cT > 1 possible?}
 
 
 \section{Late-time additional friction}
@@ -421,41 +466,31 @@ In an expanding universe where \(a(t) \in \sbr{0,1}\) monotonically increases w
 
 \autoref{fig:varying_aM0_beta} shows numerical solutions to the \namedeqref{evolution equation}{eq:evolution_friction} with this particular parametrization for \(\alphaM\) for various values of both \(\alphaMnot\) and \(\betaexp\). It was obtained with the \mmainline{ParametricNDSolve} function in Mathematica where the same initial conditions and assumption as in \autoref{sec:param_friction_const} were chosen. The special case \(\betaexp=0\) corresponds to constant friction \(\alphaM(t)=\alphaMnot\) as investigated in \autoref{sec:param_friction_const}. Increasing \(\betaexp\) to positive values reduces the additional friction at early times where \(a(t) < 1\). Larger values for \(\betaexp\) amplify this effect. \todo{include \autoref{fig:varying_beta} at all?}
 
-\plt{varying_aM0_beta}{For positive \(\betaexp\), the evolution matches \LCDM at early times and deviates at late times. Increasing \(\abs{\alphaMnot}\) yields larger deviations from \LCDM at late times.}
+\plt{varying_aM0_beta}{Tensor perturbations \(\abs{h(a)}\) with parametrized additional friction \(\alphaM(t) = \alphaMnot \cdot a(t)^\betaexp\)}{For positive \(\betaexp\), the evolution matches \LCDM at early times and deviates at late times. Increasing \(\abs{\alphaMnot}\) yields larger deviations from \LCDM at late times.}
 
-\todo{what does this say about physical viability?}
-
-\todo{value for beta necessary to only affect dark energy regime?}
-
-
-\section{Deviation from the Speed of Light}
-
-\plt{varying_cT}{Same as varying k (of course...)}\todo{Not at all different to varying k... but what does it mean?}
-
-\todo{is cT > 1 possible?}
-
+At late times, tensor modes will increase or decrease in amplitude with a slope approximating the behaviour of constant additional friction \(\alphaMnot\) discussed in \autoref{sec:param_friction_const}. However, tensor modes that grow in this regime according to \eqref{eq:grow_cond_const_fric} can be suppressed by a sufficiently large value of \(\betaexp\) remain physically viable. 
 
 
 \chapter{Gravitational Waves in Parametrized Bigravity}
 
-Bigravity is a class of modified gravity theories introduced in \autoref{sec:cc_problem_new} where a second \emph{reference metric} \(f\) in addition to the physical metric \(g\) is considered. Both metrics are coupled such that the evolution equation of gravitational waves in a bimetric setting becomes
+Bigravity is a class of modified gravity theories introduced in \autoref{sec:cc_problem_new} where a second \emph{reference metric} \(f\) in addition to the physical metric \(g\) is considered. Both metrics are coupled such that the evolution equation of gravitational waves in this bimetric setting becomes \citep{Amendola2015}
 \begin{subequations}\label{eq:evolution_bimetric}
 \begin{align}
-	\ddconf{h_n} + \del{2 + \alphaM^n} \Hconf \dconf{h_n} + \del{\Hconf^2 m_n^2 + (\cT^n)^2 k^2} h_n &= \Hconf^2 q^n h_m \quad \text{in conformal time \(\conft\)} \\
-    \text{or} \quad \ddefold{h_n} + \del{\frac{\defold{\Hconf}}{\Hconf} + 2 + \alphaM^n} \defold{h_n} + \del{m_n^2 + \frac{(\cT^n)^2 k^2}{\Hconf^2}} h_n &= q^n h_m \quad \text{in e-foldings \(\efold\)}
+	\ddconf{h}\ofmetr{n} + \del{2 + \alphaMofmetr{n}} \Hconf \dconf{h}\ofmetr{n} + \del{\Hconf^2 \mofmetr{n}^2 + \cTofmetr{n}^2 k^2} h\ofmetr{n} = \Hconf^2 \qofmetr{n} h\ofmetr{m} \quad \text{in conformal time \(\conft\)} \\
+    \text{or} \quad \ddefold{h}\ofmetr{n} + \del{\frac{\defold{\Hconf}}{\Hconf} + 2 + \alphaMofmetr{n}} \defold{h}\ofmetr{n} + \del{\mofmetr{n}^2 + \frac{\cTofmetr{n}^2 k^2}{\Hconf^2}} h\ofmetr{n} = \qofmetr{n} h\ofmetr{m} \quad \text{in e-foldings \(\efold\)}
 \end{align}
 \end{subequations}
-where m..q denote..
+where the indices \(n,m \in \cbr{g,f}\) with \(n \neq m\) refer to the perturbations and parameters associated with the physical metric \(g\) and the reference metric \(f\), respectively. The additional friction terms~\(\alphaMofmetr{n}\) and the deviations from the speed of light~\(\cTofmetr{n}\) for each of the two metrics were discussed in \autoref{ch:param_mod_grav} in the context of unimetric modified gravity. Each metric also has an associated \emph{mass parameter}~\(\mofmetr{n}\) and a \emph{coupling}~\(\qofmetr{n}\) to the other metric. In the theory of bigravity, these parameters have specific, time-dependent forms.
 
-\plt{bimetric}{Physical metric follows reference metric...}
+\plt{bimetric}{}{Physical metric follows reference metric...}
 
 
 \subsection{Comparison to \cite{Amendola2015}}
 
 In \cite{Amendola2015}, both the physical and reference metric tensor perturbations can be described as \ref{eq:evolution_friction_regime} with friction
 \begin{align}
-	\alphaM^{g} &= 0 \\
-	\alphaM^{f} &= -3(1+\eosp) < -2
+	\alphaMofmetr{g} &= 0 \\
+	\alphaMofmetr{f} &= -3(1+\eosp) < -2
 \end{align}
 
 Clearly, the physical metric perturbations $h_g$ fall like $\frac{1}{a}$ as in \LCDM, whereas the reference metric perturbations $h_f$ grow like $a^1$ in RDE and $a^\frac{1}{2}$ in MDE.
@@ -518,7 +553,7 @@ To derive the Einstein equations, we begin with the Einstein-Hilbert action
 
 \end{appendices}
 
-\plt{varying_beta}{For larger \(\betaexp\) the curve converges to \LCDM at early times and deviates at late times.}
+\plt{varying_beta}{}{For larger \(\betaexp\) the curve converges to \LCDM at early times and deviates at late times.}
 
 
 \bibliography{lit,Bachelorarbeit}

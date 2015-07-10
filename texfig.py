@@ -2,15 +2,16 @@
 
 import numpy as np
 import matplotlib as mpl
-#mpl.use('pgf')
+mpl.use('pgf')
 
 default_width = 5.78853 # in inches
 default_ratio = (np.sqrt(5.0)-1.0)/2.0 # golden mean
  
-mpl.rcParams.update({                   # setup matplotlib to use latex for output
-    "pgf.texsystem": "xetex",           # change this if using xetex or lautex
-    "text.usetex": True,                # use LaTeX to write all text
-    "font.family": "serif",
+mpl.rcParams.update({
+    "text.usetex": True,                # use inline math for ticks
+    "pgf.texsystem": "xelatex",
+    "pgf.rcfonts": False,               # don't setup fonts from rc parameters
+    "font.family": "serif",             # use serif/main font for text elements
     "font.serif": [],                   # blank entries should cause plots to inherit fonts from the document
     "font.sans-serif": [],
     "font.monospace": [],
@@ -24,9 +25,15 @@ mpl.rcParams.update({                   # setup matplotlib to use latex for outp
     "pgf.preamble": [
         r"\usepackage[utf8x]{inputenc}",    # use utf8 fonts becasue your computer can handle it :)
         r"\usepackage[T1]{fontenc}",        # plots will be generated using this preamble
-    ]
+        r"\newcommand{\alphaM}{{\alpha_{\mathrm{M}}}}", # commands defined in document
+        r"\newcommand{\alphaMnot}{{\alpha_{\mathrm{M}0}}}",
+        r"\newcommand{\cT}{{c_{\mathrm{T}0}}}",
+        r"\newcommand{\betaexp}{\beta}",
+        r"\newcommand{\ofmetr}[1]{_#1}",
+        r"\newcommand{\alphaMofmetr}[1]{\alphaM\ofmetr{#1}}",
+    ],
 })
- 
+
 import matplotlib.pyplot as plt
 
  
