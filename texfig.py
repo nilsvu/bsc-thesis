@@ -17,7 +17,7 @@ mpl.rcParams.update({
     "font.monospace": [],
     "axes.labelsize": 10,               # LaTeX default is 10pt font.
     "text.fontsize": 10,
-    "title.fontsize": 10,
+    "title.fontsize": 8,
     "legend.fontsize": 8,               # Make the legend/label fonts a little smaller
     "xtick.labelsize": 8,
     "ytick.labelsize": 8,
@@ -27,10 +27,13 @@ mpl.rcParams.update({
         r"\usepackage[T1]{fontenc}",        # plots will be generated using this preamble
         r"\newcommand{\alphaM}{{\alpha_{\mathrm{M}}}}", # commands defined in document
         r"\newcommand{\alphaMnot}{{\alpha_{\mathrm{M}0}}}",
-        r"\newcommand{\cT}{{c_{\mathrm{T}0}}}",
+        r"\newcommand{\cT}{{c_{\mathrm{T}}}}",
         r"\newcommand{\betaexp}{\beta}",
         r"\newcommand{\ofmetr}[1]{_#1}",
         r"\newcommand{\alphaMofmetr}[1]{\alphaM\ofmetr{#1}}",
+        r"\newcommand{\mofmetr}[1]{m\ofmetr{#1}}",
+        r"\newcommand{\cTofmetr}[1]{\cT\ofmetr{#1}}",
+        r"\newcommand{\qofmetr}[1]{q\ofmetr{#1}}",
     ],
 })
 
@@ -52,6 +55,6 @@ def subplots(width=default_width, ratio=default_ratio, *args, **kwargs):
     })
     return fig, axes
 
-def savefig(filename):
-    plt.savefig(filename + '.pdf')
-    plt.savefig(filename + '.pgf')
+def savefig(filename, *args, **kwargs):
+    plt.savefig(filename + '.pdf', *args, **kwargs)
+    plt.savefig(filename + '.pgf', *args, **kwargs)

@@ -1,4 +1,4 @@
-\documentclass[parskip=half]{scrreprt}
+\documentclass[12pt,parskip=half]{scrreprt}
 
 \usepackage{todonotes} % TODO: remove todonotes package
 \newcommand{\todocheck}[1]{\todo[color=blue!40]{#1}}
@@ -21,7 +21,7 @@
 \input{include/titlepage}
 
 \begin{abstract}
-	By parametrization of the evolution equation of gravitational waves, I find constraints for the physical viability of a general modified gravity theory. In particular, I focus on a bimetric setting.
+	Modified gravity theories generally aim to solve part of the \emph{cosmological constant problem} by providing self-accelerating cosmological solutions without a cosmological constant. Such modifications of general relativity also affect the evolution of gravitational waves in the proposed theory. Instead of focussing on a specific model, I introduce parametric modifications to the evolution equation of gravitational waves in both unimetric and bimetric settings and investigate their effect on the evolution of tensor perturbation modes. In particular, I argue that any modified gravity theory that exhibits \emph{growing tensor modes} in cosmological evolution can be in tension with experiments. Therefore, parametric constraints for the physical viability of a general modified gravity theory can be found such that tensor modes remain within limits set by observations.
 \end{abstract}
 
 
@@ -30,15 +30,22 @@
 
 \chapter{Introduction}\label{ch:intro}
 
-%I will first give a brief introduction to standard FRW cosmology in general relativity in \autoref{sec:grav_waves} and derive the evolution equation for gravitational waves by considering perturbations to such a universe. In \autoref{sec:cc_problem}, I will then summarize the cosmological constant problem and explain, why this is still one of the greatest mysteries in theoretical physics of our time. I will briefly explore an approach to solve this problem in a theory of modified gravity. Such modifications will generally also alter the evolution of gravitational waves. I will therefore explain in \autoref{sec:grav_waves_mod} how a modified gravity theory in conjunction with observable data can be tested for physical viability when considering these alterations. \todo{improve}
-\todo{write intro}
+Gravitational waves are an intrinsic part of general relativity and the standard model of cosmology. Since attempts to measure gravitational waves, either directly by dedicated ground-based experiments or indirectly by precise measurements of the cosmic microwave background, have not been successful yet, their amplitude is constrained to be extremely small by the data at hand. Any theory of gravity that goes beyond general relativity must also predict gravitational waves that agree with these experimental constraints. In particular, modified gravity theories where gravitational waves grow in amplitude in cosmological evolution can easily be in tension with experiments.
 
-\todo{c=1}
+In fact, many modified gravity theories have been proposed to address the \emph{cosmological constant problem} that remains one of the greatest mysteries in theoretical physics of our time. They generally aim to explain the accelerated expansion of our universe today without relying on a cosmological constant. The main idea of this thesis is to find properties of modified gravity theories such that growing gravitational waves are avoided that could render the theory physically unviable. To achieve this, I introduce appropriate parameters in the evolution equation of gravitational waves that can result from general modifications of gravity. Furthermore, I will focus this parametric approach on the extended class of \emph{bimetric} models where a second spacetime metric in our universe interacts with the gravity-inducing physical metric and both metrics can exhibit gravitational waves.
+
+This chapter first gives a brief introduction to gravitational waves in general relativity in \autoref{sec:grav_waves}. Then, \autoref{sec:cc_problem} formulates the remarkably complex cosmological constant problem and introduces the concept of modified gravity theories as an approach for solving part of it. The main part of the thesis in \autoref{ch:param_mod_grav} and \autoref{ch:param_bigravity} explores various parametric modifications to the evolution equation of gravitational waves in unimetric and bimetric modified gravity, respectively. Finally, \autoref{ch:summary} summarizes the results of this thesis.
+
+Throughout the thesis, I choose natural units with the speed of light
+\begin{equation}
+	c \equiv 1
+\end{equation}
+and a mostly-positive metric signature \(\del{-1,1,1,1}\).
+
 
 \section{Gravitational Waves}\label{sec:grav_waves}
 
-%In this section, we will derive the evolution equation of gravitational waves in general relativity. \todo{improve}
-\todo{write intro}
+I will first give a brief introduction to standard FRW cosmology in general relativity and derive the evolution equation for gravitational waves by considering perturbations to such a universe.
 
 \subsection{Gravity and Spacetime in General Relativity}\label{sec:gr}
 
@@ -49,7 +56,6 @@ With Maxwell's theory of electromagnetism and experimental observations regardin
 Newtonian mechanics postulates that particles accelerate under the influence of \textbf{any} force proportional to their \emph{inertial mass} \(m_i\). At the same time, the gravitational force a particle induces on another is proportional to its \emph{gravitational mass} \(m_g\) that is completely unrelated to the former in this theory. Strikingly, however, experiments find inertial and gravitational mass indistinguishable from another \todo{order of magnitude?} --- to this end, any two objects will fall with the same velocity, no matter their weight --- and physicists identify both as \emph{mass} \(m=m_i=m_g\) instead. This \emph{equivalence principle} constitutes the basis of Einstein's 1915 theory of \emph{general relativity} where gravity is \textbf{not regarded as an external force} acting on particles in spacetime but rather a phenomenon of the geometry of spacetime itself, with \textbf{particles moving freely in curved spacetime}.
 
 In general relativity, the \emph{Einstein equations}
-
 \begin{align}\label{eq:einstein_eqns}
 	\Gtens_{\mu \nu} + \cosmconst g_{\mu\nu} &= 8 \pi \Newtconst \Ttens_{\mu \nu} \\
 	\text{with the \emph{Einstein Tensor}} \quad &\Gtens_{\mu \nu} = \Rtens_{\mu \nu} + \frac{1}{2}g_{\mu \nu}\Rscal \eqpunct{,} \label{eq:einstein_tensor} \\
@@ -378,7 +384,12 @@ where \(\alphaM\) denotes an additional friction term and \(\cT\) a deviation of
 
 \section{Constant additional friction}\label{sec:param_friction_const}
 
-I will first consider a constant friction term \(\alphaM=\const\) in the \namedeqref{parametrized evolution equation}{eq:evolution_friction}. \autoref{fig:varying_aM} shows the numerical solution of the equation for various values of \(\alphaM\). The result was obtained with the \mmainline{ParametricNDSolve} function in Mathematica where several assumptions were made:
+I will first consider a constant friction term \(\alphaM=\const\) in the \namedeqref{parametrized evolution equation}{eq:evolution_friction}.
+
+
+\subsection{Numerical solution}
+
+\autoref{fig:varying_aM} shows the numerical solution of the \namedeqref{parametrized evolution equation}{eq:evolution_friction} for various values of \(\alphaM\). The result was obtained with the \mmainline{ParametricNDSolve} function in Mathematica where several assumptions were made:
 
 First, initial conditions were chosen such that
 \begin{equation}
@@ -405,7 +416,7 @@ was also computed from the \cite{Planck} \todo{add reference} results given in \
 In \autoref{fig:varying_aM}, the absolute value \(\abs{h(a)}\) is plotted in double-logarithmic scale \todo{better word?} for both positive and negative values of \(\alphaM\). Clearly, the amplitude of the gravitational wave decreases more rapidly for larger \(\alphaM\) because additional friction is introduced. However, also the horizon entry is delayed for larger \(\alphaM\) thus introducing a competing effect. This reproduces the behaviour found in \cite{Pettorino2014}. \todo{write this here?}
 
 
-\subsection{Analytic Solution in Cosmological Regimes}
+\subsection{Analytic solution in cosmological regimes}
 
 The \namedeqref{parametrized evolution equation}{eq:evolution_friction} can even be solved analytically in cosmological regimes dominated by one of the matter types discussed in \autoref{sec:frw}. The expansion of an FRW universe dominated by matter or radiation is given by \eqref{eq:frw_a_evol} or
 \begin{equation}
@@ -453,7 +464,7 @@ Because gravitational waves with lower propagation speed \(\cT\) exhibit a delay
 \todo{is cT > 1 possible?}
 
 
-\section{Late-time additional friction}
+\section{Late-time additional friction}\label{sec:param_friction_late}
 
 Many theories of modified gravity aim to solve the \emph{new cosmological constant problem} presented in \autoref{sec:cc_problem_new}. This requires such theories to model the accelerated expansion of our universe today as described in \autoref{sec:cc_intro}. Proposed modifications to general relativity thus generally only affect late-time cosmological regimes \todo{add reference/example, maybe specific f(R) theory} where the \LCDM standard model of cosmology relies on dark energy to accelerate the universe. Therefore, suitable parametrized modifications to the \namedeqref{evolution equation of gravitational waves}{eq:evolution_friction} are time-dependent and vanish in early-time cosmological regimes to reflect this behaviour of modified gravity theories.
 
@@ -471,33 +482,61 @@ In an expanding universe where \(a(t) \in \sbr{0,1}\) monotonically increases w
 At late times, tensor modes will increase or decrease in amplitude with a slope approximating the behaviour of constant additional friction \(\alphaMnot\) discussed in \autoref{sec:param_friction_const}. However, tensor modes that grow in this regime according to \eqref{eq:grow_cond_const_fric} can be suppressed by a sufficiently large value of \(\betaexp\) remain physically viable. 
 
 
-\chapter{Gravitational Waves in Parametrized Bigravity}
+\chapter{Gravitational Waves in Parametrized Bigravity}\label{ch:param_bigravity}
 
-Bigravity is a class of modified gravity theories introduced in \autoref{sec:cc_problem_new} where a second \emph{reference metric} \(f\) in addition to the physical metric \(g\) is considered. Both metrics are coupled such that the evolution equation of gravitational waves in this bimetric setting becomes \citep{Amendola2015}
+Bigravity is a class of modified gravity theories introduced in \autoref{sec:cc_problem_new} where a second \emph{reference metric}~\(f\) in addition to the physical metric~\(g\) is considered. Matter only couples to the physical metric, but both metrics are coupled such that the evolution equation of gravitational waves in this bimetric setting becomes \citep{Amendola2015}
 \begin{subequations}\label{eq:evolution_bimetric}
 \begin{align}
 	\ddconf{h}\ofmetr{n} + \del{2 + \alphaMofmetr{n}} \Hconf \dconf{h}\ofmetr{n} + \del{\Hconf^2 \mofmetr{n}^2 + \cTofmetr{n}^2 k^2} h\ofmetr{n} = \Hconf^2 \qofmetr{n} h\ofmetr{m} \quad \text{in conformal time \(\conft\)} \\
     \text{or} \quad \ddefold{h}\ofmetr{n} + \del{\frac{\defold{\Hconf}}{\Hconf} + 2 + \alphaMofmetr{n}} \defold{h}\ofmetr{n} + \del{\mofmetr{n}^2 + \frac{\cTofmetr{n}^2 k^2}{\Hconf^2}} h\ofmetr{n} = \qofmetr{n} h\ofmetr{m} \quad \text{in e-foldings \(\efold\)}
 \end{align}
 \end{subequations}
-where the indices \(n,m \in \cbr{g,f}\) with \(n \neq m\) refer to the perturbations and parameters associated with the physical metric \(g\) and the reference metric \(f\), respectively. The additional friction terms~\(\alphaMofmetr{n}\) and the deviations from the speed of light~\(\cTofmetr{n}\) for each of the two metrics were discussed in \autoref{ch:param_mod_grav} in the context of unimetric modified gravity. Each metric also has an associated \emph{mass parameter}~\(\mofmetr{n}\) and a \emph{coupling}~\(\qofmetr{n}\) to the other metric. In the theory of bigravity, these parameters have specific, time-dependent forms.
+where the indices \(n,m \in \cbr{g,f}\) with \(n \neq m\) refer to the perturbations and parameters associated with the physical metric \(g\) and the reference metric \(f\), respectively. The additional friction terms~\(\alphaMofmetr{n}\) and the deviations from the speed of light~\(\cTofmetr{n}\) for each of the two metrics were discussed in \autoref{ch:param_mod_grav} in the context of unimetric modified gravity. Each metric also has an associated \emph{mass parameter}~\(\mofmetr{n}\) and a \emph{coupling}~\(\qofmetr{n}\) to the other metric. In the theory of bigravity, these parameters have specific, time-dependent forms that are given in \cite{Amendola2015}.
 
-\plt{bimetric}{}{Physical metric follows reference metric...}
+\section{Coupling to the reference metric}\label{sec:bimetric_coupling}
+
+Since the amplitude of tensor perturbations of the physical metric~\(g\) is severely constrained by cosmological observations, I neglect the coupling of the reference metric~\(f\) that is sourced by~\(h\ofmetr{g}\). Instead, I explore solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} with a non-zero coupling parameter~\(\qofmetr{g}=\const\). The non-standard behaviour of the reference metric that is governed by a choice of its associated parameters will therefore modify the evolution of the physical tensor perturbations~\(h\ofmetr{g}\). 
+
+\autoref{fig:bimetric} depicts several solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} that were obtained numerically with the \mmainline{ParametricNDSolve} function in Mathematica. For both \(g\) and \(f\), the same assumptions and initial conditions as in \autoref{sec:param_friction_const} were chosen. In addition to the coupling \(\qofmetr{g}=1\), only the additional friction parameter of the \(f\)-metric was given a non-standard value such that its tensor perturbations grow in amplitude for \(\alphaMofmetr{f} < -2\) as discussed in \autoref{sec:param_friction_const}.
+
+\plt{bimetric}{Physical and reference metric perturbations with parametrized coupling~\(\qofmetr{g}=1\)}{The amplitude of the physical metric perturbations follows the slope of the reference metric perturbations at late times. Note that the coupling~\(\qofmetr{g}\) and the additional friction \(\alphaMofmetr{f}\) of the \(f\)-metric are the only non-standard parameters.}
+
+Because matter only couples to the physical metric~\(g\) whereas the reference metric~\(f\) is not directly observable, growing tensor modes for the reference metric are not in tension with experiments. \todo{a coupling between the metrics must exist for the theory to provide any modifications to observable gravity.} However, the coupling~\(\qofmetr{g}\) also leads to non-standard behaviour of the physical metric, although its other associated parameters remain unmodified. \autoref{fig:bimetric} shows that the physical metric perturbations follow the slope of the reference metric perturbations at late times and also exhibit a growing amplitude for sufficiently negative \(\alphaMofmetr{f}\) when coupled to the reference metric. In the specific bigravity model investigated in \cite{Amendola2015}, a similar behaviour is found for explicit, time-dependent expressions for the parameters that were considered constant here.
 
 
-\subsection{Comparison to \cite{Amendola2015}}
+\section{Non-zero mass parameter}
 
-In \cite{Amendola2015}, both the physical and reference metric tensor perturbations can be described as \ref{eq:evolution_friction_regime} with friction
+The numerical solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} obtained in \autoref{sec:bimetric_coupling} also allow for a brief discussion of the mass parameter~\(\mofmetr{n}\) for both metrics \(n \in \cbr{g,f}\). \autoref{fig:varying_mg} shows the evolution of the physical metric perturbations~\(\abs{h\ofmetr{g}(a)}\) for various values of its mass parameter~\(\mofmetr{g}\) and all other parameters set to their standard value. Because the mass parameter appears as a positive contribution to the effective wavelength mode \(\cT k\) in \eqref{eq:evolution_bimetric}, larger values of \(\mofmetr{n}\) will advance the horizon entry of the tensor mode. A degeneracy between the mass parameter and a deviating propagation speed \(\cT\) is to be expected.
+
+\plt{varying_mg}{Tensor perturbations with non-zero mass parameter~\(\mofmetr{g}\)}{}
+
+
+\section{Decoupling at early times}
+
+Bimetric modified gravity theories, like unimetric theories, usually deviate from \LCDM only at late times to provide an accelerated expansion of the universe without a cosmological constant. \todo{add reference} This is discussed in more detail in \autoref{sec:param_friction_late}. For physically viable bimetric theories it is therefore reasonable to assume that the metrics decouple in early-time cosmological regimes where the physical metric~\(g\) behaves unmodified but the reference metric can exhibit arbitrary dynamics.
+
+A specific bimetric model is investigated in \cite{Amendola2015}, for example, where the physical and reference metric decouple at early times. The authors found that for sub-horizon modes in radiation and matter dominated eras also the mass parameters become negligible in this model. Therefore, the evolution of tensor perturbations for both metrics reduce to the \namedeqref{unimetric parametrized evolution equation}{eq:evolution_friction} with parameters \citep{Amendola2015}
+\begin{subequations}
 \begin{align}
-	\alphaMofmetr{g} &= 0 \\
-	\alphaMofmetr{f} &= -3(1+\eosp) < -2
+	\alphaMofmetr{g} &= 0 & \cTofmetr{g} &= 1 \\
+	\alphaMofmetr{f} &= -3(1+\eosp) & \cTofmetr{f} &= \frac{\del{3\eosp + 1}^2}{4} \label{eq:bigr_amendola_param}
 \end{align}
+\end{subequations}
+where the physical metric remains entirely standard such that the amplitude of tensor perturbations \(h\ofmetr{g}\) falls like \(\frac{1}{a}\) according to \eqref{eq:slope_const_friction}. However, the reference metric tensor perturbations~\(h\ofmetr{f}\) with \(\alphaMofmetr{f}<-2\) in \eqref{eq:bigr_amendola_param} grow in amplitude like \(a^1\) in radiation domination and \(a^\frac{1}{2}\) in matter domination.
 
-Clearly, the physical metric perturbations $h_g$ fall like $\frac{1}{a}$ as in \LCDM, whereas the reference metric perturbations $h_f$ grow like $a^1$ in RDE and $a^\frac{1}{2}$ in MDE.
+When the coupling~\(\qofmetr{g}\) becomes relevant at appropriate late times, the behaviour explored in \autoref{sec:bimetric_coupling} must be taken into consideration such that the physical metric perturbations do not exceed observational constraints by coupling to growing reference metric tensor modes. A detailed analysis of tensor perturbation can provide crucial insight about the physical viability of bimetric theories. \todo{move to summary}
 
 
 
-\chapter{Summary}
+\chapter{Summary}\label{ch:summary}
+
+Gravitational waves are tensor perturbations of the FRW spacetime metric in vacuum that solve the perturbed Einstein equations in general relativity. Primordial gravitational waves originate in the early universe and could be observed in the polarization of the cosmic microwave background. Precise measurements severely constrain the amplitude of tensor perturbations.
+
+\todo{summarize...}
+
+
+\todo{non-linearity}
+
 
 
 \begin{appendices}
@@ -558,5 +597,6 @@ To derive the Einstein equations, we begin with the Einstein-Hilbert action
 
 \bibliography{lit,Bachelorarbeit}
 
+%\listoffigures
 
 \end{document}

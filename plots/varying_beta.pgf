@@ -18,7 +18,7 @@
 %%   \usepackage[T1]{fontenc}
 %%   \newcommand{\alphaM}{{\alpha_{\mathrm{M}}}}
 %%   \newcommand{\alphaMnot}{{\alpha_{\mathrm{M}0}}}
-%%   \newcommand{\cT}{{c_{\mathrm{T}0}}}
+%%   \newcommand{\cT}{{c_{\mathrm{T}}}}
 %%   \newcommand{\betaexp}{\beta}
 %%   \newcommand{\ofmetr}[1]{_#1}
 %%   \newcommand{\alphaMofmetr}[1]{\alphaM\ofmetr{#1}}
@@ -7634,9 +7634,9 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.626543in}{0.403750in}}%
-\pgfpathlineto{\pgfqpoint{1.406756in}{0.403750in}}%
-\pgfpathlineto{\pgfqpoint{1.406756in}{1.211775in}}%
-\pgfpathlineto{\pgfqpoint{0.626543in}{1.211775in}}%
+\pgfpathlineto{\pgfqpoint{2.662815in}{0.403750in}}%
+\pgfpathlineto{\pgfqpoint{2.662815in}{1.367108in}}%
+\pgfpathlineto{\pgfqpoint{0.626543in}{1.367108in}}%
 \pgfpathclose%
 \pgfusepath{stroke,fill}%
 \end{pgfscope}%
@@ -7647,12 +7647,12 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.704320in}{1.128441in}}%
-\pgfpathlineto{\pgfqpoint{0.859876in}{1.128441in}}%
+\pgfpathmoveto{\pgfqpoint{0.704320in}{1.283775in}}%
+\pgfpathlineto{\pgfqpoint{0.859876in}{1.283775in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.982098in,y=1.089552in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=0.1\)}}%
+\pgftext[x=0.982098in,y=1.244886in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=0.1\)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -7661,12 +7661,12 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.500000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.704320in}{0.973503in}}%
-\pgfpathlineto{\pgfqpoint{0.859876in}{0.973503in}}%
+\pgfpathmoveto{\pgfqpoint{0.704320in}{1.128836in}}%
+\pgfpathlineto{\pgfqpoint{0.859876in}{1.128836in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.982098in,y=0.934614in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=0.5\)}}%
+\pgftext[x=0.982098in,y=1.089947in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=0.5\)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -7675,12 +7675,12 @@
 \definecolor{currentstroke}{rgb}{1.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.704320in}{0.818565in}}%
-\pgfpathlineto{\pgfqpoint{0.859876in}{0.818565in}}%
+\pgfpathmoveto{\pgfqpoint{0.704320in}{0.973898in}}%
+\pgfpathlineto{\pgfqpoint{0.859876in}{0.973898in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.982098in,y=0.779676in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=0\)}}%
+\pgftext[x=0.982098in,y=0.935009in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=0\)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -7689,12 +7689,12 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.750000,0.750000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.704320in}{0.663626in}}%
-\pgfpathlineto{\pgfqpoint{0.859876in}{0.663626in}}%
+\pgfpathmoveto{\pgfqpoint{0.704320in}{0.818960in}}%
+\pgfpathlineto{\pgfqpoint{0.859876in}{0.818960in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.982098in,y=0.624737in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=1\)}}%
+\pgftext[x=0.982098in,y=0.780071in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=1\)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -7703,12 +7703,30 @@
 \definecolor{currentstroke}{rgb}{0.750000,0.000000,0.750000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.704320in}{0.508688in}}%
-\pgfpathlineto{\pgfqpoint{0.859876in}{0.508688in}}%
+\pgfpathmoveto{\pgfqpoint{0.704320in}{0.664021in}}%
+\pgfpathlineto{\pgfqpoint{0.859876in}{0.664021in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.982098in,y=0.469799in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=10\)}}%
+\pgftext[x=0.982098in,y=0.625132in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \betaexp=10\)}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetmiterjoin%
+\pgfsetlinewidth{0.000000pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetstrokeopacity{0.000000}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.670987in}{0.469750in}}%
+\pgfpathlineto{\pgfqpoint{0.893209in}{0.469750in}}%
+\pgfpathlineto{\pgfqpoint{0.893209in}{0.547527in}}%
+\pgfpathlineto{\pgfqpoint{0.670987in}{0.547527in}}%
+\pgfpathclose%
+\pgfusepath{}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[x=0.982098in,y=0.469750in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont for \(\displaystyle k=0.01\), \(\displaystyle \alphaMnot=-1\), \(\displaystyle \cT=1\)}}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%

@@ -1,7 +1,10 @@
 
 % General
 \usepackage[english]{babel}
-%\usepackage{placeins} % for \FloatBarrier command
+
+% Geometry
+\usepackage[onehalfspacing]{setspace}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
 
 % Links
 \usepackage{color,xcolor}
@@ -28,7 +31,7 @@
 \usepackage{pgf}
 %\setlength{\abovecaptionskip}{0pt }
 \newcommand{\plt}[3]{
-	\begin{figure}[ht]
+	\begin{figure}[h]
 		\begin{center}
 			\input{plots/#1.pgf}
 		\end{center}
