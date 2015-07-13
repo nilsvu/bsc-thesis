@@ -2,6 +2,7 @@
 
 \usepackage{todonotes} % TODO: remove todonotes package
 \newcommand{\todocheck}[1]{\todo[color=blue!40]{#1}}
+\newcommand{\addref}{\todo[color=black!20]{ref.}}
 \usepackage{layouts,layout}
 
 \input{include/style}
@@ -30,11 +31,19 @@
 
 \chapter{Introduction}\label{ch:intro}
 
-Gravitational waves are an intrinsic part of general relativity and the standard model of cosmology. Since attempts to measure gravitational waves, either directly by dedicated ground-based experiments or indirectly by precise measurements of the cosmic microwave background, have not been successful yet, their amplitude is constrained to be extremely small by the data at hand. Any theory of gravity that goes beyond general relativity must also predict gravitational waves that agree with these experimental constraints. In particular, modified gravity theories where gravitational waves grow in amplitude in cosmological evolution can easily be in tension with experiments.
+For a long time, physicists believed space and time were both flat and fundamentally different concepts. In \emph{Newtonian spacetime}, it is therefore straight forward to define notions such as the \emph{length of a curve} and \emph{simultaneity} \citep{Tolish}.
 
-In fact, many modified gravity theories have been proposed to address the \emph{cosmological constant problem} that remains one of the greatest mysteries in theoretical physics of our time. They generally aim to explain the accelerated expansion of our universe today without relying on a cosmological constant. The main idea of this thesis is to find properties of modified gravity theories such that growing gravitational waves are avoided that could render the theory physically unviable. To achieve this, I introduce appropriate parameters in the evolution equation of gravitational waves that can result from general modifications of gravity. Furthermore, I will focus this parametric approach on the extended class of \emph{bimetric} models where a second spacetime metric in our universe interacts with the gravity-inducing physical metric and both metrics can exhibit gravitational waves.
+With Maxwell's theory of electromagnetism and experimental observations regarding the speed of light, however, many of these concepts had to be abandoned. Physicists realized the necessity to reconsider fundamental assumptions about space and time. Albert Einstein addressed many of these issues with his theory of special relativity \todo{summarize SR briefly, mention GR->SR for minkowskian metric} in 1905, but, particularly, one striking observation remained unexplained:
 
-This chapter first gives a brief introduction to gravitational waves in general relativity in \autoref{sec:grav_waves}. Then, \autoref{sec:cc_problem} formulates the remarkably complex cosmological constant problem and introduces the concept of modified gravity theories as an approach for solving part of it. The main part of the thesis in \autoref{ch:param_mod_grav} and \autoref{ch:param_bigravity} explores various parametric modifications to the evolution equation of gravitational waves in unimetric and bimetric modified gravity, respectively. Finally, \autoref{ch:summary} summarizes the results of this thesis.
+Newtonian mechanics postulates that particles accelerate under the influence of \textbf{any} force proportional to their \emph{inertial mass} \(m_i\). At the same time, the gravitational force a particle induces on another is proportional to its \emph{gravitational mass} \(m_g\) that is completely unrelated to the former in this theory. Strikingly, however, experiments find inertial and gravitational mass indistinguishable from another \todo{order of magnitude?} --- to this end, any two objects will fall with the same velocity in vacuum, no matter their weight --- and physicists identify both as \emph{mass} \(m=m_i=m_g\) instead. This \emph{equivalence principle} constitutes the basis of Einstein's 1915 theory of \emph{general relativity} where gravity is not regarded as an external force but rather a phenomenon of the geometry of spacetime itself that is curved by its matter content. Therefore, the trajectories of freely moving particles appear affected by a gravitational force although they actually follow straight lines, or \emph{geodesics}, in curved spacetime. In other words, gravity is only an inertial force observed in a cartesian reference frame that is induced by the curvature of spacetime in presence of mass.
+
+General relativity not only succeeded in explaining phenomena at astronomical scales that stood in conflict with Newtonian gravity, such as the perihelion shift of Mercury and gravitational lensing, \addref but also enabled the development of many high-precision technologies. Among them, navigational systems such as GPS are arguably the most prominent. \addref Most remarkably, however, it allowed physicists to scientifically approach questions that concern the evolution of the entire universe itself for the first time in the field of \emph{cosmology}. Assuming only that, at sufficiently large scales, our universe looks the same everywhere and in all directions, notions such as the \emph{beginning} and \emph{age of the universe} became computable in cosmological models that could be compared to experimental data. For instance, distance measurements of galaxies and stars provided evidence of a recent accelerated expansion of our universe. One of the most important cosmological observations remains the high precision measurements of the \emph{cosmic microwave background} that is thermal radiation originating in the early universe. \addref These discoveries, together with measurements of the matter composition in out universe and many more, lead to the \LCDM (Lambda Cold Dark Matter) standard model of cosmology. \addref In this model, our universe went through a phase of exponential expansion, known as \emph{cosmic inflation}, at very early times, followed by several cosmological eras where each is dominated by one of the different matter species in the universe. These include radiation, ordinary matter and the elusive \emph{dark matter} and \emph{dark energy}.
+
+Gravitational waves are an intrinsic part of general relativity and the standard model of cosmology that occur when the geometry of spacetime is disturbed in a tensorial manner. For instance, binary systems of stellar objects such as stars or black holes of different mass orbiting each other generate such perturbations that will propagate through spacetime. Gravitational waves that originate in the early universe and could be measured in the cosmic microwave background are known as \emph{primordial gravitational waves}. This thesis begins with a detailed discussion of gravitational waves in general relativity in \autoref{sec:grav_waves}. Since attempts to measure gravitational waves, either directly by dedicated ground-based experiments or indirectly by precise measurements of the cosmic microwave background, have not been successful yet, their amplitude is constrained to be extremely small by the data at hand. \addref
+
+Although the \LCDM standard model of cosmology agrees with observational data remarkably well, it does not offer an entirely conclusive model of our universe. One of the shortcoming this model exhibits is related to its dark energy component that provides the accelerated expansion of our universe at recent times. It is given by a free parameter \(\cosmconst\) known as the \emph{cosmological constant} in this theory. In fact, the \emph{cosmological constant problem} connects unsolved phenomena of both quantum field theory and general relativity and remains one of the greatest mysteries in theoretical physics of our time. It is formulated in \autoref{sec:cc_problem} and also introduces the concept of modified theories of gravity as an approach for solving part of it. Such theories generally propose alterations to general relativity that have self-accelerating late-time cosmological solutions without relying on a cosmological constant.
+
+Any theory of gravity that goes beyond general relativity must also predict gravitational waves that agree with the experimental constraints mentioned above, however. In particular, modified gravity theories where gravitational waves grow in amplitude in cosmological evolution can easily be in tension with experiments. The main idea of this thesis is to find properties of modified gravity theories such that growing gravitational waves are avoided that could render the theory physically unviable. To achieve this, I introduce appropriate parameters in the evolution equation of gravitational waves that can result from general modifications of gravity. I will explore the effect these parametric modifications have on the evolution of gravitational waves in modified gravity theories in \autoref{ch:param_mod_grav}. In addition to numerical solutions, I will solve the parametrized evolution equation analytically for appropriate assumptions to find constraints for the parameters such that the theory does not exhibit gravitational waves that grow in amplitude. Subsequently, I will focus this parametric approach on the extended class of \emph{bimetric} models where a second spacetime metric in our universe interacts with the gravity-inducing physical metric and both metrics can exhibit gravitational waves. Finally, \autoref{ch:summary} summarizes the results of this thesis.
 
 Throughout the thesis, I choose natural units with the speed of light
 \begin{equation}
@@ -45,15 +54,9 @@ and a mostly-positive metric signature \(\del{-1,1,1,1}\).
 
 \section{Gravitational Waves}\label{sec:grav_waves}
 
-I will first give a brief introduction to standard FRW cosmology in general relativity and derive the evolution equation for gravitational waves by considering perturbations to such a universe.
+In this section, I will first give a brief introduction to general relativity and standard \FLRW cosmology. The evolution equation for gravitational waves that is the main object of consideration in the remainder of this thesis then follows from metric tensor perturbations in such a universe.
 
 \subsection{Gravity and Spacetime in General Relativity}\label{sec:gr}
-
-For a long time, physicists believed space and time were both flat and fundamentally different concepts. In \emph{Newtonian spacetime}, it is therefore straight forward to define notions such as the \emph{length of a curve} and \emph{simultaneity}. \todo{cite \citep{Tolish}}
-
-With Maxwell's theory of electromagnetism and experimental observations regarding the speed of light, however, many of these concepts had to be abandoned. Physicists realized the necessity to reconsider fundamental assumptions about space and time. Albert Einstein addressed many of these issues with his theory of special relativity \todo{summarize SR briefly, mention GR->SR for minkowskian metric} in 1905, but, in particular, one striking observation remained unexplained:
-
-Newtonian mechanics postulates that particles accelerate under the influence of \textbf{any} force proportional to their \emph{inertial mass} \(m_i\). At the same time, the gravitational force a particle induces on another is proportional to its \emph{gravitational mass} \(m_g\) that is completely unrelated to the former in this theory. Strikingly, however, experiments find inertial and gravitational mass indistinguishable from another \todo{order of magnitude?} --- to this end, any two objects will fall with the same velocity, no matter their weight --- and physicists identify both as \emph{mass} \(m=m_i=m_g\) instead. This \emph{equivalence principle} constitutes the basis of Einstein's 1915 theory of \emph{general relativity} where gravity is \textbf{not regarded as an external force} acting on particles in spacetime but rather a phenomenon of the geometry of spacetime itself, with \textbf{particles moving freely in curved spacetime}.
 
 In general relativity, the \emph{Einstein equations}
 \begin{align}\label{eq:einstein_eqns}
@@ -70,40 +73,47 @@ We can obtain the Einstein equations through variation of the \emph{Einstein-Hil
 \begin{align}\label{eq:einstein_hilbert_action}
 	S[g] = \int \! \dif{^4x} \sqrt{-\metrdet{g}} \del{\Rscal - 2\cosmconst} + \int \! \dif{^4x} \sqrt{-\metrdet{g}} \lagrdensmatter \quad \text{with} \quad \metrdet{g} = \det{g}
 \end{align}
-with respect to \(g_{\mu \nu}\). A detailed derivation is done in \appref{app:deriv_einstein_eqns}. The matter Lagrangian denoted by \(\lagrdensmatter\) is only \emph{minimally coupled} to gravity through the measure \(\sqrt{-\metrdet{g}}\dif{^4x}\) that arises from the spacetime metric in general relativity.
+with respect to \(g_{\mu \nu}\). A detailed derivation is done in \appref{app:deriv_einstein_eqns}. The matter Lagrangian denoted by \(\lagrdensmatter\) is only \emph{minimally coupled} to gravity through the measure \(\sqrt{-\metrdet{g}}\dif{^4x}\) that arises from the spacetime metric.
 
-Given a stress-energy tensor \(\Ttens_{\mu \nu}\), the Einstein equations constitute ten \todo{why ten? > symmetric} highly non-linear partial differential equations for the spacetime metric~\(g\). The metric, in turn, restores the notion of the length of a curve in spacetime and thus allows us to formulate postulates for the dynamics of matter in the universe.
+Given a stress-energy tensor \(\Ttens_{\mu \nu}\), the Einstein equations constitute ten highly non-linear partial differential equations for the spacetime metric~\(g\) since it is a symmetric, four-dimensional tensor. The metric, in turn, restores the notion of the length of a curve in spacetime and thus allows us to formulate postulates for the dynamics of matter in the universe. In particular, as a generalization of Newton's law, particles without any external forces acted upon will move on \emph{geodesics} in spacetime where their curve~\(\gamma\) is stationary with respect to the length functional~\(L[\gamma]\) such that
+\begin{equation}
+	\delta L[\gamma] = 0
+	\eqpunct{.}
+\end{equation}
 
-In particular, as a generalization of Newton's law, particles without any external forces acted upon will move on \emph{geodesics} in spacetime, i.e. their curve is stationary with respect to the length functional.\todo{explain better}
-
-A simple solution to the Einstein equations \todo{in vacuum?} is the flat \emph{Minkowskian} spacetime metric
+Many solutions to the Einstein equations have been found for particular choices of matter distributions given by \(\Ttens_{\mu\nu}\). To make an exact solution possible, they often make strong symmetry assumptions. The metric tensor is usually given in some choice of coordinates \(x^\mu\) in its matrix notation or as line element
+\begin{equation}
+	\dif{s}^2 = g_{\mu \nu}\dif{x}^\mu \dif{x}^\nu
+	\eqpunct{.}
+\end{equation}
+For instance, a trivial vacuum solution to the Einstein equations is the flat \emph{Minkowskian} spacetime metric of special relativity
 \begin{equation}
 	g_{\mu \nu} = \eta_{\mu \nu} =
 	\begin{bmatrix}
 		-1 & 0 \\
 		0 & \idmat_3
-	\end{bmatrix}_{\mu \nu}
+	\end{bmatrix}_{\mu \nu} \quad \text{or} \quad \dif{s}^2 = -\dif{t}^2 + \delta_{ij} \dif{x}^i \dif{x}^j
 \end{equation}
-of special relativity.\todo{include this here, or elaborate?}
+in cartesian coordinates. \todo{check this} 
 
 
-\subsection{FRW Cosmology}\label{sec:frw}
+\subsection{Standard \FLRW cosmology}\label{sec:frw}
 
-In cosmology, we strive to understand \textbf{how the entire universe evolves}.\todo{elaborate}
-
-As of the \emph{cosmological principle}, it is reasonable to assume the universe is \emph{spatially homogeneous and isotropic} at large scales. This gives rise to six spatial symmetries \todo{include derivation with Killing vector fields?} and leads to the \emph{Friedmann-Robertson-Walker~(FRW)} metric
+When we strive to understand how the entire universe evolves, we can impose a number of symmetry conditions that are based on the \emph{cosmological principle}. The postulate states that the universe is \emph{spatially homogeneous and isotropic} at the largest scales since there is no apparent reason to believe otherwise \footnote{Of course, the cosmological principle can be questioned, and has been in the literature} \addref. This gives rise to six spatial symmetries \todo{include derivation with Killing vector fields?} and leads to the \emph{Friedmann-Lemaître-Robertson-Walker~(\FLRW)} metric
+\begin{subequations}
 \begin{align}
-	\dif{s}^2 = -\dif{t}^2 + a(t)^2 \gamma_{ij} \dif{x^i}\dif{x^j} \quad \text{where} \quad &\dif{s}^2 = g_{\mu \nu}\dif{x}^\mu \dif{x}^\nu \\
-	\text{and} \quad &\gamma_{ij}(r,\theta,\phi) =
+	\dif{s}^2 = -\dif{t}^2 + a(t)^2 &\gamma_{ij} \dif{x^i}\dif{x^j} \\
+	\text{where} \quad &\gamma_{ij}(r,\theta,\phi) =
 	\begin{bmatrix}
 		\frac{1}{1-\spatcurv r^2} & 0 & 0 \\
 		0 & r^2 & 0 \\
 		0 & 0 & r^2 sin^2(\theta)
 	\end{bmatrix}_{ij}
 \end{align}
+\end{subequations}
 that is a particular solution to the Einstein equations describing a smooth, expanding universe. The \emph{scale factor}~\(a(t)\) is the only freedom left after considering the symmetries and scales the time-independent metric \(\gamma_{ij}\) of a spatial \todocheck{can the subspace(?) be called spatial, or rather three-dim.?} subspace with constant curvature~\(\spatcurv\). See \appref{app:deriv_frw} for a detailed derivation.
 
-It is important to note that distances described by the FRW coordinates are merely \emph{coordinate distances} or \emph{comoving distances} that remain constant even in an expanding universe. Comoving distances are scaled by the time-dependent scale factor \(a(t)\) to obtain the physical distances. Similarly, one can define the \emph{comoving} or \emph{conformal time}
+It is important to note that distances described by the \FLRW coordinates are merely \emph{coordinate distances} or \emph{comoving distances} that remain constant even in an expanding universe. Comoving distances are scaled by the time-dependent scale factor \(a(t)\) to obtain the physical distances. Similarly, one can define the \emph{comoving} or \emph{conformal time}
 \begin{equation}
 	\conft = \int_0^t \frac{\dif{t^\prime}}{a(t^\prime)}
 \end{equation}
@@ -113,15 +123,15 @@ as the comoving distance light (with \(\dif{s}^2=0\)) could have traveled since 
 	\eqpunct{.}
 \end{equation}
 
-Given the particular form of the spacetime metric, the \namedeqref{Einstein tensor}{eq:einstein_tensor} can be explicitly computed. This is done in \appref{app:deriv_frw_einstein}. When we also assume the universe is filled with matter that, at large scales, resembles a perfect fluid \todo{add reference} with stress-energy tensor
+Given the particular form of the spacetime metric, the \namedeqref{Einstein tensor}{eq:einstein_tensor} can be explicitly computed. This is done in \appref{app:deriv_frw_einstein}. When we also assume the universe is filled with matter that, at large scales, resembles a perfect fluid \addref with stress-energy tensor
 \begin{equation}\label{eq:perfect_fluid}
 	\Ttens^{\mu\nu} = \del{\rho + p}u^\mu u^\nu + p g^{\mu\nu} \quad \text{in time direction} \quad u^\mu = \del{1,0,0,0}^T
 \end{equation}
 with \emph{matter density} \(\dens\), \emph{pressure} \(p\) and linear \emph{equation of state}
 \begin{equation}
-	p = \eosp \rho \eqpunct{,}	
+	p = \eosp \rho \quad \text{with \emph{equation of state parameter} \(\eosp\),}
 \end{equation}
-the \namedeqref{Einstein equations}{eq:einstein_eqns} reduce to two ordinary, coupled differential equations \todo{add reference} \todo{check lambda dependence}
+the \namedeqref{Einstein equations}{eq:einstein_eqns} reduce to two ordinary, coupled differential equations \addref \todo{check lambda dependence}
 \begin{subequations}\label{eq:friedmann_eqns}
 \begin{align}
 	\ddt{a} &= -\frac{4\pi}{3}\Newtconst\del{\rho + 3p}a + \frac{\cosmconst}{3} \eqname{acceleration equation}{eq:acceleration} \\
@@ -132,7 +142,7 @@ with the \emph{Hubble function}
 \begin{equation}\label{eq:hubble}
 	\Hcosm \equiv \dt{a}\frac{1}{a} \quad \text{or} \quad \Hconf \equiv \frac{\dconf{a}}{a} = a \Hcosm \quad \text{in conformal time \(\conft\).}
 \end{equation}
-The \emph{equation of state parameter} \(\eosp\) for various matter types is summarized in \autoref{tab:matter_types}. For a universe filled with any such matter, we can solve the \namedeqref{Friedmann equations}{eq:friedmann_eqns} to find both the time evolution of the matter density
+The equation of state parameter \(\eosp\) for various matter types is summarized in \autoref{tab:matter_types}. For a universe filled with any such matter, we can solve the \namedeqref{Friedmann equations}{eq:friedmann_eqns} to find both the time evolution of the matter density
 \begin{equation}\label{eq:frw_dens_evol}
 	\dens \propto a^{-\nexp}
 \end{equation}
@@ -148,17 +158,17 @@ This result is derived in \appref{app:deriv_frw_a_evol} and already exhibits a w
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{l>{$}c<{$}>{$}c<{$}>{$}c<{$}}
+\begin{tabular}{l>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}}
 	\toprule
-	~ & i & \eosp & \nexp \\
+	~ & i & \eosp & \nexp & \nexpconft \\
 	\midrule
-	radiation & \symbrad & \frac{1}{3} & 4 \\
-	dust & \symbdust & 0 & 3 \\
-	cosmological constant & \cosmconst & -1 & 0 \\
-	spatial curvature & \spatcurv & -\frac{1}{3} & -2 \\
+	radiation & \symbrad & \frac{1}{3} & 4 & 1 \\
+	dust & \symbdust & 0 & 3 & 2 \\
+	cosmological constant & \cosmconst & -1 & 0 & -1 \\
+	spatial curvature & \spatcurv & -\frac{1}{3} & -2 & \infty \\
 	\bottomrule
 \end{tabular}
-\caption{Overview of cosmological properties for a universe filled with various matter types}
+\caption{\textbf{Overview of cosmological properties for a universe filled with various matter types}}
 \label{tab:matter_types}
 \end{table}
 
@@ -182,12 +192,12 @@ and we find from \eqref{eq:frw_dens_evol} the relation
 \begin{equation}
 	\Dens_\cosmconst \propto a^2 \Dens_\spatcurv \propto a^3 \Dens_\symbdust \propto a^4 \Dens_\symbrad \eqpunct{.}
 \end{equation}
-Because the universe expands monotonically with time for any of these matter types, as given by \eqref{eq:frw_a_evol}, this result allows us to consider successive \emph{cosmological regimes} in an FRW universe with a dominant matter type each. Radiation dominates in the early universe and is followed by a regime of dust domination (also called \emph{matter domination}). The spatial curvature \(\spatcurv\) is measured to be zero very precisely today, thus eliminating the corresponding regime. Today, the universe is in a regime dominated by a cosmological constant (also called \emph{de Sitter space}) that is discussed in more detail in \autoref{sec:cc_intro}.
+Because the universe expands monotonically with time for any of these matter types, as given by \eqref{eq:frw_a_evol}, this result allows us to consider successive \emph{cosmological regimes} or \emph{eras} in an \FLRW universe with a dominant matter type each. Radiation dominates in the early universe and is followed by a regime of dust domination (also called \emph{matter domination}). The spatial curvature \(\spatcurv\) is measured to be zero very precisely today and is therefore assumed to vanish in the following. At recent times, the universe is in a regime dominated by a cosmological constant known as \emph{de Sitter space} that is discussed in more detail in \autoref{sec:cc_intro}.
 
 
-\subsection{Tensor Perturbations in an FRW Universe}\label{sec:perturb}
+\subsection{Tensor Perturbations in an \FLRW Universe}\label{sec:perturb}
 
-At smaller scales, the universe is not homogeneous and isotropic at all, of course. Galaxies, stars and planets, as well as radiation or, in fact, any energy content of the universe disturb the spacetime metric locally\todo{also primordial / early universe / inflation and such}\todo{..and lead to gravitational interaction}. It is therefore reasonable to consider perturbations~\(\delta g\) around the smooth FRW metric and their evolution.\todo{motivate better > baccigalupi p. 22}
+At smaller scales, the universe is not homogeneous and isotropic at all, of course. Galaxies, stars and planets, as well as radiation or, in fact, any energy content of the universe disturb the spacetime metric locally\todo{also primordial / early universe / inflation and such}\todo{..and lead to gravitational interaction}. It is therefore reasonable to consider perturbations~\(\delta g\) around the smooth \FLRW metric and their evolution.\todo{motivate better > baccigalupi p. 22}
 
 When we assume an exact solution~\(g\) to the unperturbed Einstein equations and consider a sufficiently small perturbation to the stress-energy tensor~\(\delta \Ttens_{\mu \nu}\), then the metric perturbation \(\delta g\) that solves
 \begin{equation}
@@ -211,7 +221,7 @@ As of the \emph{Helmholtz theorem}, the parameters uniquely decompose further in
 \end{align}
 This is shown in detail in \appref{app:deriv_decompose} and allows us to study scalar, vector and tensor perturbations separately. \todo{add info about scalar, vector, tensor > grav. waves}
 
-\emph{Gravitational waves} now arise when we only consider \textbf{unsourced tensor perturbations} of the metric. This is analogous to the propagation of electromagnetic waves in vacuum, for example. \todo{elaborate} In fact, scalar and vector perturbations can only arise from stress-energy perturbation. \todo{add reference} Therefore, only tensor perturbations remain for \(\delta \Ttens_{\mu \nu}=0\).
+\emph{Gravitational waves} now arise when we only consider \textbf{unsourced tensor perturbations} of the metric. This is analogous to the propagation of electromagnetic waves in vacuum, for example. \todo{elaborate} In fact, scalar and vector perturbations can only arise from stress-energy perturbation. \addref Therefore, only tensor perturbations remain for \(\delta \Ttens_{\mu \nu}=0\).
 
 It is shown in \appref{app:deriv_decompose} that
 \begin{equation}
@@ -262,14 +272,14 @@ We will further discuss gravitational waves in the context of \emph{modified gra
 
 \section{The Cosmological Constant Problem}\label{sec:cc_problem}
 
-Both quantum field theory and general relativity are extremely well-tested theories and constitute the basis of modern physics, both in their respective fields. Whereas quantum field theory succeeds remarkably well in predicting particle physics phenomena, general relativity celebrates an equal success in large-scale cosmological observations. Both theories and particularly their interplay are not without mysteries\todo{better: not fully understood?}, however.
+Both quantum field theory and general relativity are extremely well-tested theories and constitute the basis of modern physics in their respective fields. Whereas quantum field theory succeeds remarkably well in predicting particle physics phenomena, general relativity celebrates an equal success in large-scale cosmological observations. Both theories and particularly their interplay are not without mysteries\todo{better: not fully understood?}, however.
 
 This section strives to formulate the \emph{cosmological constant problem} and particularly emphasizes its problem of \emph{radiative instability}. The quest for solutions will lead us to consider modified theories of gravity that will be the focus for the remainder of this thesis.
 %General relativity includes a free parameter \(\cosmconst\), called \emph{cosmological constant}, that will be introduced in \autoref{sec:cc_intro}. One mystery of quantum field theory, however, is the concept of \emph{vacuum energy} discussed in \autoref{sec:cc_contrib}. Interestingly enough, both exhibit a very similar interpretation and consolidating the two seems a very natural approach. The problem is more complex, though, and connects unsolved phenomena of both quantum field theory and general relativity. This section strives to formulate the \emph{cosmological constant problem} and particularly emphasizes its problem of \emph{radiative instability} in \autoref{sec:rad_instability}. \autoref{sec:new_cc_problem} finally suggests a modern approach to this century-old problem where we already assume a solution for part of it. This leads to the suggestion of a \emph{modified theory of gravity} to solve the remaining problem of the accelerated expansion of our universe.
 
 \subsection{The Cosmological Constant}\label{sec:cc_intro}
 
-\emph{Lovelock's theorem}\label{sec:lovelock} states that general relativity as it emerges from the Einstein-Hilbert action \ref{eq:einstein_hilbert_action} is, in fact, the \textbf{unique} metric theory in four spacetime dimensions that \todo{add reference}
+\emph{Lovelock's theorem}\label{sec:lovelock} states that general relativity as it emerges from the Einstein-Hilbert action \ref{eq:einstein_hilbert_action} is, in fact, the \textbf{unique} metric theory in four spacetime dimensions that \addref
 \begin{itemize}
 	\item gives rise to second-order equations of motion
 	\item for only one symmetric rank-2 tensor
@@ -281,9 +291,9 @@ It appears in the Einstein equations \ref{eq:einstein_eqns} as a contribution
 \begin{equation}
 	\Ttens_{\cosmconst\textnormal{,}\mu\nu} = - \cosmconst g_{\mu\nu}
 \end{equation}
-to the stress-energy tensor that corresponds to a \textbf{homogeneous energy density} penetrating the entire spacetime. In standard FRW cosmology, such a contribution results in an accelerating expansion of our universe as derived in detail in \appref{app:deriv_acc_exp_lambda}.
+to the stress-energy tensor that corresponds to a \textbf{homogeneous energy density} penetrating the entire spacetime. In standard \FLRW cosmology, such a contribution results in an accelerating expansion of our universe as derived in detail in \appref{app:deriv_acc_exp_lambda}.
 
-In fact, cosmological observations clearly suggest such an accelerated expansion taking place at recent cosmic times. \todo{add references} The \LCDM (\emph{\(\cosmconst\) cold dark matter}) standard model of cosmology therefore includes a cosmological constant on the order of \(10^{-122}\) in Planck units and agrees with all \todo{really?} cosmological observations remarkably well. In this theory, the physical origin of the homogeneous energy contribution that the cosmological constant represents remains a mystery, however, and is given the elusive \todo{good word?} name \emph{dark energy}. \todo{add reference}
+In fact, cosmological observations clearly suggest such an accelerated expansion taking place at recent cosmic times. \addref The \LCDM (\emph{\(\cosmconst\) cold dark matter}) standard model of cosmology therefore includes a cosmological constant on the order of \(10^{-122}\) in Planck units and agrees with all \todo{really?} cosmological observations remarkably well. In this theory, the physical origin of the homogeneous energy contribution that the cosmological constant represents remains a mystery, however, and is given the elusive \todo{good word?} name \emph{dark energy}. \addref
 
 The fact that the cosmological constant must be fixed by observations is not remarkable on its own, of course, since also the gravitational constant \(\Newtconst\) must be determined experimentally. Theories such as the standard model of particle physics include a number of such free parameters. This poses an entirely different, somewhat philosophical problem that is often naively answered using anthropic arguments. This is discussed in detail in \appref{app:anthropic}.
 
@@ -291,9 +301,9 @@ The fact that the cosmological constant must be fixed by observations is not rem
 
 The cosmological constant problem arises when we consider both classical and quantum phenomena that, to our knowledge, should contribute to the cosmological constant.
 
-Already in basic quantum mechanics, the uncertainty principle requires every physical system to have a zero-point energy\todo{reference}. This immediately carries over to quantum field theory, where a (free) field is an infinite collection of coupled quantum mechanical harmonic oscillators. With a zero-point energy each, they combine to an infinite \emph{vacuum energy} \(\rho_\textnormal{vac}\). \todo{add some derivation?}
+Already in basic quantum mechanics, the uncertainty principle requires every physical system to have a zero-point energy\addref. This immediately carries over to quantum field theory, where a (free) field is an infinite collection of coupled quantum mechanical harmonic oscillators. With a zero-point energy each, they combine to an infinite \emph{vacuum energy} \(\rho_\textnormal{vac}\). \todo{add some derivation?}
  
-In quantum field theory, the vacuum energy is largely ignored as only differences in energy determine the dynamics of the system. In general relativity, however, all energy content gravitates, including the vacuum energy. \todo{reference} \todo{how about Lamb shift, Casimir effect?}
+In quantum field theory, the vacuum energy is largely ignored as only differences in energy determine the dynamics of the system. In general relativity, however, all energy content gravitates, including the vacuum energy. \addref \todo{how about Lamb shift, Casimir effect?}
 
 Remarkably, assigning an importance to not only energy differences, but also absolute energy values gives rise to another, entirely classical contribution to the stress-energy tensor, namely the \emph{zero-point potential} \(V_0\). This is the energy
 \begin{equation}
@@ -318,15 +328,15 @@ The free parameter \(\cosmconst\) in the Einstein equations therefore combines w
 \begin{equation}
 	\cosmconst_\textnormal{eff} = \cosmconst + \rho_\textnormal{vac} + V_0
 \end{equation}
-that we measure as dark energy. In comparison to the small value for \(\cosmconst_\textnormal{eff}\) we observe today, however, both contributions are extremely large \citep{Martin2012}. \todo{add reference} This already suggests a severe \emph{fine-tuning} problem where the value of the original cosmological constant \(\cosmconst\) must precisely cancel the other contributions up to the small value we measure today. \todo{elaborate fine-tuning} This is not the entire cosmological constant problem yet, though.
+that we measure as dark energy. In comparison to the small value for \(\cosmconst_\textnormal{eff}\) we observe today, however, both contributions are extremely large \citep{Martin2012}. \addref This already suggests a severe \emph{fine-tuning} problem where the value of the original cosmological constant \(\cosmconst\) must precisely cancel the other contributions up to the small value we measure today. \todo{elaborate fine-tuning} This is not the entire cosmological constant problem yet, though.
 
 \subsection{Radiative Instability}\label{sec:rad_instability}
 
-The full scope of the problem arises when we consider in more detail the vacuum energy that we found to be infinite before. The mechanism to make sense of divergencies like this in quantum field theory is the framework of \emph{renormalization}. In the process to find a find finite, \emph{renormalized} value for \(\rho_\textnormal{vac}\) one generally adds counterterms for every order in perturbation theory that each depend on an \emph{arbitrary subtraction scale}.
+The full scope of the problem arises when we consider in more detail the vacuum energy that we found to be infinite before. The mechanism to make sense of divergencies like this in quantum field theory is the framework of \emph{renormalization}. In the process to find a finite, \emph{renormalized} value for \(\rho_\textnormal{vac}\) one generally adds counterterms for every order in perturbation theory that each depend on an \emph{arbitrary subtraction scale}.
 
-Generally, successive orders are not significantly suppressed by a sufficiently small perturbation parameter \(\cosmconst\), however. In fact, for the standard model Higgs field the self-coupling parameter of perturbation \(\cosmconst\) is of the order \(10^{-1}\) \todo{add reference} and therefore every order in perturbation theory must be renormalized independently. This \emph{radiative instability} requires us to fine-tune the cosmological constant \textbf{repeatedly} for every order in perturbation theory and thus makes it sensitive even to small-scale physics where we assume our theory to break down \citep{Datta1996}.
+Generally, successive orders are not significantly suppressed by a sufficiently small perturbation parameter \(\cosmconst\), however. In fact, for the standard model Higgs field the self-coupling parameter of perturbation \(\cosmconst\) is of the order \(10^{-1}\) \addref and therefore every order in perturbation theory must be renormalized independently. This \emph{radiative instability} requires us to fine-tune the cosmological constant \textbf{repeatedly} for every order in perturbation theory and thus makes it sensitive even to small-scale physics where we assume our theory to break down \citep{Datta1996}.
 
-This also prohibits us from finding an \emph{effective theory} where the full structure of perturbation theory is encoded in one finite, renormalized value by means of a \emph{Wilson effective action}. \todo{add reference} Again, we find the renormalized vacuum energy is unstable against changes in the unknown UV-regime of the theory \citep{Datta1996}.
+This also prohibits us from finding an \emph{effective theory} where the full structure of perturbation theory is encoded in one finite, renormalized value by means of a \emph{Wilson effective action}. \addref Again, we find the renormalized vacuum energy is unstable against changes in the unknown UV-regime of the theory \citep{Datta1996}.
 
 \todo{how about \emph{why now?}}
 \todo{how about naturalness <-> anthropic \cite{Datta1996}?}
@@ -338,7 +348,7 @@ The cosmological constant problem is deeply rooted in our inability to find a re
 
 In fact, unbroken \emph{supersymmetry} would accomplish just that. In supersymmetry, bosons and fermions are related by a symmetry and share the same mass. Supersymmetric partners contribute to the vacuum energy with opposite signs, however, thus precisely canceling each other.
 
-With the cosmological constant set to zero, the cosmological observation of accelerated expansion \todo{other observables?} remains to be explained by a different mechanism. Dark energy models such as the \emph{quintessence} theory \todo{add reference} postulate further contributions to the stress-energy tensor that have the same accelerating effect as a cosmological constant. A different approach is to modify the theory of gravity instead.
+With the cosmological constant set to zero, the cosmological observation of accelerated expansion \todo{other observables?} remains to be explained by a different mechanism. Dark energy models such as the \emph{quintessence} theory \addref postulate further contributions to the stress-energy tensor that have the same accelerating effect as a cosmological constant. A different approach is to modify the theory of gravity instead.
 
 Every attempt towards a modified theory of gravity has to take Lovelock's theorem into consideration and break at least one of its assumptions that make general relativity unique. The concept of the entire class of \emph{\fR{theories}}, for example, is to replace the Ricci scalar \(\Rscal\) in the \namedeqref{Einstein-Hilbert action}{eq:einstein_hilbert_action} by a function \(f(\Rscal)\).
 % such that the action becomes
@@ -346,7 +356,7 @@ Every attempt towards a modified theory of gravity has to take Lovelock's theore
 %	S[g] = \int \! \dif{^4x} \sqrt{-\metrdet{g}} f(\Rscal) + \int \! \dif{^4x} \sqrt{-\metrdet{g}} \lagrdensmatter
 %	\eqpunct{.}
 %\end{equation}
-\fR{theories} break Lovelock's assumption of only second-order equations of motion and are in many cases equivalent to an additional scalar field contribution to the matter Lagrangian that is non-minimally coupled to gravity. \todo{add reference}
+\fR{theories} break Lovelock's assumption of only second-order equations of motion and are in many cases equivalent to an additional scalar field contribution to the matter Lagrangian that is non-minimally coupled to gravity. \addref
 
 Alternatively, the hypothesis of a \emph{massive graviton} requires a second, arbitrary \emph{reference metric} \(f\) in addition to the physical metric \(g\). The additional metric is necessary to construct a mass term because a single metric allows only trivial self-interaction terms \(g^{\mu\sigma}g_{\sigma\nu}=\delta^\mu_\nu\) and \(g^{\mu\nu}g_{\mu\nu} = 4\). By postulating a symmetric action where the reference metric \(f\) behaves dynamically just like \(g\), we arrive at the theory of \emph{massive bigravity}.
 % with the action
@@ -357,7 +367,7 @@ Alternatively, the hypothesis of a \emph{massive graviton} requires a second, ar
 %	+ m^2 \planckM_g^2 \int \! \dif{^4x} \sqrt{-\metrdet{g}} \sum_{n=0}^4 \beta_n e_n()
 %	+ \int \! \dif{^4x} \sqrt{-\metrdet{g}} \lagrdensmatter
 %\end{equation}
-The cosmology in this theory allows solutions with late-time acceleration without a cosmological constant. \todo{add reference}
+The cosmology in this theory allows solutions with late-time acceleration without a cosmological constant. \addref
 
 \todo{connect to next chapter}
 
@@ -365,9 +375,9 @@ The cosmology in this theory allows solutions with late-time acceleration withou
 
 \chapter{Parametrization of Modified Gravitational Wave Evolution}\label{ch:param_mod_grav}
 
-Many theories of modified gravity are discussed in the literature \todo{add reference} and this thesis will not focus on one specific model. Instead, the remainder of the thesis will explore various parametric modifications to the \namedeqref{evolution equation of gravitational waves}{eq:grav_waves_evolution} that can result from a modified gravity theory. For such a modified gravity theory to be physically viable, the metric tensor perturbations must remain within constraints set by observations. In particular, any theory that exhibits \textbf{growing} tensor modes in cosmological evolution should be regarded with serious doubt, as their amplitude would likely be large enough today to be excluded by experiments. \todo{mention observations} \todo{add reference}
+Many theories of modified gravity are discussed in the literature \addref and this thesis will not focus on one specific model. Instead, the remainder of the thesis will explore various parametric modifications to the \namedeqref{evolution equation of gravitational waves}{eq:grav_waves_evolution} that can result from a modified gravity theory. For such a modified gravity theory to be physically viable, the metric tensor perturbations must remain within constraints set by observations. In particular, any theory that exhibits growing tensor modes in cosmological evolution should be regarded with serious doubt, as their amplitude would likely be large enough today to be excluded by experiments. \todo{mention observations} \addref \todo{introduce better}
 
-In an \fR{theory} without anisotropic stress, for example, the evolution equation becomes \citep{Xu2015,Hwang1996}
+In an \fR{theory} without anisotropic stress, for example, the evolution equation becomes \citep{Xu2015,Hwang1996} \todo{check Xu ref.}
 \begin{equation}
 	\ddconf{h} + \del{2 + \diff{\log{F}}{\efold}} \Hconf \dconf{h} + k^2 h = 0 \quad \text{with} \quad F \defeq \diff{f(\Rscal)}{\Rscal} \eqpunct{,}
 \end{equation}
@@ -379,7 +389,7 @@ thus adding an additional friction term. Furthermore, the propagation speed of g
     \text{or} \quad \ddefold{h} + \del{\frac{\defold{\Hconf}}{\Hconf} + 2 + \alphaM} \defold{h} + \frac{\cT^2 k^2}{\Hconf^2} h &= 0 \quad \text{in e-foldings \(\efold\)}
 \end{align}
 \end{subequations}
-where \(\alphaM\) denotes an additional friction term and \(\cT\) a deviation of the propagation speed from the speed of light. Both parameters may in general be time-dependent. The standard behaviour of general relativity discussed in \autoref{sec:perturb} is recovered for \(\alphaM=0\) and \(\cT=1\).
+where \(\alphaM\) denotes an additional friction term and \(\cT\) a deviation of the propagation speed from the speed of light. Both parameters may in general be time-dependent. The standard behaviour of general relativity discussed in \autoref{sec:perturb} is recovered for \(\alphaM=0\) and \(\cT=1\). This chapter will explore the evolution of gravitational waves in a modified gravity theory that reduces to a modification of one or both of these parameters to find constraints such that growing tensor modes are avoided.
 
 
 \section{Constant additional friction}\label{sec:param_friction_const}
@@ -395,7 +405,7 @@ First, initial conditions were chosen such that
 \begin{equation}
 	h(a \to 0) = 1 \quad \text{and} \quad \defold{h}(a \to 0) = 0 \eqpunct{.}
 \end{equation}\todo{write the limit like this?}
-Furthermore, a standard FRW background was assumed where the Hubble function is given by the \namedeqref{Friedmann equation}{eq:friedmann_normalized_dens}
+Furthermore, a standard \FLRW background was assumed where the Hubble function is given by the \namedeqref{Friedmann equation}{eq:friedmann_normalized_dens}
 \begin{equation}
 	\Hcosm(t) = \Hcosm_0 \sqrt{\sum_i\Dens_i(t)}
 	\eqpunct{.}
@@ -405,20 +415,20 @@ Only matter and dark energy contributions \(\Dens_\symbdust\) and \(\Dens_\cosmc
 	\Dens_\symbdust(t) = \Dens_\symbdust(t_0) a^{-3} \quad \text{and} \quad \Dens_\cosmconst(t) = 1 - \Dens_\symbdust(t_0)
 \end{equation}
 were obtained from the \cite{Planck} \todo{add reference to planck} results given in \autoref{tab:planck_data}.
-Lastly, the physical amplitude for the gravitational waves
+Lastly, the physical amplitude
 \begin{equation}
 	h_\textnormal{phys}(a) = \sqrt{A_\tenspert\del{\frac{k}{k_0}}^{n_\tenspert}} \cdot h(a)
 \end{equation}
-was also computed from the \cite{Planck} \todo{add reference} results given in \autoref{tab:planck_data}. \todo{explain phys. ampl.!}
+for gravitational waves was also computed from the \cite{Planck} \addref results given in \autoref{tab:planck_data}. \todo{explain phys. ampl.!}
 
 \plt{varying_aM}{Tensor perturbations \(\abs{h(a)}\) with additional friction \(\alphaM=\const\)}{Increasing \(\alphaM\) introduces more friction, so that the amplitude of the gravitational wave decreases more rapidly, but also delays the horizon entry.}
 
-In \autoref{fig:varying_aM}, the absolute value \(\abs{h(a)}\) is plotted in double-logarithmic scale \todo{better word?} for both positive and negative values of \(\alphaM\). Clearly, the amplitude of the gravitational wave decreases more rapidly for larger \(\alphaM\) because additional friction is introduced. However, also the horizon entry is delayed for larger \(\alphaM\) thus introducing a competing effect. This reproduces the behaviour found in \cite{Pettorino2014}. \todo{write this here?}
+In \autoref{fig:varying_aM}, the absolute value \(\abs{h(a)}\) is plotted in double-logarithmic scale \todo{better word?} for both positive and negative values of \(\alphaM\). The amplitude of the gravitational wave clearly decreases more rapidly for larger \(\alphaM\) since additional friction is introduced. However, also the horizon entry is delayed for larger \(\alphaM\) thus introducing a competing effect. \todo{elaborate} This reproduces the behaviour found in \cite{Pettorino2014}. \todo{write this here?}
 
 
 \subsection{Analytic solution in cosmological regimes}
 
-The \namedeqref{parametrized evolution equation}{eq:evolution_friction} can even be solved analytically in cosmological regimes dominated by one of the matter types discussed in \autoref{sec:frw}. The expansion of an FRW universe dominated by matter or radiation is given by \eqref{eq:frw_a_evol} or
+The \namedeqref{parametrized evolution equation}{eq:evolution_friction} can even be solved analytically in cosmological regimes dominated by one of the matter types discussed in \autoref{sec:frw}. The expansion of an \FLRW universe dominated by matter or radiation is given by \eqref{eq:frw_a_evol} or
 \begin{equation}
 	a(\conft) \propto \conft^{\nexpconft} \quad \text{with} \quad \nexpconft \defeq \frac{2}{1+3\eosp} \quad \text{in conformal time.}
 \end{equation}
@@ -431,7 +441,7 @@ This is a Bessel differential equation that has solutions in terms of Bessel fun
 \begin{equation}
 	h(\conft) = \conft^{-p} \sbr{C_1 \besselJ_p(\cT k \conft) + C_2 \besselY_p(\cT k \conft)} \quad \text{with} \quad p = \nexpconft\del{1 + \frac{\alphaM}{2}}-\frac{1}{2}
 \end{equation}
-where \(\besselJ_p(x)\) and \(\besselY_p(x)\) denote the Bessel functions of first and second kind, respectively. Their asymptotic behaviour for large \(k\) or late times \(\conft\) is given in \appref{app:bessel} and both correspond to oscillations with an amplitude decreasing as \(\conft^{-\frac{1}{2}}\). Therefore, the amplitude of gravitational waves with additional friction \(\alphaM\) behaves as
+where \(\besselJ_p(x)\) and \(\besselY_p(x)\) denote the Bessel functions of first and second kind, respectively. Their asymptotic behaviour for large modes~\(k\) or late times~\(\conft\) is given in \appref{app:bessel} and both correspond to oscillations with an amplitude decreasing as~\(\conft^{-\frac{1}{2}}\). Therefore, the amplitude of gravitational waves with additional friction ~\(\alphaM\) behaves as
 \begin{subequations}\label{eq:slope_const_friction}
 \begin{align}
 	h(\conft) &\propto \conft^{-p-\frac{1}{2}} = \conft^{-\nexpconft\del{1+\frac{\alphaM}{2}}} \\
@@ -453,13 +463,13 @@ The numerical result obtained before reflects this behaviour as presented in \au
 
 \section{Deviating propagation speed}
 
-To explore the effect a modified propagating speed has on the evolution of gravitational waves in a modified gravity theory, I consider a parametric deviation \(\cT\) from the speed of light in the \namedeqref{parametrized evolution equation}{eq:evolution_friction}. The deviation of the propagation speed as it appears in \eqref{eq:evolution_friction} changes the effective wavelength scale \(\frac{1}{\cT k}\) such that the horizon entry of the gravitational wave occurs later for smaller values of \(\cT\). The horizon entry is discussed in detail in the context of general relativity in \autoref{sec:frw}.
+To explore the effect a modified propagating speed has on the evolution of gravitational waves in a modified gravity theory, I consider a parametric deviation~\(\cT\) from the speed of light in the \namedeqref{parametrized evolution equation}{eq:evolution_friction}. The deviation of the propagation speed as it appears in \eqref{eq:evolution_friction} changes the effective wavelength scale \(\frac{1}{\cT k}\) such that the horizon entry of the gravitational wave occurs later for smaller values of \(\cT\). The horizon entry is discussed in detail in the context of general relativity in \autoref{sec:frw}.
 
-\autoref{fig:varying_cT} shows the evolution of gravitational waves for several values of \(\cT=\const\). The plots were obtained numerically with the \mmainline{ParametricNDSolve} function in Mathematica and the same assumptions and initial conditions as chosen in \autoref{sec:param_friction_const}.
+\autoref{fig:varying_cT} shows the evolution of gravitational waves for several values of \(\cT=\const\). The plots were obtained numerically with the \mmainline{ParametricNDSolve} function in Mathematica where the same assumptions and initial conditions as in \autoref{sec:param_friction_const} were chosen.
 
 \plt{varying_cT}{Tensor perturbations \(\abs{h(a)}\) with a modified propagation speed \(\cT=\const\)}{Gravitational waves with lower propagation speed \(\cT\) exhibit a delayed horizon entry.}
 
-Because gravitational waves with lower propagation speed \(\cT\) exhibit a delayed horizon entry, their amplitude today is closer to their initial value than for gravitational waves that propagate faster. An additional friction contribution \(\alphaM\) as discussed in \autoref{sec:param_friction_const} therefore is less effective for gravitational waves with lower \(\cT\) that enter the horizon later and thus have less time until today to decrease or increase in amplitude. This suggests a degeneracy between a modified propagation speed and an additional friction contribution, as both affect the amplitude of tensor perturbations measured today. A positive \(\alphaM\) that results in a faster decrease in amplitude can be compensated by a lower propagation speed \(\cT\) that in turn delays the horizon entry and thus gives the tensor mode less time to decrease. Also, the amount growing tensor modes increase in amplitude is reduced by a lower propagation speed.
+Because gravitational waves with lower propagation speed \(\cT\) exhibit a delayed horizon entry, their amplitude today is closer to their initial value than for gravitational waves that propagate faster. An additional friction contribution \(\alphaM\) as discussed in \autoref{sec:param_friction_const} therefore is less effective for gravitational waves with lower~\(\cT\) that enter the horizon later and thus have less time until today to decrease or increase in amplitude. This suggests a degeneracy between a modified propagation speed and an additional friction contribution, as both affect the amplitude of tensor perturbations measured today. A positive \(\alphaM\) that results in a faster decrease in amplitude can be compensated by a lower propagation speed \(\cT\) that in turn delays the horizon entry and thus gives the tensor mode less time to decrease. The amount growing tensor modes increase in amplitude is reduced by a lower propagation speed for the same reasons.
 
 \todo{is cT > 1 possible?}
 
@@ -468,52 +478,52 @@ Because gravitational waves with lower propagation speed \(\cT\) exhibit a delay
 
 Many theories of modified gravity aim to solve the \emph{new cosmological constant problem} presented in \autoref{sec:cc_problem_new}. This requires such theories to model the accelerated expansion of our universe today as described in \autoref{sec:cc_intro}. Proposed modifications to general relativity thus generally only affect late-time cosmological regimes \todo{add reference/example, maybe specific f(R) theory} where the \LCDM standard model of cosmology relies on dark energy to accelerate the universe. Therefore, suitable parametrized modifications to the \namedeqref{evolution equation of gravitational waves}{eq:evolution_friction} are time-dependent and vanish in early-time cosmological regimes to reflect this behaviour of modified gravity theories.
 
-In particular, I consider for the additional friction parametrized by \(\alphaM\) the time-dependent pa\-ra\-me\-tri\-za\-tion
+In particular, I consider for the additional friction~\(\alphaM\) the time-dependent pa\-ra\-me\-tri\-za\-tion
 \begin{equation}\label{eq:friction_param_powerlaw}
 	\alphaM(t) = \alphaMnot \cdot a(t)^\betaexp \quad \text{with} \quad \alphaMnot = \const \quad \text{and} \quad \betaexp > 0
 	\eqpunct{.}
 \end{equation}
-In an expanding universe where \(a(t) \in \sbr{0,1}\) monotonically increases with time, the additional friction contribution \(\alphaM\) vanishes at early times to recover general relativity, but deviates from \LCDM today.
+In an expanding universe where \(a(t) \in (0,1]\) monotonically increases with time, the additional friction contribution \(\alphaM\) vanishes at early times to recover general relativity, but deviates from \LCDM today.
 
-\autoref{fig:varying_aM0_beta} shows numerical solutions to the \namedeqref{evolution equation}{eq:evolution_friction} with this particular parametrization for \(\alphaM\) for various values of both \(\alphaMnot\) and \(\betaexp\). It was obtained with the \mmainline{ParametricNDSolve} function in Mathematica where the same initial conditions and assumption as in \autoref{sec:param_friction_const} were chosen. The special case \(\betaexp=0\) corresponds to constant friction \(\alphaM(t)=\alphaMnot\) as investigated in \autoref{sec:param_friction_const}. Increasing \(\betaexp\) to positive values reduces the additional friction at early times where \(a(t) < 1\). Larger values for \(\betaexp\) amplify this effect. \todo{include \autoref{fig:varying_beta} at all?}
+\autoref{fig:varying_aM0_beta} shows numerical solutions to the \namedeqref{evolution equation}{eq:evolution_friction} with this particular parametrization for \(\alphaM\) for various values of both \(\alphaMnot\) and \(\betaexp\). It was obtained with the \mmainline{ParametricNDSolve} function in Mathematica where the same initial conditions and assumption as in \autoref{sec:param_friction_const} were chosen. The special case \(\betaexp=0\) corresponds to constant friction \(\alphaM(t)=\alphaMnot\) as investigated in \autoref{sec:param_friction_const}. Increasing \(\betaexp\) to positive values reduces the additional friction at early times where \(a(t) < 1\). Larger values for \(\betaexp\) amplify this effect. \todo{include \autoref{fig:varying_beta} with varying \(\betaexp\) for const \(\alphaM\) at all?}
 
 \plt{varying_aM0_beta}{Tensor perturbations \(\abs{h(a)}\) with parametrized additional friction \(\alphaM(t) = \alphaMnot \cdot a(t)^\betaexp\)}{For positive \(\betaexp\), the evolution matches \LCDM at early times and deviates at late times. Increasing \(\abs{\alphaMnot}\) yields larger deviations from \LCDM at late times.}
 
-At late times, tensor modes will increase or decrease in amplitude with a slope approximating the behaviour of constant additional friction \(\alphaMnot\) discussed in \autoref{sec:param_friction_const}. However, tensor modes that grow in this regime according to \eqref{eq:grow_cond_const_fric} can be suppressed by a sufficiently large value of \(\betaexp\) remain physically viable. 
+At late times, tensor modes will increase or decrease in amplitude with a slope approximating the behaviour of constant additional friction \(\alphaMnot\) discussed in \autoref{sec:param_friction_const}. However, tensor modes that grow in this regime according to \eqref{eq:grow_cond_const_fric} can be suppressed by a sufficiently large value of \(\betaexp\) to remain physically viable. \todo{explain more what this means}
 
 
 \chapter{Gravitational Waves in Parametrized Bigravity}\label{ch:param_bigravity}
 
-Bigravity is a class of modified gravity theories introduced in \autoref{sec:cc_problem_new} where a second \emph{reference metric}~\(f\) in addition to the physical metric~\(g\) is considered. Matter only couples to the physical metric, but both metrics are coupled such that the evolution equation of gravitational waves in this bimetric setting becomes \citep{Amendola2015}
+Bigravity is a class of modified gravity theories introduced in \autoref{sec:cc_problem_new} where a second \emph{reference metric}~\(f\) in addition to the physical metric~\(g\) is considered. Matter only couples to the physical \(g\)-metric, but both metrics are coupled such that the evolution equation of gravitational waves in this bimetric setting becomes \citep{Amendola2015}
 \begin{subequations}\label{eq:evolution_bimetric}
 \begin{align}
 	\ddconf{h}\ofmetr{n} + \del{2 + \alphaMofmetr{n}} \Hconf \dconf{h}\ofmetr{n} + \del{\Hconf^2 \mofmetr{n}^2 + \cTofmetr{n}^2 k^2} h\ofmetr{n} = \Hconf^2 \qofmetr{n} h\ofmetr{m} \quad \text{in conformal time \(\conft\)} \\
     \text{or} \quad \ddefold{h}\ofmetr{n} + \del{\frac{\defold{\Hconf}}{\Hconf} + 2 + \alphaMofmetr{n}} \defold{h}\ofmetr{n} + \del{\mofmetr{n}^2 + \frac{\cTofmetr{n}^2 k^2}{\Hconf^2}} h\ofmetr{n} = \qofmetr{n} h\ofmetr{m} \quad \text{in e-foldings \(\efold\)}
 \end{align}
 \end{subequations}
-where the indices \(n,m \in \cbr{g,f}\) with \(n \neq m\) refer to the perturbations and parameters associated with the physical metric \(g\) and the reference metric \(f\), respectively. The additional friction terms~\(\alphaMofmetr{n}\) and the deviations from the speed of light~\(\cTofmetr{n}\) for each of the two metrics were discussed in \autoref{ch:param_mod_grav} in the context of unimetric modified gravity. Each metric also has an associated \emph{mass parameter}~\(\mofmetr{n}\) and a \emph{coupling}~\(\qofmetr{n}\) to the other metric. In the theory of bigravity, these parameters have specific, time-dependent forms that are given in \cite{Amendola2015}.
+where the indices \(n,m \in \cbr{g,f}\) with \(n \neq m\) refer to the perturbations and parameters associated with the physical metric \(g\) and the reference metric \(f\), respectively. The additional friction terms~\(\alphaMofmetr{n}\) and the deviations from the speed of light~\(\cTofmetr{n}\) for each of the two metrics were discussed in \autoref{ch:param_mod_grav} in the context of unimetric modified gravity. Each metric also has an associated \emph{mass parameter}~\(\mofmetr{n}\) and a \emph{coupling}~\(\qofmetr{n}\) to the other metric. In the theory of bigravity, these parameters have specific, time-dependent forms that are given in \cite{Amendola2015}. The effect the additional metric and mass parameters have on the evolution of gravitational waves will be discussed in this chapter.
 
 \section{Coupling to the reference metric}\label{sec:bimetric_coupling}
 
-Since the amplitude of tensor perturbations of the physical metric~\(g\) is severely constrained by cosmological observations, I neglect the coupling of the reference metric~\(f\) that is sourced by~\(h\ofmetr{g}\). Instead, I explore solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} with a non-zero coupling parameter~\(\qofmetr{g}=\const\). The non-standard behaviour of the reference metric that is governed by a choice of its associated parameters will therefore modify the evolution of the physical tensor perturbations~\(h\ofmetr{g}\). 
+Since the amplitude of physical tensor perturbations \(h\ofmetr{g}\) is severely constrained by cosmological observations, I neglect the coupling of the reference metric~\(f\) to~\(h\ofmetr{g}\). Instead, I explore solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} with a non-zero coupling parameter~\(\qofmetr{g}=\const\). The non-standard behaviour of the reference metric that is governed by a choice of its associated parameters will therefore modify the evolution of the physical tensor perturbations~\(h\ofmetr{g}\). 
 
 \autoref{fig:bimetric} depicts several solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} that were obtained numerically with the \mmainline{ParametricNDSolve} function in Mathematica. For both \(g\) and \(f\), the same assumptions and initial conditions as in \autoref{sec:param_friction_const} were chosen. In addition to the coupling \(\qofmetr{g}=1\), only the additional friction parameter of the \(f\)-metric was given a non-standard value such that its tensor perturbations grow in amplitude for \(\alphaMofmetr{f} < -2\) as discussed in \autoref{sec:param_friction_const}.
 
 \plt{bimetric}{Physical and reference metric perturbations with parametrized coupling~\(\qofmetr{g}=1\)}{The amplitude of the physical metric perturbations follows the slope of the reference metric perturbations at late times. Note that the coupling~\(\qofmetr{g}\) and the additional friction \(\alphaMofmetr{f}\) of the \(f\)-metric are the only non-standard parameters.}
 
-Because matter only couples to the physical metric~\(g\) whereas the reference metric~\(f\) is not directly observable, growing tensor modes for the reference metric are not in tension with experiments. \todo{a coupling between the metrics must exist for the theory to provide any modifications to observable gravity.} However, the coupling~\(\qofmetr{g}\) also leads to non-standard behaviour of the physical metric, although its other associated parameters remain unmodified. \autoref{fig:bimetric} shows that the physical metric perturbations follow the slope of the reference metric perturbations at late times and also exhibit a growing amplitude for sufficiently negative \(\alphaMofmetr{f}\) when coupled to the reference metric. In the specific bigravity model investigated in \cite{Amendola2015}, a similar behaviour is found for explicit, time-dependent expressions for the parameters that were considered constant here.
+Because matter only couples to the physical metric~\(g\) whereas the reference metric~\(f\) is not directly observable, tensor modes for the reference metric are not constrained by experiments. \todo{a coupling between the metrics must exist for the theory to provide any modifications to observable gravity.} However, the coupling~\(\qofmetr{g}\) also leads to non-standard behaviour of the physical metric, although its other associated parameters remain unmodified. \autoref{fig:bimetric} shows that the physical metric perturbations follow the slope of the reference metric perturbations at late times and also exhibit a growing amplitude for sufficiently negative \(\alphaMofmetr{f}\) when coupled to the reference metric. In the specific bigravity model investigated in \cite{Amendola2015}, a similar behaviour is found for explicit, time-dependent expressions for the parameters that were considered constant here. \todo{elaborate?}
 
 
 \section{Non-zero mass parameter}
 
-The numerical solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} obtained in \autoref{sec:bimetric_coupling} also allow for a brief discussion of the mass parameter~\(\mofmetr{n}\) for both metrics \(n \in \cbr{g,f}\). \autoref{fig:varying_mg} shows the evolution of the physical metric perturbations~\(\abs{h\ofmetr{g}(a)}\) for various values of its mass parameter~\(\mofmetr{g}\) and all other parameters set to their standard value. Because the mass parameter appears as a positive contribution to the effective wavelength mode \(\cT k\) in \eqref{eq:evolution_bimetric}, larger values of \(\mofmetr{n}\) will advance the horizon entry of the tensor mode. A degeneracy between the mass parameter and a deviating propagation speed \(\cT\) is to be expected.
+The numerical solutions of the \namedeqref{parametrized bimetric evolution equation}{eq:evolution_bimetric} obtained in \autoref{sec:bimetric_coupling} also allow for a brief discussion of the mass parameter~\(\mofmetr{n}\) for both metrics \(n \in \cbr{g,f}\). \autoref{fig:varying_mg} shows the evolution of the physical metric perturbations~\(\abs{h\ofmetr{g}(a)}\) for various values of its mass parameter~\(\mofmetr{g}\) and all other parameters set to their standard value. Because the mass parameter appears as an additive contribution to the effective wavelength mode \(\cT k\) in \eqref{eq:evolution_bimetric}, larger values of \(\mofmetr{n}\) will advance the horizon entry of the tensor mode. A degeneracy between the mass parameter and a deviating propagation speed \(\cT\) is to be expected. \todo{elaborate?}
 
-\plt{varying_mg}{Tensor perturbations with non-zero mass parameter~\(\mofmetr{g}\)}{}
+\plt{varying_mg}{Tensor perturbations with non-zero mass parameter~\(\mofmetr{g}\)}{ Due to the additive contribution to the effective wavelength mode \(\cT k\), increasing the mass parameter~\(\mofmetr{g}\) will advance the horizon crossing of the gravitational wave.}
 
 
 \section{Decoupling at early times}
 
-Bimetric modified gravity theories, like unimetric theories, usually deviate from \LCDM only at late times to provide an accelerated expansion of the universe without a cosmological constant. \todo{add reference} This is discussed in more detail in \autoref{sec:param_friction_late}. For physically viable bimetric theories it is therefore reasonable to assume that the metrics decouple in early-time cosmological regimes where the physical metric~\(g\) behaves unmodified but the reference metric can exhibit arbitrary dynamics.
+Bimetric modified gravity theories, like unimetric theories, usually deviate from \LCDM only at late times to provide an accelerated expansion of the universe without a cosmological constant. \addref This is discussed in more detail in \autoref{sec:param_friction_late}. For physically viable bimetric theories it is therefore reasonable to assume that the metrics decouple in early-time cosmological regimes where the physical metric~\(g\) behaves unmodified but the reference metric can exhibit arbitrary dynamics.
 
 A specific bimetric model is investigated in \cite{Amendola2015}, for example, where the physical and reference metric decouple at early times. The authors found that for sub-horizon modes in radiation and matter dominated eras also the mass parameters become negligible in this model. Therefore, the evolution of tensor perturbations for both metrics reduce to the \namedeqref{unimetric parametrized evolution equation}{eq:evolution_friction} with parameters \citep{Amendola2015}
 \begin{subequations}
@@ -524,13 +534,13 @@ A specific bimetric model is investigated in \cite{Amendola2015}, for example, w
 \end{subequations}
 where the physical metric remains entirely standard such that the amplitude of tensor perturbations \(h\ofmetr{g}\) falls like \(\frac{1}{a}\) according to \eqref{eq:slope_const_friction}. However, the reference metric tensor perturbations~\(h\ofmetr{f}\) with \(\alphaMofmetr{f}<-2\) in \eqref{eq:bigr_amendola_param} grow in amplitude like \(a^1\) in radiation domination and \(a^\frac{1}{2}\) in matter domination.
 
-When the coupling~\(\qofmetr{g}\) becomes relevant at appropriate late times, the behaviour explored in \autoref{sec:bimetric_coupling} must be taken into consideration such that the physical metric perturbations do not exceed observational constraints by coupling to growing reference metric tensor modes. A detailed analysis of tensor perturbation can provide crucial insight about the physical viability of bimetric theories. \todo{move to summary}
+When the coupling~\(\qofmetr{g}\) becomes relevant at appropriate late times, the behaviour explored in \autoref{sec:bimetric_coupling} must be taken into consideration such that the physical metric perturbations do not exceed observational constraints by coupling to growing reference metric tensor modes. A detailed analysis of tensor perturbation can provide crucial insight about the physical viability of bimetric theories. \todo{move to summary?}
 
 
 
 \chapter{Summary}\label{ch:summary}
 
-Gravitational waves are tensor perturbations of the FRW spacetime metric in vacuum that solve the perturbed Einstein equations in general relativity. Primordial gravitational waves originate in the early universe and could be observed in the polarization of the cosmic microwave background. Precise measurements severely constrain the amplitude of tensor perturbations.
+Gravitational waves are tensor perturbations of the \FLRW spacetime metric in vacuum that solve the perturbed Einstein equations in general relativity. Primordial gravitational waves originate in the early universe and could be observed in the polarization of the cosmic microwave background. Precise measurements severely constrain the amplitude of tensor perturbations.
 
 \todo{summarize...}
 
@@ -552,9 +562,9 @@ To derive the Einstein equations, we begin with the Einstein-Hilbert action
 \end{align}
 
 
-\section{Derivation of the FRW metric from the cosmological principle}\label{app:deriv_frw}
+\section{Derivation of the \FLRW metric from the cosmological principle}\label{app:deriv_frw}
 
-\section{Time evolution of the scale factor in an FRW universe}\label{app:deriv_frw_a_evol}
+\section{Time evolution of the scale factor in an \FLRW universe}\label{app:deriv_frw_a_evol}
 
 \begin{align}
 	0 &= \dt{\rho} + 3\Hcosm\del{\rho + p} = \dt{\rho} + \Hcosm\rho \nexp \quad \text{with} \quad \nexp \defeq 3\del{1 + \eosp} \\
