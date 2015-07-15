@@ -4,7 +4,8 @@
 
 % Geometry
 \usepackage[onehalfspacing]{setspace}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[a4paper,width=150mm,top=30mm,bottom=30mm,bindingoffset=6mm]{geometry}
+% bindingoffset=6mm
 
 % Links
 \usepackage{color,xcolor}
@@ -50,12 +51,11 @@
 %\usepackage[textheight=640pt]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\AtBeginDocument{
-	\fancyhf{}
-	\lhead{\textit{\nouppercase{\leftmark}}}
-	\rhead{\thepage}
-	\renewcommand{\headrulewidth}{0.2pt}
-}
+\fancyhf{}
+\fancyhead[LO,RE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[RO,LE]{\thepage}
+%\fancyfoot[RO,LE]{\includegraphics[height=1cm]{images/plus_ini\arabic{page}}}
+\renewcommand{\headrulewidth}{0.2pt}
 
 
 % Headings
