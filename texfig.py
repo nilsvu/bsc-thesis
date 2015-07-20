@@ -41,10 +41,10 @@ import matplotlib.pyplot as plt
 
  
 # Simple plot
-def figure(width=default_width, ratio=default_ratio, *args, **kwargs):
+def figure(width=default_width, ratio=default_ratio, pad=0, *args, **kwargs):
     fig = plt.figure(figsize=(width, width*ratio), *args, **kwargs)
     fig.set_tight_layout({
-        'pad': 0
+        'pad': pad
     })
     return fig
     

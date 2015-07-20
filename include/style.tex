@@ -4,13 +4,18 @@
 
 % Geometry
 \usepackage[onehalfspacing]{setspace}
-\usepackage[a4paper,width=150mm,top=30mm,bottom=30mm,bindingoffset=6mm]{geometry}
-% bindingoffset=6mm
+\usepackage[a4paper,width=150mm,top=30mm,bottom=30mm]{geometry}
+% bindingoffset=6mm % PRINTOPTION
 
 % Links
 \usepackage{color,xcolor}
 \definecolor{uhd}{RGB}{196,19,47}
-\usepackage[colorlinks=true,allcolors=uhd]{hyperref}
+\usepackage[
+	colorlinks=true,
+	allcolors=uhd,
+    pdfauthor={Nils Fischer},
+	pdftitle={Gravitational Waves in Modified Gravity}]{hyperref}
+% monochrome % PRINTOPTION
 \newcommand{\namedeqref}[2]{\hyperref[#2]{#1}~\eqref{#2}}
 \newcommand{\appref}[1]{\hyperref[#1]{Appendix~\ref{#1}}}
 
@@ -51,26 +56,61 @@
 \usepackage{booktabs} % for hline rules
 
 % Page Layout
-%\pagestyle{headings}
-%\usepackage[textheight=640pt]{geometry}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+%\pagestyle{fancy} % called in document
 \fancyhf{}
-\fancyhead[LO,RE]{\textit{\nouppercase{\leftmark}}}
-\fancyhead[RO,LE]{\thepage}
-%\fancyfoot[RO,LE]{\includegraphics[height=1cm]{images/plus_ini\arabic{page}}}
+\fancyhead[L]{
+    \textit{\nouppercase{\leftmark}}
+}
+% PRINTOPTION
+%\fancyhead[LE]{
+%    \textit{\nouppercase{\leftmark}}
+%}
+%\fancyhead[RO]{
+%	\textit{\nouppercase{\rightmark}}
+%}
+\newcommand{\vcenteredicon}[1]{
+	\begingroup
+	\setbox0=\hbox{
+		\scalebox{0.2}{
+			\input{#1}
+	    }
+	}\parbox{\wd0}{\box0}
+	\endgroup
+}
+\fancyfoot[C]{
+	\vcenteredicon{paging_animation/continuous_\arabic{page}.pgf} \thepage
+}
+% PRINTOPTION
+%\fancyfoot[RO]{
+%	\vcenteredicon{paging_animation/alternating_\arabic{page}.pgf} \thepage
+%}
+%\fancyfoot[LE]{
+%	\thepage \vcenteredicon{paging_animation/alternating_\arabic{page}.pgf}
+%}
 \renewcommand{\headrulewidth}{0.2pt}
 
-
-% Headings
-%\usepackage[bf]{titlesec}
-%\titleformat{\chapter}[display]{\large\bfseries}{\chaptertitlename\ \thechapter}{5pt}{\large}% NEW
-%\titlespacing*{\chapter}{0pt}{30pt}{20pt}% NEW
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\fancyfoot[C]{
+		\vcenteredicon{paging_animation/continuous_\arabic{page}.pgf} \thepage
+	}
+% PRINTOPTION
+%	\fancyfoot[RO]{
+%		\vcenteredicon{paging_animation/alternating_\arabic{page}.pgf} \thepage
+%	}
+%	\fancyfoot[LE]{
+%		\thepage \vcenteredicon{paging_animation/alternating_\arabic{page}.pgf}
+%	}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
 
 
 % Bibliography
-\usepackage{natbib}
-\bibliographystyle{plainnat}
+\usepackage[style=numeric-comp, backend=biber, maxnames=10, maxcitenames=2]{biblatex}
+\addbibresource{Bachelorarbeit.bib}
+%\nocite{*} % print all references, even those not used
 
 % Appendix
 \usepackage[toc,page]{appendix}
