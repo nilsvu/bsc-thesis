@@ -1,6 +1,6 @@
 
 % General
-\usepackage[english]{babel}
+\usepackage[ngerman,english]{babel}
 
 % Geometry
 \usepackage[onehalfspacing]{setspace}
@@ -26,8 +26,8 @@
 \setmonofont[Scale=MatchLowercase]{Menlo}
 
 % Symbols
-\newcommand{\LCDM}{$\cosmconst$CDM }
-\newcommand{\FLRW}{FLRW }
+\newcommand{\LCDM}{$\cosmconst$CDM}
+\newcommand{\FLRW}{FLRW}
 \newcommand{\fR}[1]{\(f(\Rscal)\)~#1}
 
 % Equations
@@ -37,6 +37,9 @@
 % Units
 \usepackage{siunitx}
 \DeclareSIUnit\parsec{pc}
+\sisetup{
+	separate-uncertainty = true
+}
 
 % Images
 \usepackage{pgf}
