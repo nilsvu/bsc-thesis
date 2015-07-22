@@ -1,15 +1,13 @@
-\documentclass[12pt,oneside,parskip=half]{scrreprt}
-% twoside % PRINTOPTION
+\documentclass[print,twoside]{bsc}
 
-\input{include/style}
-\input{include/mathformat}
+\title{Gravitational Waves in Modified Gravity}
+\author{Nils Fischer}
+\date{July 22, 2015}
+
 \input{include/codestyle}
+\input{include/macros}
 
-\AtBeginDocument{
-	\title{Gravitational Waves in Modified Gravity}
-	\author{Nils Fischer}
-	\date{July 22, 2015}
-}
+\addbibresource{bsc.bib}
 
 
 \begin{document}
@@ -18,50 +16,33 @@
 % Front matter
 \pagenumbering{Roman}
 
-
-\input{include/titlepage}
-
-
-\input{include/abstract}
-
+\input{content/titlepage}
+\input{content/abstract}
 
 \cleardoublepage
-
-%\addtocontents{toc}{\protect\thispagestyle{empty}}
 \tableofcontents
-
-%\addtocontents{lof}{\protect\thispagestyle{empty}}
 \listoffigures
-
-
 
 % Main matter
 \cleardoublepage\pagenumbering{arabic}
 
 
-\input{include/contents}
-
+\input{content/main}
 
 
 % Back matter
 
-
-\input{include/acknowledgments}
-
+\input{content/acknowledgments}
 
 \cleardoublepage
 \begin{appendices}
-
-\input{include/mathematical_appendix}
-
-\input{include/anthropic}
-
+\input{content/mathematical_appendix}
+\input{content/anthropic}
 \end{appendices}
-
 
 \printbibliography
 
+\input{content/declaration}
 
-\input{include/declaration}
 
 \end{document}
