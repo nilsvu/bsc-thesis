@@ -34,6 +34,9 @@ mpl.rcParams.update({
         r"\newcommand{\mofmetr}[1]{m\ofmetr{#1}}",
         r"\newcommand{\cTofmetr}[1]{\cT\ofmetr{#1}}",
         r"\newcommand{\qofmetr}[1]{q\ofmetr{#1}}",
+        r"\newcommand{\hplus}{h_+}",
+        r"\newcommand{\hcross}{h_x}",
+        r"\newcommand{\LCDM}{LCDM}",
     ],
 })
 

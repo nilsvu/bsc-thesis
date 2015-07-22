@@ -41,6 +41,8 @@ def plot_particles(phi, A=0.25, ax=None, n=8, pol='+', title=None):
         tic.label1On = tic.label2On = False
     
 
+# tensorial deformation figure
+
 # fig = texfig.figure(pad=1)
 #
 # n = 12
@@ -56,10 +58,10 @@ def plot_particles(phi, A=0.25, ax=None, n=8, pol='+', title=None):
 #         j -= m
 #     if j == 0:
 #         if pol == 'x':
-#             poltxt = r'x'
+#             poltxt = r'cross'
 #         else:
-#             poltxt = r'+'
-#         t = ax.text(-0.2, 0.5, r'$h_\mathrm{'+poltxt+'}$', horizontalalignment='right', verticalalignment='center', transform=ax.transAxes)
+#             poltxt = r'plus'
+#         t = ax.text(-0.2, 0.5, r'$\h'+poltxt+'$', horizontalalignment='right', verticalalignment='center', transform=ax.transAxes)
 #         add.append(t)
 #     title = None
 #     if i < m:
@@ -69,24 +71,31 @@ def plot_particles(phi, A=0.25, ax=None, n=8, pol='+', title=None):
 # texfig.savefig('plots/grav_wave_deform', additional_artists=add, bbox_inches='tight')
 
 
-def page_plot(p, phi, pol, prefix):
+# paging animation
+
+def page_plot(p, f, prefix, p_front=0, alternating=False):
+    if alternating:
+        f = f / 2.
+        if p % 2 == 0:
+            pol = '+'
+            pphi = p
+        else:
+            pol = 'x'
+            pphi = p - 3
+    else:
+        pol = '+'
+        pphi = p
+
+    phi = pphi * f
+
     plt.clf()
     fig = texfig.figure(width=1.5, ratio=1)
     ax = fig.add_subplot(111, aspect='equal')
     plot_particles(phi=phi, ax=ax, pol=pol)
     ax.axis('off')
-    texfig.savefig('paging_animation/' + prefix + str(p+1))
+    texfig.savefig('paging_animation/' + prefix + str(p+1+p_front))
 
-# for p in np.arange(50):
-#     if p % 2 == 0:
-#         pol = '+'
-#         pphi = p / 2
-#     else:
-#         pol = 'x'
-#         pphi = (p - 1) / 2
-#     page_plot(p=p, phi=pphi*const.pi/8, pol=pol, prefix='alternating_')
-#     print(str(p+1) + ' done.')
-    
-for p in np.arange(50):
-    page_plot(p=p, phi=p*const.pi/8, pol='+', prefix='continuous_')
+for p in np.arange(70):
+    page_plot(p=p, f=const.pi/8, prefix='alternating_', p_front=4, alternating=True)
+#    page_plot(p=p, f=const.pi/8, prefix='continuous_', p_front=2)
     print(str(p+1) + ' done.')

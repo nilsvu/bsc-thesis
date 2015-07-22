@@ -22,6 +22,12 @@
 %%   \newcommand{\betaexp}{\beta}
 %%   \newcommand{\ofmetr}[1]{_#1}
 %%   \newcommand{\alphaMofmetr}[1]{\alphaM\ofmetr{#1}}
+%%   \newcommand{\mofmetr}[1]{m\ofmetr{#1}}
+%%   \newcommand{\cTofmetr}[1]{\cT\ofmetr{#1}}
+%%   \newcommand{\qofmetr}[1]{q\ofmetr{#1}}
+%%   \newcommand{\hplus}{h_+}
+%%   \newcommand{\hcross}{h_x}
+%%   \newcommand{\LCDM}{LCDM}
 %%   \usepackage{fontspec}
 %%
 \begingroup%
@@ -6301,8 +6307,8 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.626543in}{0.403750in}}%
 \pgfpathlineto{\pgfqpoint{2.057832in}{0.403750in}}%
-\pgfpathlineto{\pgfqpoint{2.057832in}{1.057082in}}%
-\pgfpathlineto{\pgfqpoint{0.626543in}{1.057082in}}%
+\pgfpathlineto{\pgfqpoint{2.057832in}{1.068860in}}%
+\pgfpathlineto{\pgfqpoint{0.626543in}{1.068860in}}%
 \pgfpathclose%
 \pgfusepath{stroke,fill}%
 \end{pgfscope}%
@@ -6313,12 +6319,12 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,1.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.704320in}{0.973749in}}%
-\pgfpathlineto{\pgfqpoint{0.859876in}{0.973749in}}%
+\pgfpathmoveto{\pgfqpoint{0.704320in}{0.985527in}}%
+\pgfpathlineto{\pgfqpoint{0.859876in}{0.985527in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.982098in,y=0.934860in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \alphaM=-1\)}}%
+\pgftext[x=0.982098in,y=0.946638in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \alphaM=-1\)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -6327,12 +6333,12 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.704320in}{0.818860in}}%
-\pgfpathlineto{\pgfqpoint{0.859876in}{0.818860in}}%
+\pgfpathmoveto{\pgfqpoint{0.704320in}{0.825082in}}%
+\pgfpathlineto{\pgfqpoint{0.859876in}{0.825082in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.982098in,y=0.779972in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \alphaM=0\)}}%
+\pgftext[x=0.982098in,y=0.786194in,left,base]{{\rmfamily\fontsize{8.000000}{9.600000}\selectfont \(\displaystyle \alphaM=0\) (\LCDM{})}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

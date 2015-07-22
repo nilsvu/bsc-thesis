@@ -1,0 +1,131 @@
+\cleardoublepage
+\chapter{Mathematical Appendix}
+
+\section{Time evolution of the Scale Factor in an \FLRW{} Universe}\label{app:deriv_frw_a_evol}
+
+A time derivate of the \namedeqref{Friedmann equation}{eq:friedmann} leads to
+\begin{align}
+	0 &= \dt{\dens} + 3\Hcosm\del{\dens + p} = \dt{\dens} + \Hcosm\dens \cdot \nexp
+	\eqpunct{.}
+\end{align}
+Substituting e-folds for cosmic time with
+\begin{equation}
+	\dt{\dens} = \diff{\dens}{\efold} \diff{\efold}{t} = \Hcosm \diff{\dens}{\efold}
+\end{equation}
+gives then a differential equation
+\begin{equation}
+	\diff{\dens}{\efold} = -\dens \cdot \nexp
+\end{equation}
+for \(\dens(a)\) that is solved by
+\begin{equation}
+	\dens(a) \propto a^{-\nexp}
+	\eqpunct{.}
+\end{equation}
+Inserting~\eqref{eq:frw_dens_evol} into the \namedeqref{Friedmann equation}{eq:friedmann} gives another differential equation for the scale factor~\(a(t)\)
+\begin{equation}
+	\dt{a} \propto a^{-\frac{\nexp}{2}+1}
+\end{equation}
+assuming the case \(\spatcurv=0\). It has the solutions
+\begin{equation}
+	a(t) \propto
+	\begin{cases}
+		t^{\frac{2}{\nexp}} &\text{for \(\eosp\neq-1\)} \\
+		\eul^{\Hcosm t} &\text{for \(\eosp=-1\)}
+	\end{cases}
+\end{equation}
+that are discussed in \autoref{sec:frw}.
+
+
+\section{Accelerating effect of a Cosmological Constant}\label{app:deriv_acc_exp_lambda}
+
+Considering the \namedeqref{acceleration equation}{eq:acceleration}, any fluid species with
+\begin{equation}\label{eq:acc_cond}
+	\dens + 3 p < 0 \iff \eosp < -\frac{1}{3}
+\end{equation}
+will accelerate the expansion of the universe.
+
+The cosmological constant in the \namedeqref{Einstein equations}{eq:einstein_eqns} resembles a homogeneous energy density with stress-energy tensor
+\begin{equation}
+	\Ttens_{\cosmconst\textnormal{,}\mu\nu} = - \cosmconst g_{\mu\nu}
+\end{equation}
+that, compared to the \namedeqref{stress-energy tensor of a perfect fluid}{eq:perfect_fluid}, corresponds to
+\begin{equation}
+	p_\cosmconst = -\cosmconst \quad \text{and} \quad p_\cosmconst = -\dens_\cosmconst
+	\eqpunct{.}
+\end{equation}
+Thus, it has the phenomenology of a negative pressure or equation of state parameter
+\begin{equation}
+	\eosp_\cosmconst = -1
+\end{equation}
+with the accelerating effect found in \eqref{eq:acc_cond}.
+
+
+\section{Decomposition of Metric Perturbations}\label{app:deriv_decompose}
+
+The parametrization for the metric tensor perturbation
+\begin{align}
+	\delta g = -2A \dxdx{0}{0} + B_i\del{\dxdx{0}{i} + \dxdx{i}{0}} + \del{2C\gamma_{ij} + 2E_{ij}}\dxdx{i}{j}
+\end{align}
+for small spatial scalar fields~\(A(x^0)\) and~\(C(x^0)\), a vector field~\(B_i(x^0)\) and a symmetric, traceless tensor field~\(E_{ij}(x^0)\) is a choice to describe its 10 degrees of freedom. \(\gamma_{ij}\) denotes a Riemannian metric for the tree-dimensional spatial subspace.
+
+The Helmholtz theorem allows us to decompose the parameters as \autocite{Schuller,Weinberg}
+\begin{align}
+	&A = \tilde{A}\\
+	&B_i = \covd_i \tilde{B} + \tilde{B}_i \\
+	&C = \tilde{C}\\
+	&E_{ij} = \del{\covd_i\covd_j-\frac{1}{3}\gamma_{ij}\gamma^{\mu\nu}\covd_\mu\covd_\nu}\tilde{E} + 2 \covd_{(i}\tilde{E}_{j)} + \tilde{E}_{ij}
+\end{align}
+where \(\covd\) denotes the Levi-Civita covariant derivative with respect to \(\gamma\). \(\tilde{B}\), \(\tilde{C}\) and \(\tilde{E}\) are scalar fields, \(\tilde{B}_i\) and \(\tilde{E}_i\) are divergence-free vector fields with
+\begin{equation}
+	\covd_i \tilde{B}^i = 0 \quad \text{and} \quad \covd_i \tilde{E}^i = 0
+\end{equation}
+and \(\tilde{E}_{ij}\) is a symmetric, traceless and divergence-free tensor field with
+\begin{equation}\label{eq:tt_gauge_cond}
+	\tilde{E}_{ij} = \tilde{E}_{ji} \eqpunct{,} \quad \gamma^{ij}\tilde{E}_{ij} = 0 \quad \text{and} \quad \covd^i \tilde{E}_{ij} = 0
+	\eqpunct{.}
+\end{equation}
+
+Reordering the metric tensor perturbation in this decomposition then gives
+\begin{equation}
+	\delta g = \delta g^{\mathrm{scalar}} + \delta g^{\mathrm{vector}} + \delta g^{\mathrm{tensor}} \\
+\end{equation}
+\begin{align}
+	\begin{split}
+	\text{with} \quad &\delta g^{\mathrm{scalar}} = -2\tilde{A} \dxdx{0}{0} + \covd_i\tilde{B}\del{\dxdx{0}{i} + \dxdx{i}{0}} \\
+		&\qquad + 2\sbr{\tilde{C}\gamma_{ij} + \del{\covd_i\covd_j-\frac{1}{3}\gamma_{ij}\gamma^{\mu\nu}\covd_\mu\covd_\nu}\tilde{E}}\dxdx{i}{j}
+	\end{split} \eqpunct{,} \\
+	&\delta g^{\mathrm{vector}} = \tilde{B}_i\del{\dxdx{i}{0} + \dxdx{0}{i}} + 4 \covd_{(i}\tilde{E}_{j)}\dxdx{i}{j} \\
+	\text{and} \quad &\delta g^{\mathrm{tensor}} = 2 \tilde{E}_{ij}\dxdx{i}{j}
+	\eqpunct{.}
+\end{align}
+When considering general coordinate transformation, only two scalar, one vector and the tensor contribution remain unaffected and constitute the \emph{gauge invariant} quantities \autocite{Schuller,Weinberg}.
+
+Throughout the thesis, the tensor perturbations denoted by~\(h_{ij}\) are related to the parametrization above by
+\begin{equation}
+	h_{ij} = 2 \tilde{E}_{ij}
+\end{equation}
+and therefore fulfill the same conditions \eqref{eq:tt_gauge_cond}.
+
+
+\section{Bessel functions}\label{app:bessel}
+
+The \emph{Bessel differential equation}
+\begin{equation}
+	f''(x) + \left(2p+1\right)\frac{1}{x} f'(x) + \left(\alpha^2 + \frac{\beta^2}{x^2}\right) f(x) = 0 \\
+\end{equation}
+has solutions \autocite{Bowman,Boas}
+\begin{equation}
+	f(x) = x^{-p} \left[C_1 \besselJ_q(\alpha x) + C_2 \besselY_q(\alpha x)\right] \quad \text{with} \quad q = \sqrt{p^2 - \beta^2}
+\end{equation}
+where \(\besselJ_q(x)\) and \(\besselY_q(x)\) denote the \emph{Bessel functions of first and second kind}, respectively, that are given by \autocite{Bowman,Boas}
+\begin{align}
+	&\besselJ_q(x) = \sum_{n=0}^{\infty} \frac{\del{-1}^n}{\Gamma(n+1)\Gamma(n+1+q)}\del{\frac{x}{2}}^{2n+q} \\
+	\text{and} \quad &\besselY_q(x) = \frac{\cos\del{\pi q}\besselJ_q(x) - \besselJ_{-q}(x)}{\sin\del{\pi q}}
+	\eqpunct{.}
+\end{align}
+Their asymptotic behaviour for large \(x\) is \autocite{Boas}
+\begin{align}
+	\besselJ_q(x) &\to \sqrt{\frac{2}{\pi x}} \cos\del{x-\frac{2q+1}{4}\pi} + \mathcal{O}(x^{-\frac{3}{2}}) \\
+	\besselY_q(x) &\to \sqrt{\frac{2}{\pi x}} \sin\del{x-\frac{2q+1}{4}\pi} + \mathcal{O}(x^{-\frac{3}{2}})
+	\eqpunct{.}
+\end{align}

@@ -22,6 +22,12 @@
 %%   \newcommand{\betaexp}{\beta}
 %%   \newcommand{\ofmetr}[1]{_#1}
 %%   \newcommand{\alphaMofmetr}[1]{\alphaM\ofmetr{#1}}
+%%   \newcommand{\mofmetr}[1]{m\ofmetr{#1}}
+%%   \newcommand{\cTofmetr}[1]{\cT\ofmetr{#1}}
+%%   \newcommand{\qofmetr}[1]{q\ofmetr{#1}}
+%%   \newcommand{\hplus}{h_+}
+%%   \newcommand{\hcross}{h_x}
+%%   \newcommand{\LCDM}{LCDM}
 %%   \usepackage{fontspec}
 %%
 \begingroup%

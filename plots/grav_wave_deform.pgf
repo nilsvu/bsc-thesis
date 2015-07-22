@@ -25,6 +25,9 @@
 %%   \newcommand{\mofmetr}[1]{m\ofmetr{#1}}
 %%   \newcommand{\cTofmetr}[1]{\cT\ofmetr{#1}}
 %%   \newcommand{\qofmetr}[1]{q\ofmetr{#1}}
+%%   \newcommand{\hplus}{h_+}
+%%   \newcommand{\hcross}{h_x}
+%%   \newcommand{\LCDM}{LCDM}
 %%   \usepackage{fontspec}
 %%
 \begingroup%
@@ -327,7 +330,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.292709in,y=1.819461in,right,]{{\rmfamily\fontsize{12.000000}{14.400000}\selectfont \(\displaystyle h_\mathrm{+}\)}}%
+\pgftext[x=0.292709in,y=1.819461in,right,]{{\rmfamily\fontsize{12.000000}{14.400000}\selectfont \(\displaystyle \hplus\)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgftext[x=0.963103in,y=2.607185in,,base]{{\rmfamily\fontsize{14.400000}{17.280000}\selectfont \(\displaystyle 0\)}}%
@@ -1735,7 +1738,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=0.292709in,y=0.578853in,right,]{{\rmfamily\fontsize{12.000000}{14.400000}\selectfont \(\displaystyle h_\mathrm{x}\)}}%
+\pgftext[x=0.292709in,y=0.578853in,right,]{{\rmfamily\fontsize{12.000000}{14.400000}\selectfont \(\displaystyle \hcross\)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%

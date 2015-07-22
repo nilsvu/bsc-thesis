@@ -2,6 +2,7 @@
 \usepackage{esdiff} % derivatives
 \usepackage{commath} % math macros
 \usepackage{bbm} % blackboard style symbols
+\usepackage{xfrac}
 
 % Symbols
 \newcommand{\Rscal}{\mathcal{R}} % Ricci scalar
@@ -29,14 +30,14 @@
 \newcommand{\dens}{\rho} % density
 \newcommand{\denscrit}{\rho_\textnormal{crit}} % density
 \newcommand{\Dens}{\Omega} % normalized density
-\newcommand{\symbdust}{\mathrm{d}} % normalized density
+\newcommand{\symbdust}{\mathrm{m}} % normalized density
 \newcommand{\symbrad}{\gamma} % normalized density
 % Parametrization
 \newcommand{\alphaM}{{\alpha_{\textnormal{\tiny{M}}}}} % parametrized friction
 \newcommand{\tenspert}{\textnormal{\tiny{T}}}
 \newcommand{\scalpert}{\textnormal{\tiny{S}}}
 \newcommand{\cT}{{c_\tenspert}} % parametrized propagation speed
-\newcommand{\const}{\textnormal{\textit{const.}}} % constant parameter
+\newcommand{\const}{\textnormal{\textit{const}}} % constant parameter
 \newcommand{\alphaMnot}{\alphaM_0} % parametrized power law friction amplitude
 \newcommand{\betaexp}{\beta} % parametrized power law friction exponent
 \newcommand{\ofmetr}[1]{_{#1}}
@@ -63,3 +64,4 @@
 \newcommand{\idmat}{\mathbbm{1}}
 \newcommand{\covd}{\nabla}
 \newcommand{\eul}{\mathrm{e}}
+\newcommand{\dxdx}[2]{\dif{x^{#1}}\otimes\dif{x^{#2}}}

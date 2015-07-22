@@ -25,6 +25,9 @@
 %%   \newcommand{\mofmetr}[1]{m\ofmetr{#1}}
 %%   \newcommand{\cTofmetr}[1]{\cT\ofmetr{#1}}
 %%   \newcommand{\qofmetr}[1]{q\ofmetr{#1}}
+%%   \newcommand{\hplus}{h_+}
+%%   \newcommand{\hcross}{h_x}
+%%   \newcommand{\LCDM}{LCDM}
 %%   \usepackage{fontspec}
 %%
 \begingroup%
@@ -73,39 +76,39 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.115745in}{0.384255in}%
+\pgfsys@transformshift{1.200221in}{0.299779in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.267241in}{0.750000in}%
+\pgfsys@transformshift{1.267241in}{0.630533in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.115745in}{1.115745in}%
+\pgfsys@transformshift{1.031269in}{1.031269in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.750000in}{1.267241in}%
+\pgfsys@transformshift{0.630533in}{1.267241in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.384255in}{1.115745in}%
+\pgfsys@transformshift{0.299779in}{1.200221in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.232759in}{0.750000in}%
+\pgfsys@transformshift{0.232759in}{0.869467in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.384255in}{0.384255in}%
+\pgfsys@transformshift{0.468731in}{0.468731in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.750000in}{0.232759in}%
+\pgfsys@transformshift{0.869467in}{0.232759in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.115745in}{0.384255in}%
+\pgfsys@transformshift{1.200221in}{0.299779in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%

@@ -25,6 +25,9 @@
 %%   \newcommand{\mofmetr}[1]{m\ofmetr{#1}}
 %%   \newcommand{\cTofmetr}[1]{\cT\ofmetr{#1}}
 %%   \newcommand{\qofmetr}[1]{q\ofmetr{#1}}
+%%   \newcommand{\hplus}{h_+}
+%%   \newcommand{\hcross}{h_x}
+%%   \newcommand{\LCDM}{LCDM}
 %%   \usepackage{fontspec}
 %%
 \begingroup%
