@@ -9,7 +9,7 @@
 
 
 % General
-\LoadClass[12pt,parskip=half]{scrreprt}
+\LoadClassWithOptions{scrreprt}
 
 % Language
 \usepackage[ngerman,english]{babel} % all languages being used, with main language last in list

@@ -1,4 +1,15 @@
-\documentclass[print,twoside]{bsc}
+\documentclass[
+	12pt,
+	parskip=half,
+	oneside,
+%	twoside,
+%	openright,
+%	print,
+]{bsc}
+
+\geometry{
+%	bindingoffset=5mm,
+}
 
 \title{Gravitational Waves in Modified Gravity}
 \author{Nils Fischer}
@@ -19,7 +30,6 @@
 \input{content/titlepage}
 \input{content/abstract}
 
-\cleardoublepage
 \tableofcontents
 \listoffigures
 
@@ -34,13 +44,12 @@
 
 \input{content/acknowledgments}
 
-\cleardoublepage
 \begin{appendices}
 \input{content/mathematical_appendix}
 \input{content/anthropic}
 \end{appendices}
 
-\printbibliography
+\printbibliography[heading=bibintoc,title=References]
 
 \input{content/declaration}
 
