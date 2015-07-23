@@ -2,14 +2,35 @@
 \usepackage{esdiff} % derivatives
 \usepackage{commath} % math macros
 \usepackage{bbm} % blackboard style symbols
-\usepackage{xfrac}
+\usepackage{xfrac} % sfrac
+\usepackage{mathtools} % coloneqq
+
+% Links
+\newcommand{\namedeqref}[2]{\hyperref[#2]{#1}~\eqref{#2}} % macro to reference equations by name
+\renewcommand{\appref}[1]{\hyperref[#1]{Appendix~\ref{#1}}} % macro to print appendix references
+
+% Equations
+\newcommand{\eqpunct}[1]{\mathpunct{#1}} % embed punctuation in equations
+\newcommand{\eqname}[2]{\label{#2} \\[-1em] \tag*{\llap{\emph{#1}}}} % print a title for the equation
+
+% Images
+\usepackage{pgf}
+\newcommand{\plt}[3]{
+	\begin{figure}[h]
+		\begin{center}
+			\input{plots/#1.pgf}
+		\end{center}
+		\caption[#2]{\textbf{#2} \quad #3}
+		\label{fig:#1}
+	\end{figure}
+}
 
 % Abbreviations
 \newcommand{\LCDM}{$\cosmconst$CDM}
 \newcommand{\FLRW}{FLRW}
 \newcommand{\fR}[1]{\(f(\Rscal)\)~#1}
 
-% Symbols
+% Math symbols
 \newcommand{\Rscal}{\mathcal{R}} % Ricci scalar
 \newcommand{\Rtens}{R} % Ricci tensor
 \newcommand{\Riemtens}{R} % Riemann tensor
@@ -64,9 +85,15 @@
 
 % Operators and other stuff
 \newcommand{\vect}[1]{\boldsymbol{#1}}
-\usepackage{mathtools}
 \newcommand{\defeq}{\coloneqq}
 \newcommand{\idmat}{\mathbbm{1}}
 \newcommand{\covd}{\nabla}
 \newcommand{\eul}{\mathrm{e}}
 \newcommand{\dxdx}[2]{\dif{x^{#1}}\otimes\dif{x^{#2}}}
+
+% Units
+\RequirePackage{siunitx}
+\DeclareSIUnit\parsec{pc}
+
+% Code
+\newcommand{\mmainline}[1]{\texttt{#1}}

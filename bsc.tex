@@ -1,22 +1,23 @@
 \documentclass[
-	12pt,
-	parskip=half,
-	oneside,
-%	twoside,
-%	openright,
-%	print,
+	12pt, % font size
+	parskip=half, % space between paragraphs instead of indentation
+	digital, % digital or print
+	oneside, % oneside / twoside
+%	openright, % openright for title page and subsequent chapters on right pages in twosided layout
 ]{bsc}
 
 \geometry{
+	width=155mm,
 %	bindingoffset=5mm,
 }
+\fancyhfoffset{0pt}
 
 \title{Gravitational Waves in Modified Gravity}
 \author{Nils Fischer}
 \date{July 22, 2015}
 
-\input{include/codestyle}
 \input{include/macros}
+\usepackage{include/paginganim}
 
 \addbibresource{bsc.bib}
 
