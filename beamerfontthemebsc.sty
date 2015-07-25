@@ -1,0 +1,45 @@
+% Based on: Beamer mtheme
+%
+% Copyright 2014 Matthias Vogelgesang
+% Licensed under CC-BY-SA 4.0 International.
+%
+% The initial template comes from the HSRM beamer theme by Benjamin Weiss, which
+% you can find at https://github.com/hsrmbeamertheme/hsrmbeamertheme.
+%
+
+\ProvidesPackage{beamerfontthemebsc}
+
+\RequirePackage{fontspec,xunicode}
+
+
+\defaultfontfeatures{Mapping=tex-text}
+\setsansfont[BoldFont={Optima Bold}]{Optima}
+\setmonofont{Menlo}
+\setmainfont{Palatino}
+\newfontfamily\Regular{Optima Regular}
+\newfontfamily\Italic{Optima Italic}
+\newfontfamily\Bold{Optima Bold}
+\newfontfamily\Black{Optima ExtraBlack}
+
+\AtBeginEnvironment{tabular}{\setsansfont[BoldFont={Palatino}, Numbers={Monospaced}]{Palatino}}
+
+\setbeamerfont{title}{family=\Black, size=\Large}
+\setbeamerfont{subtitle}{family=\Italic, size=\fontsize{12}{14}}
+\setbeamerfont{author}{family=\Bold, size=\small}
+\setbeamerfont{date}{family=\Regular, size=\small}
+
+\setbeamerfont{section title}{family=\Black, size=\Large}
+\setbeamerfont{frametitle}{family=\Bold, size=\large}
+\setbeamerfont{block title}{family=\Regular, size=\normalsize}
+\setbeamerfont{block title alerted}{family=\Regular, size=\normalsize}
+\setbeamerfont{alerted text}{series=\bfseries}
+
+\setbeamerfont{description item}{family=\Regular}
+
+\setbeamerfont{caption}{size=\small}
+\setbeamerfont{caption name}{family=\Regular}
+
+\setbeamerfont{page number in head/foot}{size=\scriptsize}
+
+
+\linespread{1.15}

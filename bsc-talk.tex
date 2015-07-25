@@ -1,0 +1,298 @@
+\documentclass[aspectratio=1610]{beamer}
+
+\title{Gravitational Waves in Modified Gravity}
+\subtitle{Bachelor Thesis in Physics}
+\author{Nils Fischer}
+\institute{Institute for Theoretical Physics, University of Heidelberg}
+\date{July 27, 2015}
+
+
+\usepackage{pgfpages}
+\setbeamertemplate{note page}[plain]
+\setbeameroption{show notes}
+\makeatletter
+\def\beamer@framenotesbegin{% at beginning of slide
+  \gdef\beamer@noteitems{}%
+  \gdef\beamer@notes{{}}% used to be totally empty.
+}
+\makeatother
+
+\newcommand{\noteitem}[1]{\note[item]{#1}}
+
+\usetheme[usetitleprogressbar,nooffset]{bsc}
+\usecolortheme{bsc}
+\usefonttheme{bsc}
+\usefonttheme[onlymath]{serif}
+
+\hypersetup{pdfpagemode=FullScreen}
+
+\input{include/macros}
+
+\usepackage{pgf}
+\newcommand{\pltpgfbeamer}[3][.79\textheight]{
+	\begin{figure}[h]
+		\begin{center}
+			\resizebox{!}{#1}{\input{plots/#2.pgf}}
+		\end{center}
+		\caption{#3}
+		\label{fig:#2}
+	\end{figure}
+}
+
+\usepackage{siunitx}
+
+\usepackage[style=numeric-comp,backend=biber,maxnames=10,maxcitenames=2]{biblatex}
+\setbeamertemplate{bibliography item}[text]
+\addbibresource{bsc.bib}
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{frame}
+\frametitle{Main Idea of the Thesis I}
+\begin{itemize}
+	\noteitem{The title of my bachelor thesis is of course .. let me talk about gravity first}
+	\noteitem{When Einstein formulated his theory of GR, I think his greatest accomplishment was to reconsider many of the most fundamental assumptions that biased physicists at the time. Already with SR he abandoned the concept of a strict separation of space and time, but with GR he even replaced the implicit assumptions of the geometric structure of spacetime with more general notions. Afterall, it's really hard to abandon what you think is intuitively obvious about nature and generalize it.}
+	\item Modified gravity theories reconsider fundamental assumptions of general relativity to solve the cosmological constant problem \noteitem{Now, we try to do a similar thing. We try to make the assumptions that GR is based on clear and explicit. First and foremost, it's Lovelocks theorem that tells us that GR is unique under a number of assumptions and we try to reconsider them systematically to find a theory of gravity that can solve the cosmological constant problem.}
+	\item Every geometric theory of gravity exhibits gravitational waves \noteitem{This is where my bachelor thesis begins, since every... that are just perturbations of the metric tensor that propagate through spacetime}
+\end{itemize}
+
+\onslide<2->{\vspace{3ex}\centering\itshape
+	Explore, how modifications to general relativity affect gravitational waves. \noteitem{So in my bsc thesis, I.. to learn more about what these modifications do and eventually be able to know what assumptions of GR should be reconsidered in a more general theory of gravity}
+
+	Find parametric constraints for general modified gravity theories from observational knowledge of tensor perturbation modes. \noteitem{And then, of course, we have quite a bit of observational data on gravitational waves, mostly that we have still not detected any, despite enormous efforts and their amplitude must therefore be extremely small today. So a particular point of my thesis is to use this knowledge to formulate constraints for these modifications of gravity such that the theory remains physically viable}
+}
+\end{frame}
+
+
+%\begin{frame}<1-3>[label=overview]
+%\frametitle{Overview of the Thesis}
+%\textbf{Chapters:}
+%\begin{enumerate}
+%	\item \alert<2>{Introduction}
+%		\only<2>{\noteitem{tried to write it in a way that my mother would understand it, for example, I'll see if that worked out when I go home on Saturday..}}
+%	\item \alert<3>{Gravitational Waves in General Relativity}
+%		\only<3>{\begin{enumerate}
+%			\item The Spacetime Metric in General Relativity \noteitem{introduce concepts of GR: Einstein eqns, meaning of spacetime metric}
+%			\item Standard \FLRW{} Cosmology \noteitem{introduce FLRW cosmology: with FLRW metric, introduce conformal time, Friedmann eqns, density parameters, for example}
+%			\item Tensor Perturbations in an \FLRW{} Universe \noteitem{consider perturbations to such a universe to derive the evolution equation of gravitational waves in GR with perturbation theory and the decomposition theorem, also explain how the amplitude of GW is damped by the expansion of the universe and how they remain constant until their horizon crossing}
+%			\item Detection of Gravitational Waves \noteitem{explain how gravitational waves distort matter in this tensorial manner with two polarizations, overview of detection, sensitivity, (both direkt detection / astronomical sources (bar detectors, LIGO, eLISA) and primordial / CMB), experimental constraints for amplitude}
+%		\end{enumerate}}
+%	\item \alert<4>{The Cosmological Constant Problem}
+%		\only<4>{\noteitem{motivate why we do MG at all}
+%		\begin{enumerate}
+%			\item The Cosmological Constant \noteitem{to formulate the problem, I first go into some detail about Lovelocks theorem and how GR is unique under a number of assumptions when it includes a CC, and how the CC resembles a homogeneous energy density that accelerates the expansion of the universe that we actually measure today}
+%			\item Contributions to the Cosmological Constant \noteitem{then I basically explain how this bare CC must be extremely fine-tuned to cancel the large contributions from the QFT vacuum energy and the zero-point potential from classical phase transitions of all quantum fields up to the small effective CC that we measure}
+%			\item Radiative Instability \noteitem{because I was very interested in the whole topic, I went into more detail about the problems of technical naturalness and radiative instability and how we can't find a renormalized vacuum energy that is stable against changes in its effective description, and I also mentioned the quite remarkable fact that the density parameters of dark energy and matter are on about the same order today, although they evolve rapidly with time.. altogether, I found this topic quite fascinating}
+%			\item The \emph{New} Cosmological Constant Problem and Modified Gravity \noteitem{Finally, I described how theories of modified gravity are an approach to solve the problem, since when we assume another mechanism sets the CC to zero first, such as unbroken supersymmetry, we need a theory of gravity that has late-time self-accelerating cosmological solutions. Here I also introduce f(R) gravity and bigravity a bit as examples}
+%		\end{enumerate}}
+%	\item \alert<5>{Unimetric Parametrization}
+%	\item \alert<5>{Bimetric Parametrization}
+%		\only<5>{\noteitem{this is what I actually did, present one example each}}
+%	\item \alert<6>{Summary}
+%\end{enumerate}
+%\end{frame}
+
+
+%\begin{frame}
+%\frametitle{Tensor Perturbations in an \FLRW{} Universe}
+%\pltpgfbeamer{varying_k}{Tensor perturbations \(\abs{h(a)}\) for different wavelength modes \(k\)}
+%\end{frame}
+%
+%
+%\againframe<3>{overview}
+%
+%
+\begin{frame}
+\frametitle{Gravitational Waves in General Relativity}
+\begin{itemize}
+	\noteitem{That's why the first chapter of my thesis is devoted to derive the ev.eqn of GW in FRW cosmology}
+	\item Spatially homogeneous and isotropic \FLRW{} metric solves the Einstein equations: \noteitem{assume cosmological principle (that I don't question here, btw), so spatial homogeneity and isotropy at largest scale, the only freedom left is the scale factor a(t) that scales a spatial subspace with three-dim. metric gamma.}
+	\begin{equation}
+		\dif{s}^2 = -\dif{t}^2 + a(t)^2 \gamma_{ij} \dif{x^i}\dif{x^j} \quad \text{where} \quad \gamma_{ij}(r,\theta,\phi) =
+		\begin{bmatrix}
+			\frac{1}{1-\spatcurv r^2} & 0 & 0 \\
+			0 & r^2 & 0 \\
+			0 & 0 & r^2 sin^2(\theta)
+		\end{bmatrix}_{ij}
+	\end{equation}
+	\item Small tensor perturbations with \(z\)-axis in direction of \emph{wave vector}~\(\vect{k}\): \noteitem{When we then consider small perturbations to the metric, they decompose into their scalar, vector and tensor parts (as of the Helmholtz theorem) where the tensor part is symmetric, traceless and div-free:..}
+	\noteitem{so when we choose the z-axis in direction of the wave vector we can express the tensor perturbations in terms of 2 functions h+ and hx:}
+	\begin{equation}
+		h_{ij} = h_{ji} \eqpunct{,} \quad \gamma^{ij}h_{ij} = 0 \quad \text{and} \quad k^i h_{ij} = 0 \implies
+		h_{ij} =
+		\begin{bmatrix}
+			\hplus & \hcross & 0 \\
+			\hcross & -\hplus & 0 \\
+			0 & 0 & 0
+		\end{bmatrix}_{ij}
+	\end{equation}
+	\item Evolution equation of gravitational waves for \(h \in \cbr{\hcross, \hplus}\): \noteitem{Then, when we plug this form of the metric into the Einstein equations, we obtain the ev. eq. of GW (written here in conformal time) that's basically a damped wave equation, which is damped by the expansion of the universe, and propagates with the speed of light}
+	\begin{equation}
+		\ddconf{h} + 2 \Hconf \dconf{h} + k^2 h = 0 \quad \text{in conformal time \(\conft\),} \quad \Hconf=\frac{\dconf{a}}{a}
+	\end{equation}
+	\noteitem{The solutions to this equation are called gravitational waves and they occur in two independent polarization + and x}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Detection of Gravitational Waves}
+\noteitem{You can see the effect the two polarizations have on matter here, so they alternatingly stretch and compress the proper distance between masses in a plane transverse to the propagation direction of the gravitational wave. There's also a little animation in my thesis next to the page number, I hope you discovered that}
+\pltpgfbeamer[.5\textheight]{grav_wave_deform}{Effect of gravitational waves on a ring of particles}
+\textbf{Experimental bounds:}\noteitem{Now many extremely sensitive experiments around the world are trying to detect gravitational waves, through resonating bar detectors or interferometers, or in the primordial power spectrum of the B-mode polarization of the CMB, but as of now they can only give upper limits on their amplitude. You can see the latest numbers here: The LIGO interferometer is sensitive on the order of 10-22 and the tensor-to-scalar ratio of the CMB also has strong upper bounds placed on it}
+\begin{itemize}
+	\item LIGO: \(h \sim 10^{-22}\) null-detection sensitivity \autocite{LIGO2009,LIGO2015}
+	\item Planck: CMB tensor-to-scalar ratio \(r_{0.05} \equiv \frac{A_\tenspert}{A_\scalpert} < 0.12\) at \SI{95}{\percent} confidence \autocite{BKP2015}
+\end{itemize}
+\end{frame}
+
+
+%\againframe<3-5>{overview}
+
+\begin{frame}[label=overview]
+\frametitle{Overview of the Thesis}
+\textbf{Chapters:}
+\begin{enumerate}
+	\item Introduction
+	\item \alert<1>{Gravitational Waves in General Relativity}\only<1>{\noteitem{This is basically what the chapter 2 in my thesis is about}}
+	\item \alert<2>{The Cosmological Constant Problem}\only<2>{\noteitem{Then in chapter 3 I motivate why we do MG at all, because that was quite an important question for me when I started here, obviously. I go into some detail there because altogether, I found this topic quite fascinating and had some quite interesting discussions about it with Frank and Florian and also Christof.}}
+	\only<3>{\noteitem{But let me now instead focus on what I actually did!}}
+	\item \alert<3>{Unimetric Parametrization}
+	\item \alert<3>{Bimetric Parametrization}
+	\item Summary
+\end{enumerate}
+\end{frame}
+
+
+
+\section{Unimetric Parametrization}
+
+
+\begin{frame}
+\frametitle{Unimetric Parametrization}
+\begin{itemize}
+	\noteitem{As I said, the main point of the thesis is to..}
+	\item To explore the effects that modifications of gravity have on tensor modes:
+	\noteitem{And to accomplish this, I introduce parameters in the ev. eq. of GW that you and Marco, for example, have also used in your papers before. In particular, that's a modified friction parameter alphaM as an additive contribution to the damping term and a deviation of the propagation speed from the speed of light cT.}
+	\item Introduce \alert{parametric modifications} to the \emph{evolution equation of gravitational waves} \autocite{Amendola2014,Raveri2014,Pettorino2014}
+		\begin{equation}
+			\ddconf{h} + \del{2 + \alphaM} \Hconf \dconf{h} + \cT^2 k^2 h = 0 \quad \text{in conformal time \(\conft\)}
+		\end{equation}
+		\begin{description}
+			\item[\(\alphaM\)] \alert{modified friction} (e.g. for \fR{theory}: \(\alphaM = \od{\ln{F}}{\efold}\) with \(F \defeq \od{f(\Rscal)}{\Rscal}\))\noteitem{These parameters are generally time-dependent and can correspond to modifications from specific MG theories, for example in an f(R) theory, alphaM takes this form here. I keep them general however.}
+			\item[\(\cT\)] \alert{deviating propagation speed}
+		\end{description}
+	\noteitem{And now, since the amplitude of gravitational waves is severely constrained by the experiments I mentioned before, I argue that any theory with gravitational waves that actually grow in amplitude is likely to be in tension with experiments and therefore the theory is not physically viable. So I try to find constraints for these parameters such that growing tensor modes are avoided.}
+	\item In particular: find parametric constraints to \alert{avoid growing tensor modes} (can be in tension with experiments)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Constant modified friction}
+\noteitem{So the alphaM parameter appears as a modification to the damping term, right, so it is obviously very important when we want to find growing modes.}
+\noteitem{Here, you can see a numerical solution to the parametrized ev. eq. for different values of constant alphaM. The absolute value of the tensor perturbation h is plotted over the scale factor a on a logarithmic scale. The black curve shows the standard LCDM case with no modified friction and decays as 1/a.}
+\noteitem{Clearly, additional friction alphaM=1 makes the amplitude decay more rapidly, but less friction reduces the slope of the decay.}
+\noteitem{There is also a competing effect, since the horizon entry is delayed for larger alphaM.}
+\pltpgfbeamer{varying_aM}{Tensor perturbations \(\abs{h(a)}\) with modified friction \(\alphaM=\const\)}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Analytic solution in cosmological regimes}
+\noteitem{To understand this better, I also found an analytic solution in matter and radiation dominated eras. In this regime, the Hubble function takes an explicit form and the ev. eq. becomes just a Bessel differential equation. The solution is then just a damped oscillation where the amplitude decreases like..}
+\noteitem{but this already gives the very simple constraint for the alphaM parameter, since the amplitude will actually increase for alphaM < -2}
+\noteitem{this is shown here: the black curve corresponds to LCDM again, the solid lines are the numerical solutions from before for alphaM=-2 and -3 and the dotted lines are given by the slope I found analytically. you can clearly see that alphaM=-2 is where the tensor perturbations start to grow.}
+\begin{itemize}
+	\item In matter/radiation domination: \quad \(h(a) \propto a^{-\del{1+\frac{\alphaM}{2}}}\)
+	\item stable gravitational waves for: \quad \(\alphaM \geq -2\)
+\end{itemize}
+\pltpgfbeamer[.63\textheight]{growing_aM}{Tensor perturbations~\(\abs{h(a)}\) with modified friction~\(\alphaM \leq -2\)}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Deviating propagation speed}
+\noteitem{The second parameter is a deviation of the propagation speed from the speed of light that has the effect of a delayed horizon entry for lower cT as shown in this plot. So basically, this means that the effect a modified friction has on the amplitude of tensor perturbations today is decreased when cT is lower, since the amplitude has less time until today to decrease or increase in amplitude. Therefore, we can expect a degeneracy between the parameters.}
+\pltpgfbeamer{varying_cT}{Tensor perturbations~\(\abs{h(a)}\) with a modified propagation speed \(\cT=\const\)}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Late-time modified friction}
+\noteitem{The parameters will of course be time-dependent in general and since modified gravity theories aim to provide self-accelerating late-time cosmological solutions, the modifications generally vanish at early times. I implemented a parametrization to reflect this here with a power law.}
+\noteitem{The exponent is zero in the first plot, so it's just the same as constant friction. But when the exponent is increased, the modification is suppressed for small a and only becomes important at late times.}
+\noteitem{To find definite constraints for this sort of time-dependent parametrization, we would need a detailed comparison to experimental data, so for example implement the parametrization in CAMB to find the primordial power spectra of the CMB B-mode polarization}
+\pltpgfbeamer{varying_aM0_beta}{Tensor perturbations \(\abs{h(a)}\) with parametrized modified friction \(\alphaM(t) = \alphaMnot \cdot a(t)^\betaexp\)}
+\end{frame}
+
+
+
+\section{Bimetric Parametrization}
+
+
+\begin{frame}
+\frametitle{Bimetric Parametrization}
+\noteitem{Finally, one assumption of Lovelocks theorem is of course that we only have one metric, and we need to break this assumption to allow for a massive graviton with non-trivial kinetic term.}
+\noteitem{When we also assume that the f-metric is also dynamic, just like the physical metric g, we arrive at the theory of bigravity.}
+\noteitem{only the g-metric induces physical gravity, but both metrics are coupled so that their ev. eq. becomes:..}
+\begin{itemize}
+	\item Second \emph{reference metric}~\(f\) necessary to give graviton mass
+	\item Matter only couples to \emph{physical metric}~\(g\)
+	\item Assume similar dynamics for \(f\) and \(g\) in \emph{bigravity}, parametrized by:
+\end{itemize}
+\begin{equation}
+	\ddconf{h}\ofmetr{n} + \del{2 + \alphaMofmetr{n}} \Hconf \dconf{h}\ofmetr{n} + \del{\Hconf^2 \mofmetr{n}^2 + \cTofmetr{n}^2 k^2} h\ofmetr{n} = \Hconf^2 \qofmetr{n} h\ofmetr{m} \quad \text{in conformal time \(\conft\)}
+\end{equation}
+\noteitem{In addition to alphaM and cT we now have a mass parameter as well, since this is massive gravity, and a coupling parameter to the other metric}
+\begin{description}
+	\item[\(\alphaMofmetr{n}\)] modified friction
+	\item[\(\cTofmetr{n}\)] deviating propagation speed
+	\item[\(\mofmetr{n}\)] \alert{mass parameter}
+	\item[\(\qofmetr{n}\)] \alert{coupling parameter} \quad for each metric \(n,m \in \cbr{g,f}\), \(n \neq m\)
+\end{description}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Coupling to the reference metric}
+\noteitem{This is an example for the effect of the coupling. In each plot here, the physical g-metric is black and the reference f-metric is blue. Also, the g-metric is actually entirely standard, except for its coupling to the f-metric that is set to one. For the f-metric, I only vary the alphaM parameter and all other parameters are standard as well.}
+\noteitem{First of all, the f-metric can have arbitrary dynamics, since it does not induce physical gravity. But the g-metric must couple to it, because otherwise it would be completely standard and the theory could not have self-accelerating solutions.}
+\noteitem{But you can see here, that growing f-metric tensor modes will also lead to the g-metric to grow and eventually acquire the same trend. The g-metric can therefore be rendered physically unviable through coupling to growing f-metric tensor modes.}
+\pltpgfbeamer{bimetric}{Physical and reference metric perturbations with parametrized coupling~\(\qofmetr{g}=1\)}
+\noteitem{For the reasons I mentioned earlier, the modifications generally vanish at early times, however, and the metrics decouple. I actually discuss this in my thesis as well and also show how it compares to your bigravity paper, where the metrics also decouple in matter and radiation domination and the f-metric has actually exactly alphaM=-3 in the matter era and alphaM=-4 in the radiation era.}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Non-zero mass parameter}
+\noteitem{Finally, I also briefly discuss the mass parameter. A positive mass basically advances the horizon entry and therefore we can expect a strong degeneracy with cT.}
+\pltpgfbeamer{varying_mg}{Tensor perturbations \(\abs{h(a)}\) with non-zero mass parameter~\(\mofmetr{g}\)}
+\end{frame}
+
+
+
+\section{Summary}
+
+
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+	\item Many theories of modified gravity were proposed to explain the late-time accelerated expansion of our universe without a cosmological constant.
+	\item They affect gravitational waves in numerous ways explored in this thesis.
+	\item Theories that predict growing tensor modes can be in tension with experiments and constraints were found to avoid this.
+	\item Effects explored here can guide a systematic comparison to experimental data to reveal definite constraints, understand the degeneracies and gain crucial insight about the physical viability of modified gravity theories.
+\end{itemize}
+\onslide<2->{\Large{Thank You!}}
+\end{frame}
+
+
+
+\begin{frame}[noframenumbering,plain,allowframebreaks]{References}
+\printbibliography
+\end{frame}
+
+\end{document}

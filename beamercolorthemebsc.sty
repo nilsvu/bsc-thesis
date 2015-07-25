@@ -1,0 +1,77 @@
+% Based on: Beamer mtheme
+%
+% Copyright 2014 Matthias Vogelgesang
+% Licensed under CC-BY-SA 4.0 International.
+%
+% The initial template comes from the HSRM beamer theme by Benjamin Weiss, which
+% you can find at https://github.com/hsrmbeamertheme/hsrmbeamertheme.
+%
+
+\ProvidesPackage{beamercolorthemebsc}
+
+\definecolor{uhd}{RGB}{196,19,47} % the red UHD brand color
+\definecolor{darkRed}{HTML}{441B22} % the red UHD brand color
+
+
+%}}}
+%{{{ --- Options ----------------------
+
+\newif\if@beamer@metropolis@blockbg
+\@beamer@metropolis@blockbgfalse
+\DeclareOptionBeamer{blockbg}{\@beamer@metropolis@blockbgtrue}
+
+\DeclareOptionBeamer*{%
+  \PackageWarning{beamercolorthememetropolis}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptionsBeamer
+
+%}}}
+%{{{ --- Colors ---------------------
+
+% http://paletton.com/#uid=7050t0kkJkJsntwoyp6gYgoddc4
+
+\definecolor{mDarkBrown}{HTML}{604c38}
+%\definecolor{mDarkTeal}{HTML}{23373b}
+\definecolor{bscDark}{RGB}{0,0,0}
+\definecolor{bscLight}{RGB}{255,255,255}
+
+\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mMediumBrown}{HTML}{C87A2F}
+
+\setbeamercolor{palette primary}{fg=bscDark, bg=bscLight}
+\setbeamercolor{palette secondary}{fg=bscLight, bg=bscDark}
+\setbeamercolor{palette quaternary}{fg=bscDark}
+\setbeamercolor{palette tertiary}{fg=bscLight, bg=bscDark}
+
+\setbeamercolor{title}{parent=palette primary}
+\setbeamercolor{subtitle}{parent=palette primary}
+\setbeamercolor{author}{parent=palette primary}
+\setbeamercolor{date}{parent=palette primary}
+\setbeamercolor{institute}{parent=palette primary}
+
+\setbeamercolor{section title}{parent=palette primary}
+\setbeamercolor{frametitle}{parent=palette secondary}
+\setbeamercolor{background canvas}{parent=palette primary}
+\setbeamercolor{structure}{fg=bscDark}
+
+\setbeamercolor{normal text}{fg=bscDark}
+\setbeamercolor{alerted text}{fg=uhd}
+
+\setbeamercolor{footnote}{fg=bscDark!50}
+\setbeamercolor{footnote mark}{fg=.}
+\setbeamercolor{page number in head/foot}{fg=bscDark}
+
+\if@beamer@metropolis@blockbg
+
+\setbeamercolor{block title}{parent=palette primary,bg=palette primary.bg}
+\setbeamercolor{block title alerted}{use=alerted text,parent=palette primary,fg=alerted text.fg}
+\setbeamercolor{block title example}{use=example text,parent=palette primary,fg=example text.fg}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg}
+
+\fi
+
+\mode<all>

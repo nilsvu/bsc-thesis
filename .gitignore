@@ -16,6 +16,9 @@ Resources/
 *.blg
 *.bcf
 *.run.xml
+*.nav
+*.snm
+*.upa
 
 ## Build tool auxiliary files:
 *.synctex
