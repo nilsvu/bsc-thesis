@@ -1,9 +1,6 @@
 # compiled PDFs
 /*.pdf
 
-# Resources
-Resources/
-
 # LaTeX
 *.aux
 *.lof
