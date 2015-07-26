@@ -55,8 +55,8 @@
 \frametitle{Main Idea of the Thesis I}
 \begin{itemize}
 	\noteitem{The title of my bachelor thesis is of course .. let me talk about gravity first}
-	\noteitem{When Einstein formulated his theory of GR, I think his greatest accomplishment was to reconsider many of the most fundamental assumptions that biased physicists at the time. Already with SR he abandoned the concept of a strict separation of space and time, but with GR he even replaced the implicit assumptions of the geometric structure of spacetime with more general notions. Afterall, it's really hard to abandon what you think is intuitively obvious about nature and generalize it.}
-	\item Modified gravity theories reconsider fundamental assumptions of general relativity to solve the cosmological constant problem \noteitem{Now, we try to do a similar thing. We try to make the assumptions that GR is based on clear and explicit. First and foremost, it's Lovelocks theorem that tells us that GR is unique under a number of assumptions and we try to reconsider them systematically to find a theory of gravity that can solve the cosmological constant problem.}
+	\noteitem{When Einstein formulated his theory of GR, I think his greatest accomplishment was to reconsider many of the most fundamental assumptions that biased physicists at the time. Afterall, it's really hard to abandon what you think is intuitively obvious about nature and generalize it.}
+	\item Modified gravity theories reconsider fundamental assumptions of general relativity to solve the cosmological constant problem \noteitem{Now, we try to do a similar thing. We try to make the assumptions that GR is based on clear and explicit reconsider them systematically to find a theory of gravity that can solve the cosmological constant problem.}
 	\item Every geometric theory of gravity exhibits gravitational waves \noteitem{This is where my bachelor thesis begins, since every... that are just perturbations of the metric tensor that propagate through spacetime}
 \end{itemize}
 
@@ -109,8 +109,8 @@
 \begin{frame}
 \frametitle{Gravitational Waves in General Relativity}
 \begin{itemize}
-	\noteitem{That's why the first chapter of my thesis is devoted to derive the ev.eqn of GW in FRW cosmology}
-	\item Spatially homogeneous and isotropic \FLRW{} metric solves the Einstein equations: \noteitem{assume cosmological principle (that I don't question here, btw), so spatial homogeneity and isotropy at largest scale, the only freedom left is the scale factor a(t) that scales a spatial subspace with three-dim. metric gamma.}
+	\noteitem{That's why the first chapter of my thesis is devoted to derive the ev.eqn of GW in general relativity and FRW cosmology}
+	\item Spatially homogeneous and isotropic \FLRW{} metric solves the Einstein equations: \noteitem{when we assume the cosmological principle (that I don't question here, btw), so spatial homogeneity and isotropy at the largest scale, then the only freedom that we have left is the scale factor a(t) that scales a spatial subspace with three-dim. metric gamma and we obtain the FRW metric that is a particular solution of the Einstein eqns. And of course this enables us to ask questions about the beginning and evolution of the entire universe in the field of cosmology.}
 	\begin{equation}
 		\dif{s}^2 = -\dif{t}^2 + a(t)^2 \gamma_{ij} \dif{x^i}\dif{x^j} \quad \text{where} \quad \gamma_{ij}(r,\theta,\phi) =
 		\begin{bmatrix}
@@ -119,8 +119,8 @@
 			0 & 0 & r^2 sin^2(\theta)
 		\end{bmatrix}_{ij}
 	\end{equation}
-	\item Small tensor perturbations with \(z\)-axis in direction of \emph{wave vector}~\(\vect{k}\): \noteitem{When we then consider small perturbations to the metric, they decompose into their scalar, vector and tensor parts (as of the Helmholtz theorem) where the tensor part is symmetric, traceless and div-free:..}
-	\noteitem{so when we choose the z-axis in direction of the wave vector we can express the tensor perturbations in terms of 2 functions h+ and hx:}
+	\item Small tensor perturbations with \(z\)-axis in direction of \emph{wave vector}~\(\vect{k}\): \noteitem{Now the universe is not entirely homogeneous at all, of course, and so we consider perturbations to the FRW metric. As of the Helmholtz theorem, they decompose into their scalar, vector and tensor parts where the tensor part is sym., tracefree. and div-free.}
+	\noteitem{so when we choose the z-axis in direction of the wave vector we can express the tensor perturbations in terms of 2 functions h+ and hx that evolve independently.}
 	\begin{equation}
 		h_{ij} = h_{ji} \eqpunct{,} \quad \gamma^{ij}h_{ij} = 0 \quad \text{and} \quad k^i h_{ij} = 0 \implies
 		h_{ij} =
@@ -130,7 +130,7 @@
 			0 & 0 & 0
 		\end{bmatrix}_{ij}
 	\end{equation}
-	\item Evolution equation of gravitational waves for \(h \in \cbr{\hcross, \hplus}\): \noteitem{Then, when we plug this form of the metric into the Einstein equations, we obtain the ev. eq. of GW (written here in conformal time) that's basically a damped wave equation, which is damped by the expansion of the universe, and propagates with the speed of light}
+	\item Evolution equation of gravitational waves for \(h \in \cbr{\hcross, \hplus}\): \noteitem{Then, when we plug this perturbed metric into the Einstein equations, to linear order we obtain the ev. eq. of GW (written here in conformal time) that governs the evolution of both of these components h+ and hx. that's basically a wave equation, which is damped by the expansion of the universe, and propagates with the speed of light}
 	\begin{equation}
 		\ddconf{h} + 2 \Hconf \dconf{h} + k^2 h = 0 \quad \text{in conformal time \(\conft\),} \quad \Hconf=\frac{\dconf{a}}{a}
 	\end{equation}
@@ -236,13 +236,13 @@
 
 \begin{frame}
 \frametitle{Bimetric Parametrization}
-\noteitem{Finally, one assumption of Lovelocks theorem is of course that we only have one metric, and we need to break this assumption to allow for a massive graviton with non-trivial kinetic term.}
+\noteitem{Finally, one assumption of Lovelocks theorem is of course that we only have one metric, and we need to break this assumption by adding a second reference metric f to allow for a massive graviton with non-trivial kinetic term.}
 \noteitem{When we also assume that the f-metric is also dynamic, just like the physical metric g, we arrive at the theory of bigravity.}
 \noteitem{only the g-metric induces physical gravity, but both metrics are coupled so that their ev. eq. becomes:..}
 \begin{itemize}
 	\item Second \emph{reference metric}~\(f\) necessary to give graviton mass
 	\item Matter only couples to \emph{physical metric}~\(g\)
-	\item Assume similar dynamics for \(f\) and \(g\) in \emph{bigravity}, parametrized by:
+	\item Assume similar dynamics for \(f\) and \(g\) in \emph{bigravity}, parametrized by \autocite{Amendola2015}:
 \end{itemize}
 \begin{equation}
 	\ddconf{h}\ofmetr{n} + \del{2 + \alphaMofmetr{n}} \Hconf \dconf{h}\ofmetr{n} + \del{\Hconf^2 \mofmetr{n}^2 + \cTofmetr{n}^2 k^2} h\ofmetr{n} = \Hconf^2 \qofmetr{n} h\ofmetr{m} \quad \text{in conformal time \(\conft\)}
@@ -286,7 +286,7 @@
 	\item Theories that predict growing tensor modes can be in tension with experiments and constraints were found to avoid this.
 	\item Effects explored here can guide a systematic comparison to experimental data to reveal definite constraints, understand the degeneracies and gain crucial insight about the physical viability of modified gravity theories.
 \end{itemize}
-\onslide<2->{\Large{Thank You!}}
+\onslide<2->{\Large{Thank You!}}\only<2>{and with thank you I mean thanks for everything, of course, I had a great time here at the institute and learned a lot!}
 \end{frame}
 
 
