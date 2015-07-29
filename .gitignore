@@ -16,6 +16,7 @@
 *.nav
 *.snm
 *.upa
+_minted-bsc/*
 
 ## Build tool auxiliary files:
 *.synctex
