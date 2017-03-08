@@ -94,6 +94,8 @@
 	\renewcommand{\footrulewidth}{0pt}
 }
 
+% Type optimization
+\usepackage{microtype}
 
 % Bibliography
 \usepackage[style=numeric-comp,backend=biber,maxnames=10,maxcitenames=2]{biblatex}
