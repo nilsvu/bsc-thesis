@@ -12,15 +12,15 @@
 \LoadClassWithOptions{scrreprt}
 
 % Language
-\usepackage[ngerman,english]{babel} % all languages being used, with main language last in list
+\RequirePackage[ngerman,english]{babel} % all languages being used, with main language last in list
 
 % Geometry
-\usepackage[onehalfspacing]{setspace}
-\usepackage[a4paper,width=150mm,top=30mm,bottom=30mm]{geometry}
+\RequirePackage[onehalfspacing]{setspace}
+\RequirePackage[a4paper,width=150mm,top=30mm,bottom=30mm]{geometry}
 
 % Links
-\usepackage{color,xcolor}
-\usepackage{hyperref}
+\RequirePackage{color,xcolor}
+\RequirePackage{hyperref}
 \if@print % switch link coloring off for printing
 	\hypersetup{colorlinks=false}
 \else
@@ -38,25 +38,25 @@
 }
 
 % Fonts
-\usepackage{fontspec,xunicode}
+\RequirePackage{fontspec,xunicode}
 \setmainfont{Palatino}
 \setsansfont{Optima}
 \setmonofont[Scale=MatchLowercase]{Menlo}
 
 % Units
-\usepackage[separate-uncertainty]{siunitx}
+\RequirePackage[separate-uncertainty]{siunitx}
 
 % Tables
-\usepackage{array} % for math mode in tables
-\usepackage{booktabs} % for hline rules
+\RequirePackage{array} % for math mode in tables
+\RequirePackage{booktabs} % for hline rules
 
 % Quotations
-\usepackage{epigraph}
+\RequirePackage{epigraph}
 \setlength{\epigraphwidth}{.8\textwidth}
 \setlength{\epigraphrule}{0pt}
 
 % Page Layout
-\usepackage{fancyhdr}
+\RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage{include/flipbook}
 \newlength{\pagenumberwidth}
@@ -91,14 +91,14 @@
 }
 
 % Type optimization
-\usepackage{microtype}
+\RequirePackage{microtype}
 
 % Bibliography
-\usepackage[style=numeric-comp,backend=biber,maxnames=10,maxcitenames=2]{biblatex}
+\RequirePackage[style=numeric-comp,backend=biber,maxnames=10,maxcitenames=2]{biblatex}
 %\nocite{*} % print all references, even those not used
 
 % Appendix
-\usepackage[toc,page]{appendix}
+\RequirePackage[toc,page]{appendix}
 
 
 \endinput
