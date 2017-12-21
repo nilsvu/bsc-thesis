@@ -58,40 +58,36 @@
 % Page Layout
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage{include/flipbook}
+\newlength{\pagenumberwidth}
+\setlength{\pagenumberwidth}{2em}
 \fancyhf{}
-\if@print
+\if@twoside
 	\fancyhead[LE]{
-	    \textit{\nouppercase{\leftmark}}
+	    \textit{\nouppercase{\leftmark}}%
 	}
 	\fancyhead[RO]{
-		\textit{\nouppercase{\rightmark}}
+		\textit{\nouppercase{\rightmark}}%
 	}
-	\fancyfoot[RO,LE]{
-		\thepage
+	\fancyfoot[RO]{
+		\labeledflipbookframe[0][0.5]{flipbook_frames/plus_}[pgf][0.2]{r}{\thepage}{\pagenumberwidth}%
+	}
+	\fancyfoot[LE]{
+		\labeledflipbookframe[0][0.5]{flipbook_frames/cross_}[pgf][0.2]{l}{\thepage}{\pagenumberwidth}%
 	}
 \else
 	\fancyhead[L]{
-	    \textit{\nouppercase{\leftmark}}
+	    \textit{\nouppercase{\leftmark}}%
 	}
 	\fancyfoot[C]{
-		\thepage
+		\labeledflipbookframe[-2]{flipbook_frames/plus_}[pgf][0.2]{c}{\thepage}{\pagenumberwidth}%
 	}
 \fi
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{%
-	\fancyhf{}
-	\if@print
-		\fancyfoot[RO,LE]{
-			\thepage
-		}
-	\else
-		\fancyfoot[C]{
-			\thepage
-		}
-	\fi
+	\fancyhead{}
 	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
 }
 
 % Type optimization

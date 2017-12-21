@@ -20,14 +20,14 @@ def plot_particles(phi, A=0.25, ax=None, n=8, pol='+', title=None):
     # rotation
     R = ((np.cos(rot), np.sin(rot)), (-np.sin(rot), np.cos(rot)))
     xy = (R[0][0]*xy[0] + R[0][1]*xy[1], R[1][0]*xy[0] + R[1][1]*xy[1])
-    
+
     xy = np.dot(R,xy)
-    
+
     ax.scatter(xy[0], xy[1], lw=1, c='black', s=20)
-    
+
     if title is not None:
         ax.set_title('$'+title+'$', y=1.25)
-    
+
     extra = A+0.2
     ax.set_xlim(-1-extra, 1+extra)
     ax.set_ylim(-1-extra, 1+extra)
@@ -39,7 +39,7 @@ def plot_particles(phi, A=0.25, ax=None, n=8, pol='+', title=None):
     for tic in ax.yaxis.get_major_ticks():
         tic.tick1On = tic.tick2On = False
         tic.label1On = tic.label2On = False
-    
+
 
 # tensorial deformation figure
 
@@ -73,19 +73,8 @@ def plot_particles(phi, A=0.25, ax=None, n=8, pol='+', title=None):
 
 # paging animation
 
-def page_plot(p, f, prefix, p_front=0, alternating=False):
-    if alternating:
-        f = f / 2.
-        if p % 2 == 0:
-            pol = '+'
-            pphi = p
-        else:
-            pol = 'x'
-            pphi = p - 3
-    else:
-        pol = '+'
-        pphi = p
-
+def page_plot(p, f, pol, p_front=0):
+    pphi = p
     phi = pphi * f
 
     plt.clf()
@@ -93,9 +82,14 @@ def page_plot(p, f, prefix, p_front=0, alternating=False):
     ax = fig.add_subplot(111, aspect='equal')
     plot_particles(phi=phi, ax=ax, pol=pol)
     ax.axis('off')
-    texfig.savefig('paging_animation/' + prefix + str(p+1+p_front))
+    if pol == '+':
+        prefix = 'plus_'
+    else:
+        prefix = 'cross_'
+    texfig.savefig('flipbook_frames/' + prefix + str(p+1+p_front))
+    plt.close(fig)
 
 for p in np.arange(70):
-    page_plot(p=p, f=const.pi/8, prefix='alternating_', p_front=4, alternating=True)
-#    page_plot(p=p, f=const.pi/8, prefix='continuous_', p_front=2)
+    page_plot(p=p, f=const.pi/8, pol='+')
+    page_plot(p=p, f=const.pi/8, pol='x')
     print(str(p+1) + ' done.')
