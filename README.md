@@ -1,5 +1,7 @@
 # Bachelor thesis in Physics
 
+[![DOI](https://zenodo.org/badge/35695103.svg)](https://zenodo.org/badge/latestdoi/35695103)
+
 - **Title:** Gravitational Waves in Modified Gravity
 - **Author:** [Nils Leif Fischer](https://nilsleiffischer.de)
 - **Submission date:** Jul 22, 2015
